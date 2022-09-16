@@ -1,15 +1,19 @@
 import 'package:boiler/model/completeBoilerTextField.dart';
-import 'package:boiler/view/ASHPInstallerTechnicalSurvey/CustomerSatisficationQuestionair.dart';
-import 'package:boiler/view/ASHPInstallerTechnicalSurvey/PostInstallationAshp.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/heatPumpControlPerameters.dart';
-import 'package:boiler/view/UploadPicture/uploadPicture.dart';
-import 'package:boiler/view/waterQuality/waterQuality.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
-class CompleteMcsBenchMark extends StatelessWidget {
+class CompleteMcsBenchMark extends StatefulWidget {
   const CompleteMcsBenchMark({Key? key}) : super(key: key);
+
+  @override
+  State<CompleteMcsBenchMark> createState() => _CompleteMcsBenchMarkState();
+}
+
+class _CompleteMcsBenchMarkState extends State<CompleteMcsBenchMark> {
+  TextEditingController _date =TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,7 @@ class CompleteMcsBenchMark extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     InkWell(
-                      onTap:(){
+                      onTap: () {
                         Navigator.pop(context);
                       },
                       child: Container(
@@ -59,7 +63,7 @@ class CompleteMcsBenchMark extends StatelessWidget {
                 style: GoogleFonts.dmSans(
                     fontSize: 27.sp, fontWeight: FontWeight.w500),
               )),
-             
+
               SizedBox(
                 height: 15.h,
               ),
@@ -77,8 +81,8 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              
-             SizedBox(
+
+              SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -168,9 +172,40 @@ class CompleteMcsBenchMark extends StatelessWidget {
               SizedBox(
                 height: 10.h,
               ),
-              CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: TextFormField(
+
+                  controller: _date,
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 0),
+                    filled: true,
+                    fillColor: Colors.white,
+
+                    disabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.white, width: 1)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.white, width: 1)),
+                    enabledBorder:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.white, width: 1)),
+                  ),
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                  onTap: ()async{
+                    DateTime? pickeddate=await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(2050));
+                    if(pickeddate!=null){
+                      setState(() {
+                        _date.text= DateFormat("yyyy-mm-dd").format(pickeddate);
+                      });
+                    }
+                  },
+                ),
+              ),
+
+        SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -190,7 +225,7 @@ class CompleteMcsBenchMark extends StatelessWidget {
               SizedBox(
                 height: 15.h,
               ),
-              
+
               Row(
                 children: [
                   Text(
@@ -253,11 +288,11 @@ class CompleteMcsBenchMark extends StatelessWidget {
                 thickness: 1,
                 color: Colors.black,
               ),
-               SizedBox(
+              SizedBox(
                 height: 20.h,
               ),
-             
-               Text(
+
+              Text(
                 "The following checklist is direct guidance from MIS 3005-I. Please use this in conjunction with any commissioning checklist provided by the heat pump manufacturer.",
                 style: GoogleFonts.dmSans(
                     fontSize: 15.sp, fontWeight: FontWeight.w400),
@@ -287,7 +322,7 @@ class CompleteMcsBenchMark extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-                SizedBox(
+              SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -304,7 +339,7 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-                    SizedBox(
+              SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -321,7 +356,7 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-                SizedBox(
+              SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -338,8 +373,8 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              
-                SizedBox(
+
+              SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -356,8 +391,8 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              
-                SizedBox(
+
+              SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -374,8 +409,8 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              
-                SizedBox(
+
+              SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -392,8 +427,8 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              
-                SizedBox(
+
+              SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -410,8 +445,8 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              
-                SizedBox(
+
+              SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -428,8 +463,8 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              
-                SizedBox(
+
+              SizedBox(
                 height: 15.h,
               ),
               Row(
@@ -447,7 +482,7 @@ class CompleteMcsBenchMark extends StatelessWidget {
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
               // Installer as per manufacturer's instructions?
-                SizedBox(
+              SizedBox(
                 height: 15.h,
               ),
 
@@ -466,12 +501,14 @@ class CompleteMcsBenchMark extends StatelessWidget {
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
               // Installer as per manufacturer's instructions?
-              
-              
-                            SizedBox(
+
+              SizedBox(
                 height: 30.h,
               ),
-              Divider(thickness: 1,color: Colors.black,),
+              Divider(
+                thickness: 1,
+                color: Colors.black,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -488,10 +525,15 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 38.0),
-                child: Divider(thickness: 1,color: Colors.black,),
+                child: Divider(
+                  thickness: 1,
+                  color: Colors.black,
+                ),
               ),
 
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
 
               Row(
                 children: [
@@ -502,10 +544,14 @@ class CompleteMcsBenchMark extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
 
               Row(
                 children: [
@@ -516,10 +562,14 @@ class CompleteMcsBenchMark extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
 
               Row(
                 children: [
@@ -530,10 +580,14 @@ class CompleteMcsBenchMark extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               Row(
                 children: [
                   Text(
@@ -543,10 +597,14 @@ class CompleteMcsBenchMark extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               Row(
                 children: [
                   Text(
@@ -556,14 +614,21 @@ class CompleteMcsBenchMark extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(height: 20.h,),
+              SizedBox(
+                height: 20.h,
+              ),
               SizedBox(
                 height: 30.h,
               ),
-              Divider(thickness: 1,color: Colors.black,),
+              Divider(
+                thickness: 1,
+                color: Colors.black,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -580,45 +645,96 @@ class CompleteMcsBenchMark extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 78.0),
-                child: Divider(thickness: 1,color: Colors.black,),
+                child: Divider(
+                  thickness: 1,
+                  color: Colors.black,
+                ),
               ),
 
-              SizedBox(height: 20.h,),
-              CustomTextFormFieldWithPrefix3(keyboardType: TextInputType.text, readOnly: false,hintText: "L1-N                                      V:",),
-              SizedBox(height: 20.h,),
-              CustomTextFormFieldWithPrefix3(keyboardType: TextInputType.text, readOnly: false,hintText: "L2-N                                      V:",),
-              SizedBox(height: 20.h,),
-              CustomTextFormFieldWithPrefix3(keyboardType: TextInputType.text, readOnly: false,hintText: "L3-N                                      V:",),
+              SizedBox(
+                height: 20.h,
+              ),
+              CustomTextFormFieldWithPrefix3(
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "L1-N                                      V:",
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              CustomTextFormFieldWithPrefix3(
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "L2-N                                      V:",
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              CustomTextFormFieldWithPrefix3(
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "L3-N                                      V:",
+              ),
 
+              SizedBox(
+                height: 20.h,
+              ),
+              CustomTextFormFieldWithPrefix3(
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "L1-E                                      V:",
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              CustomTextFormFieldWithPrefix3(
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "L2-E                                      V:",
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              CustomTextFormFieldWithPrefix3(
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "L3-E                                      V:",
+              ),
 
-
-              SizedBox(height: 20.h,),
-              CustomTextFormFieldWithPrefix3(keyboardType: TextInputType.text, readOnly: false,hintText: "L1-E                                      V:",),
-              SizedBox(height: 20.h,),
-              CustomTextFormFieldWithPrefix3(keyboardType: TextInputType.text, readOnly: false,hintText: "L2-E                                      V:",),
-              SizedBox(height: 20.h,),
-              CustomTextFormFieldWithPrefix3(keyboardType: TextInputType.text, readOnly: false,hintText: "L3-E                                      V:",),
-
-
-              SizedBox(height: 20.h,),
-              CustomTextFormFieldWithPrefix3(keyboardType: TextInputType.text, readOnly: false,hintText: "L1-L2                                      V:",),
-              SizedBox(height: 20.h,),
-              CustomTextFormFieldWithPrefix3(keyboardType: TextInputType.text, readOnly: false,hintText: "L2-L3                                      V:",),
-              SizedBox(height: 20.h,),
-              CustomTextFormFieldWithPrefix3(keyboardType: TextInputType.text, readOnly: false,hintText: "L2-L3                                      V:",),
-              SizedBox(height: 20.h,),
-
-
-
-
-
-
-
+              SizedBox(
+                height: 20.h,
+              ),
+              CustomTextFormFieldWithPrefix3(
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "L1-L2                                      V:",
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              CustomTextFormFieldWithPrefix3(
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "L2-L3                                      V:",
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              CustomTextFormFieldWithPrefix3(
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "L2-L3                                      V:",
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
 
               InkWell(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HeatPumpControllPerameters()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HeatPumpControllPerameters()));
                 },
                 child: Container(
                   height: 46.h,

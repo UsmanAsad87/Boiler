@@ -21,13 +21,15 @@ class _SendFileState extends State<SendFile> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 60,),
+                SizedBox(
+                  height: 60,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Navigator.pop(context);
                       },
                       child: Container(
@@ -35,9 +37,9 @@ class _SendFileState extends State<SendFile> {
                         width: 35.w,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/images/Arrow 3.png"),
-                            )),
+                          fit: BoxFit.fill,
+                          image: AssetImage("assets/images/Arrow 3.png"),
+                        )),
                       ),
                     ),
                     Container(
@@ -47,91 +49,102 @@ class _SendFileState extends State<SendFile> {
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               fit: BoxFit.fill,
-                              image: AssetImage('assets/images/person.png')
-                          )
-                      ),
+                              image: AssetImage('assets/images/person.png'))),
                     ),
                   ],
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 Row(
                   children: [
-                    Text(' File:\n',style:GoogleFonts.dmSans(fontWeight: FontWeight.w400,fontSize: 24.sp),),
+                    Text(
+                      ' File:\n',
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 24.sp),
+                    ),
                   ],
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 0.0),
                   child: TextFormField(
                     maxLines: 1,
-                    decoration: InputDecoration
-                      (
+                    decoration: InputDecoration(
                         hintText: "Put Pdf or Excel file",
                         filled: true,
                         fillColor: Colors.grey.shade300,
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(17),
-                        )
-                    ),
+                        )),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
-                    Text(' Email:\n',style:GoogleFonts.dmSans(fontWeight: FontWeight.w400,fontSize: 24.sp),),
+                    Text(
+                      ' Email:\n',
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 24.sp),
+                    ),
                   ],
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 0.0),
                   child: TextFormField(
                     maxLines: 1,
-                    decoration: InputDecoration
-                      (
+                    decoration: InputDecoration(
                         hintText: "",
                         filled: true,
                         fillColor: Colors.grey.shade300,
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(17),
-                        )
-                    ),
+                        )),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
-                    Text(' Whatsapp No:\n',style:GoogleFonts.dmSans(fontWeight: FontWeight.w400,fontSize: 24.sp),),
+                    Text(
+                      ' Whatsapp No:\n',
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 24.sp),
+                    ),
                   ],
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 0.0),
                   child: TextFormField(
                     maxLines: 1,
-                    decoration: InputDecoration
-                      (
+                    decoration: InputDecoration(
                         hintText: "",
                         filled: true,
                         fillColor: Colors.grey.shade300,
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(17),
-                        )
-                    ),
+                        )),
                   ),
                 ),
-                SizedBox(height: 20.h,),
+                SizedBox(
+                  height: 20.h,
+                ),
                 Container(
                   height: 54.h,
                   width: 130.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color(0xff57FD53)
-                  ),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xff57FD53)),
                   child: Center(
                     child: Text(
-                      "Send",style: GoogleFonts.dmSans(fontSize: 17,fontWeight: FontWeight.w400
-
-                    ),
+                      "Send",
+                      style: GoogleFonts.dmSans(
+                          fontSize: 17, fontWeight: FontWeight.w400),
                     ),
                   ),
                 )
@@ -141,6 +154,5 @@ class _SendFileState extends State<SendFile> {
         ),
       ),
     );
-
   }
 }

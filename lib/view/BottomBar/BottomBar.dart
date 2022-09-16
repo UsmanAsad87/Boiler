@@ -1,10 +1,7 @@
 import 'package:boiler/view/CustomerDetailForBoiler/CustomerDetailForBoiler.dart';
 import 'package:boiler/view/HomeScreen/homeScreen.dart';
-import 'package:boiler/view/InstallBoilerTechnicalSurvey/InstallBoilerTechnicalSevay.dart';
-import 'package:boiler/view/RiskAssesment/RiskAssesmentForm1.dart';
 import 'package:boiler/view/Servey.dart';
 import 'package:boiler/view/UserFiles/UserFiles.dart';
-import 'package:boiler/view/UserSettings/UserSettings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +15,7 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
-  List pages=[
-
+  List pages = [
     // InstallBoilerTechnicalSevay(),
     // RiskAssesment(),
     CustomerDetailForBoiler(),
@@ -33,7 +29,7 @@ class _BottomBarState extends State<BottomBar> {
 
     // UserSettings(),
   ];
-  var selectedIndex=0;
+  var selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,80 +37,126 @@ class _BottomBarState extends State<BottomBar> {
         height: 60,
         padding: EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20)),
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20), topLeft: Radius.circular(20)),
             color: Colors.black),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             InkWell(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  selectedIndex=0;
+                  selectedIndex = 0;
                 });
               },
               child: Column(
                 children: [
-                  Icon(Icons.add_chart,color: selectedIndex==0?Colors.white:Colors.grey,),
-                  Text('Install',style: TextStyle(color: selectedIndex==0?Colors.white:Colors.grey,),)
-
+                  Icon(
+                    Icons.add_chart,
+                    color: selectedIndex == 0 ? Colors.white : Colors.grey,
+                  ),
+                  Text(
+                    'Install',
+                    style: TextStyle(
+                      color: selectedIndex == 0 ? Colors.white : Colors.grey,
+                    ),
+                  )
                 ],
               ),
             ),
-            VerticalDivider(color: Colors.white,),
+            VerticalDivider(
+              color: Colors.white,
+            ),
             InkWell(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  selectedIndex=1;
+                  selectedIndex = 1;
                 });
               },
               child: Column(
                 children: [
-                  Icon(CupertinoIcons.person_fill,color: selectedIndex==1?Colors.white:Colors.grey,),
-                  Text('Users',style: TextStyle(color: selectedIndex==1?Colors.white:Colors.grey,),)
+                  Icon(
+                    CupertinoIcons.person_fill,
+                    color: selectedIndex == 1 ? Colors.white : Colors.grey,
+                  ),
+                  Text(
+                    'Users',
+                    style: TextStyle(
+                      color: selectedIndex == 1 ? Colors.white : Colors.grey,
+                    ),
+                  )
                 ],
               ),
             ),
-            VerticalDivider(color: Colors.white,),
+            VerticalDivider(
+              color: Colors.white,
+            ),
             InkWell(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  selectedIndex=2;
+                  selectedIndex = 2;
                 });
               },
               child: Column(
                 children: [
-                  Icon(Icons.folder_copy_outlined,color: selectedIndex==2?Colors.white:Colors.grey,),
-                  Text('Files',style: TextStyle(color:selectedIndex==2?Colors.white:Colors.grey,),)
+                  Icon(
+                    Icons.folder_copy_outlined,
+                    color: selectedIndex == 2 ? Colors.white : Colors.grey,
+                  ),
+                  Text(
+                    'Files',
+                    style: TextStyle(
+                      color: selectedIndex == 2 ? Colors.white : Colors.grey,
+                    ),
+                  )
                 ],
               ),
             ),
-            VerticalDivider(color: Colors.white,),
+            VerticalDivider(
+              color: Colors.white,
+            ),
             InkWell(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  selectedIndex=3;
+                  selectedIndex = 3;
                 });
               },
               child: Column(
                 children: [
-                  Icon(Icons.surfing_sharp,color: selectedIndex==3?Colors.white:Colors.grey,),
-                  Text('Survey',style: TextStyle(color:selectedIndex==3?Colors.white:Colors.grey,),),
-
+                  Icon(
+                    Icons.surfing_sharp,
+                    color: selectedIndex == 3 ? Colors.white : Colors.grey,
+                  ),
+                  Text(
+                    'Survey',
+                    style: TextStyle(
+                      color: selectedIndex == 3 ? Colors.white : Colors.grey,
+                    ),
+                  ),
                 ],
               ),
             ),
-            VerticalDivider(color: Colors.white,),
+            VerticalDivider(
+              color: Colors.white,
+            ),
             InkWell(
-              onTap: (){
+              onTap: () {
                 setState(() {
-                  selectedIndex=4;
+                  selectedIndex = 4;
                 });
               },
               child: Column(
                 children: [
-                  Icon(Icons.install_mobile_outlined,color: selectedIndex==4?Colors.white:Colors.grey,),
-                  Text('About Us',style: TextStyle(color:selectedIndex==4?Colors.white:Colors.grey,),),
-
+                  Icon(
+                    Icons.install_mobile_outlined,
+                    color: selectedIndex == 4 ? Colors.white : Colors.grey,
+                  ),
+                  Text(
+                    'About Us',
+                    style: TextStyle(
+                      color: selectedIndex == 4 ? Colors.white : Colors.grey,
+                    ),
+                  ),
                 ],
               ),
             ),

@@ -1,10 +1,9 @@
 import 'package:boiler/model/completeBoilerTextField.dart';
-import 'package:boiler/view/ASHPInstallerTechnicalSurvey/heatingSyatemControl.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/obsorberASHPonly.dart';
-import 'package:boiler/view/UploadPicture/uploadPicture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 class HeatPumpControllPerameters extends StatelessWidget {
   const HeatPumpControllPerameters({Key? key}) : super(key: key);
 
@@ -27,7 +26,7 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     InkWell(
-                      onTap:(){
+                      onTap: () {
                         Navigator.pop(context);
                       },
                       child: Container(
@@ -35,9 +34,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                         width: 35.w,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/images/Arrow 3.png"),
-                            )),
+                          fit: BoxFit.fill,
+                          image: AssetImage("assets/images/Arrow 3.png"),
+                        )),
                       ),
                     ),
                   ],
@@ -46,12 +45,11 @@ class HeatPumpControllPerameters extends StatelessWidget {
               SizedBox(height: 20.h),
               Center(
                   child: Text(
-                    "Heat pump control \n parameters",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.dmSans(
-                        fontSize: 27.sp, fontWeight: FontWeight.w500),
-                  )),
-
+                "Heat pump control \n parameters",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.dmSans(
+                    fontSize: 27.sp, fontWeight: FontWeight.w500),
+              )),
 
               SizedBox(
                 height: 15.h,
@@ -65,7 +63,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -87,7 +87,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -109,7 +111,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -131,7 +135,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -153,7 +159,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -175,7 +183,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -197,7 +207,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -220,7 +232,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -242,7 +256,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -264,7 +280,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -286,7 +304,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -308,7 +328,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -330,7 +352,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -348,7 +372,9 @@ class HeatPumpControllPerameters extends StatelessWidget {
                 style: GoogleFonts.dmSans(
                     fontSize: 20.sp, fontWeight: FontWeight.w400),
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -362,10 +388,13 @@ class HeatPumpControllPerameters extends StatelessWidget {
                 height: 15.h,
               ),
               Text(
-"Type of auxiliary heating: (where more than one back up o aux heat source exists, please identify clearly in technicians comments including if bi-valentor co-valent)",                style: GoogleFonts.dmSans(
+                "Type of auxiliary heating: (where more than one back up o aux heat source exists, please identify clearly in technicians comments including if bi-valentor co-valent)",
+                style: GoogleFonts.dmSans(
                     fontSize: 20.sp, fontWeight: FontWeight.w400),
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -381,9 +410,11 @@ class HeatPumpControllPerameters extends StatelessWidget {
               Text(
                 "Max auxiliary power:(where more than one back up or aux heat source exists, please identify clearly in technicians comments including if bi-valent or co-valent)",
                 style: GoogleFonts.dmSans(
-                  fontSize: 20.sp, fontWeight: FontWeight.w400),
+                    fontSize: 20.sp, fontWeight: FontWeight.w400),
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -399,12 +430,15 @@ class HeatPumpControllPerameters extends StatelessWidget {
               Row(
                 children: [
                   Text(
-"Auxiliary bi-valent point:",                style: GoogleFonts.dmSans(
+                    "Auxiliary bi-valent point:",
+                    style: GoogleFonts.dmSans(
                         fontSize: 20.sp, fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -417,12 +451,15 @@ class HeatPumpControllPerameters extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Auxiliary heat meter reading:",                style: GoogleFonts.dmSans(
-                      fontSize: 20.sp, fontWeight: FontWeight.w400),
+                    "Auxiliary heat meter reading:",
+                    style: GoogleFonts.dmSans(
+                        fontSize: 20.sp, fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -433,17 +470,13 @@ class HeatPumpControllPerameters extends StatelessWidget {
                         borderSide: BorderSide.none)),
               ),
 
-
-
-
-
-
-
-
               SizedBox(
                 height: 20.h,
               ),
-              Divider(thickness: 1,color: Colors.black,),
+              Divider(
+                thickness: 1,
+                color: Colors.black,
+              ),
               SizedBox(
                 height: 20.h,
               ),
@@ -766,22 +799,16 @@ class HeatPumpControllPerameters extends StatelessWidget {
               CustomTextFormFieldWithPrefix3(
                   keyboardType: TextInputType.text, readOnly: false),
 
-
-
-
-         SizedBox(height: 20.h,),
-
-
-
-
-
-
-
+              SizedBox(
+                height: 20.h,
+              ),
 
               InkWell(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => obsorberASHPonly()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => obsorberASHPonly()));
                 },
                 child: Container(
                   height: 46.h,

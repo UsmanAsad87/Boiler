@@ -8,34 +8,29 @@ class CustomText extends StatefulWidget {
   final Color? textColor;
   final FontWeight? fontWeight;
 
-  const CustomText({
-    Key? key,
-    required this.text,
-    this.fontSize,
-    this.textColor,
-    this.fontWeight
-  }) : super(key: key);
+  const CustomText(
+      {Key? key,
+      required this.text,
+      this.fontSize,
+      this.textColor,
+      this.fontWeight})
+      : super(key: key);
   @override
-  State<CustomText> createState() =>
-      _CustomTextState();
+  State<CustomText> createState() => _CustomTextState();
 }
 
-class _CustomTextState
-    extends State<CustomText> {
- @override
+class _CustomTextState extends State<CustomText> {
+  @override
   Widget build(BuildContext context) {
     return Text(
       widget.text,
       style: GoogleFonts.dmSans(
-        fontSize: widget.fontSize,
-        color: widget.textColor,
-        fontWeight: widget.fontWeight
-      ),
+          fontSize: widget.fontSize,
+          color: widget.textColor,
+          fontWeight: widget.fontWeight),
     );
   }
 }
-
-
 
 class CustomTextFormFieldWithPrefix extends StatefulWidget {
   final String? hintText;
@@ -49,19 +44,19 @@ class CustomTextFormFieldWithPrefix extends StatefulWidget {
   final bool readOnly;
   final TextInputType keyboardType;
 
-  const CustomTextFormFieldWithPrefix({
-    Key? key,
-    this.hintText,
-    this.label,
-    this.sufixIcon,
-    this.minLines,
-    this.controller,
-    this.validator,
-    this.onTap,
-    this.maxLines,
-    required this.keyboardType,
-    required this.readOnly
-  }) : super(key: key);
+  const CustomTextFormFieldWithPrefix(
+      {Key? key,
+      this.hintText,
+      this.label,
+      this.sufixIcon,
+      this.minLines,
+      this.controller,
+      this.validator,
+      this.onTap,
+      this.maxLines,
+      required this.keyboardType,
+      required this.readOnly})
+      : super(key: key);
   @override
   State<CustomTextFormFieldWithPrefix> createState() =>
       _CustomTextFormFieldWithPrefixState();
@@ -69,12 +64,12 @@ class CustomTextFormFieldWithPrefix extends StatefulWidget {
 
 class _CustomTextFormFieldWithPrefixState
     extends State<CustomTextFormFieldWithPrefix> {
- @override
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18.0),
       child: TextFormField(
-        style: TextStyle(fontSize:14,color:Colors.white),
+        style: TextStyle(fontSize: 14, color: Colors.white),
         keyboardType: widget.keyboardType,
         maxLines: widget.maxLines,
         readOnly: widget.readOnly,
@@ -85,33 +80,36 @@ class _CustomTextFormFieldWithPrefixState
           fillColor: Color(0xffEEEEEE),
           disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: Colors.white,width: 1)
-          ),
+              borderSide: BorderSide(color: Colors.white, width: 1)),
           suffixIconColor: Color(0xffACA9A9),
           suffixIcon: widget.sufixIcon,
           hintText: widget.hintText,
-          hintStyle: GoogleFonts.dmSans(fontSize:14.sp,color:Color(0xffACA9A9,)),
-
-          labelStyle:GoogleFonts.dmSans(fontSize:14.sp,color:Color(0xffACA9A9,),fontWeight: FontWeight.w400) ,
+          hintStyle: GoogleFonts.dmSans(
+              fontSize: 14.sp,
+              color: Color(
+                0xffACA9A9,
+              )),
+          labelStyle: GoogleFonts.dmSans(
+              fontSize: 14.sp,
+              color: Color(
+                0xffACA9A9,
+              ),
+              fontWeight: FontWeight.w400),
           label: widget.label != null ? Text(widget.label!) : null,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(color: Colors.white,width: 1)
-          ),
+              borderRadius: BorderRadius.circular(15),
+              borderSide: BorderSide(color: Colors.white, width: 1)),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: Colors.white,width: 1)
-          ),
+              borderSide: BorderSide(color: Colors.white, width: 1)),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: Colors.white,width: 1)
-          ),
+              borderSide: BorderSide(color: Colors.white, width: 1)),
         ),
         validator: widget.validator ??
             (String? value) {
               if (value!.isEmpty) {
-                setState(() {
-                });
+                setState(() {});
                 return "Please fill out this feild";
               }
               return null;
@@ -125,7 +123,7 @@ class CustomPasswordFormFieldWithPrefix extends StatefulWidget {
   final String? hintText;
   final int? minLines;
   final String? label;
-  final Widget ?prefixIcon;
+  final Widget? prefixIcon;
   final TextEditingController? controller;
   // final bool? obscureText;
   final String? Function(String?)? validator;
@@ -156,27 +154,23 @@ class _CustomPasswordFormFieldWithPrefixState
       // textAlign: TextAlign.center,
       controller: widget.controller,
       obscureText: isVisible,
-      style: TextStyle(fontSize:14,color:Colors.white),
+      style: TextStyle(fontSize: 14, color: Colors.white),
       decoration: InputDecoration(
         filled: true,
         fillColor: Color(0xffEEEEEE),
         prefixIcon: widget.prefixIcon,
         hintText: widget.hintText,
         label: widget.label != null ? Text(widget.label!) : null,
-
-          hintStyle: TextStyle(fontSize:14,color:Colors.white),
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: Colors.white,width: 1)
-          ),
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: Colors.white,width: 1)
-          ),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: Colors.white,width: 1)
-          ),
+        hintStyle: TextStyle(fontSize: 14, color: Colors.white),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(color: Colors.white, width: 1)),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(color: Colors.white, width: 1)),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(color: Colors.white, width: 1)),
         suffixIcon: IconButton(
           onPressed: () {
             setState(() {
@@ -184,7 +178,10 @@ class _CustomPasswordFormFieldWithPrefixState
             });
           },
           splashRadius: 15,
-          icon: Icon(isVisible ? Icons.visibility_off : Icons.visibility,color: Colors.black,),
+          icon: Icon(
+            isVisible ? Icons.visibility_off : Icons.visibility,
+            color: Colors.black,
+          ),
           iconSize: 20,
         ),
       ),

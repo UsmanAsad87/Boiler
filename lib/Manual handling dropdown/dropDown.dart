@@ -2,10 +2,8 @@ import 'package:boiler/Constants/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class dropDown extends StatefulWidget {
   String? selectedItem = "L";
-
 
   dropDown({Key? key, this.selectedItem}) : super(key: key);
 
@@ -14,11 +12,7 @@ class dropDown extends StatefulWidget {
 }
 
 class _dropDownState extends State<dropDown> {
-  List DropDownList=[
-    "L",
-    "M",
-    "H"
-  ];
+  List DropDownList = ["L", "M", "H"];
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
@@ -32,18 +26,19 @@ class _dropDownState extends State<dropDown> {
       isExpanded: true,
       elevation: 0,
       underline: Container(color: Colors.transparent),
-      items: DropDownList
-          .map(
-            (title) => DropdownMenuItem(
-          child: Text(title,textAlign: TextAlign.center, style: TextStyle(
+      items: DropDownList.map(
+        (title) => DropdownMenuItem(
+          child: Text(
+            title,
+            textAlign: TextAlign.center,
+            style: TextStyle(
               fontFamily: 'Poppins',
-                  color: Colors.black,
-
-          ),),
+              color: Colors.black,
+            ),
+          ),
           value: title,
         ),
-      )
-          .toList(),
+      ).toList(),
       onChanged: (value) {
         setState(() {
           widget.selectedItem = value.toString();
@@ -51,5 +46,6 @@ class _dropDownState extends State<dropDown> {
           print(widget.selectedItem);
         });
       },
-
-    );}}
+    );
+  }
+}

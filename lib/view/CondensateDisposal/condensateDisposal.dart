@@ -1,13 +1,9 @@
-import 'package:boiler/model/TextField2.dart';
-import 'package:boiler/view/BottomBar/BottomBar.dart';
-import 'package:boiler/view/InstallBoilerTechnicalSurvey/InstallBoilerTechnicalSevay.dart';
 import 'package:boiler/view/PostIInstallation/postInstallation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:signature/signature.dart';
 
-import '../../model/completeBoilerTextField.dart';
 
 class CondensateDisposal extends StatefulWidget {
   const CondensateDisposal({Key? key}) : super(key: key);
@@ -46,20 +42,18 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     InkWell(
-                      onTap:(){
+                      onTap: () {
                         Navigator.pop(context);
                       },
                       child: Container(
-                        height:20.h,
+                        height: 20.h,
                         width: 35.w,
                         decoration: BoxDecoration(
-
                             image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/images/Arrow 3.png"),
-                            )
-
-                        ),),
+                          fit: BoxFit.fill,
+                          image: AssetImage("assets/images/Arrow 3.png"),
+                        )),
+                      ),
                     ),
                   ],
                 ),
@@ -280,18 +274,15 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
               ),
               TextFormField(
                 decoration: InputDecoration(
-                  hintText: "CO",
-                  fillColor: Colors.white,
-                  filled: true,
-                  suffixText: "ppm",
-                  contentPadding: EdgeInsets.symmetric(horizontal: 10),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
-
-
-                  )
-                ),
+                    hintText: "CO",
+                    fillColor: Colors.white,
+                    filled: true,
+                    suffixText: "ppm",
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide.none,
+                    )),
               ),
               SizedBox(
                 height: 10.h,
@@ -306,12 +297,8 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none,
-
-
-                    )
-                ),
+                    )),
               ),
-
               SizedBox(
                 height: 10.h,
               ),
@@ -326,10 +313,7 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none,
-
-
-                    )
-                ),
+                    )),
               ),
               SizedBox(
                 height: 20.h,
@@ -356,10 +340,7 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none,
-
-
-                    )
-                ),
+                    )),
               ),
               SizedBox(
                 height: 10.h,
@@ -374,12 +355,8 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none,
-
-
-                    )
-                ),
+                    )),
               ),
-
               SizedBox(
                 height: 10.h,
               ),
@@ -394,10 +371,7 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none,
-
-
-                    )
-                ),
+                    )),
               ),
               SizedBox(
                 height: 20.h,
@@ -425,10 +399,10 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                         color: Colors.white),
                     child: Center(
                         child: Text(
-                          "Yes",
-                          style: GoogleFonts.dmSans(
-                              fontWeight: FontWeight.w400, fontSize: 17),
-                        )),
+                      "Yes",
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 17),
+                    )),
                   ),
                   Container(
                     height: 46.h,
@@ -439,10 +413,10 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                     ),
                     child: Center(
                         child: Text(
-                          "No",
-                          style: GoogleFonts.dmSans(
-                              fontWeight: FontWeight.w400, fontSize: 17),
-                        )),
+                      "No",
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 17),
+                    )),
                   )
                 ],
               ),
@@ -472,10 +446,10 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                         color: Colors.white),
                     child: Center(
                         child: Text(
-                          "Yes",
-                          style: GoogleFonts.dmSans(
-                              fontWeight: FontWeight.w400, fontSize: 17),
-                        )),
+                      "Yes",
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 17),
+                    )),
                   ),
                   Container(
                     height: 46.h,
@@ -486,10 +460,10 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                     ),
                     child: Center(
                         child: Text(
-                          "No",
-                          style: GoogleFonts.dmSans(
-                              fontWeight: FontWeight.w400, fontSize: 17),
-                        )),
+                      "No",
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 17),
+                    )),
                   )
                 ],
               ),
@@ -519,10 +493,10 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                         color: Colors.white),
                     child: Center(
                         child: Text(
-                          "Yes",
-                          style: GoogleFonts.dmSans(
-                              fontWeight: FontWeight.w400, fontSize: 17),
-                        )),
+                      "Yes",
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 17),
+                    )),
                   ),
                   Container(
                     height: 46.h,
@@ -533,10 +507,10 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                     ),
                     child: Center(
                         child: Text(
-                          "No",
-                          style: GoogleFonts.dmSans(
-                              fontWeight: FontWeight.w400, fontSize: 17),
-                        )),
+                      "No",
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 17),
+                    )),
                   )
                 ],
               ),
@@ -566,19 +540,18 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  child: Signature(controller: _controller1,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Signature(
+                    controller: _controller1,
                     height: 100,
                     backgroundColor: Colors.white,
-
                   ),
                 ),
               ),
-
               SizedBox(
                 height: 20.h,
-              ),Row(
+              ),
+              Row(
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -601,16 +574,14 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  child: Signature(controller: _controller,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Signature(
+                    controller: _controller,
                     height: 100,
                     backgroundColor: Colors.white,
-
                   ),
                 ),
               ),
-
               SizedBox(
                 height: 20.h,
               ),
@@ -631,12 +602,12 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                 height: 10.h,
               ),
               InkWell(
-                onTap: (){},
+                onTap: () {},
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     height: 100.h,
-                    width:MediaQuery.of(context).size.width ,
+                    width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
@@ -665,12 +636,12 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                 height: 10.h,
               ),
               InkWell(
-                onTap: (){},
+                onTap: () {},
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     height: 100.h,
-                    width:MediaQuery.of(context).size.width ,
+                    width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
@@ -679,20 +650,21 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                   ),
                 ),
               ),
-
               SizedBox(
                 height: 20.h,
               ),
               InkWell(
-                onTap: (){
-                   Navigator.push(context, MaterialPageRoute(builder: (context)=>PostInstallation()));
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PostInstallation()));
                 },
                 child: Container(
                   margin: EdgeInsets.only(top: 10.h, bottom: 10.h),
                   alignment: Alignment.center,
                   width: MediaQuery.of(context).size.width * .6,
                   height: 46.h,
-
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Color(0xff42FF55),
@@ -706,29 +678,7 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
                   ),
                 ),
               ),
-              InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomBar()));
 
-                },
-                child: Container(
-                  margin: EdgeInsets.only(top: 10.h, bottom: 10.h),
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width * .6,
-                  height: 46.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color(0xff42FF55),
-                  ),
-                  child: Text(
-                    'Generate\nMaster File',
-                    style: GoogleFonts.dmSans(
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black),
-                  ),
-                ),
-              ),
               SizedBox(
                 height: 20.h,
               ),

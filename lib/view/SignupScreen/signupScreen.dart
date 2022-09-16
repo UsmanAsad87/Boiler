@@ -21,7 +21,7 @@ class SignUpScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: InkWell(
-                  onTap: (){
+                  onTap: () {
                     Navigator.pop(context);
                   },
                   child: Container(
@@ -75,7 +75,6 @@ class SignUpScreen extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-
           CustomTextFormFieldWithPrefix(
             keyboardType: TextInputType.text,
             readOnly: false,
@@ -104,11 +103,13 @@ class SignUpScreen extends StatelessWidget {
             height: 40.h,
           ),
           InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
               },
-
-              child: MyButton(text: "Create",))
+              child: MyButton(
+                text: "Create",
+              ))
         ],
       ),
     );

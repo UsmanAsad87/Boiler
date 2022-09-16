@@ -1,21 +1,28 @@
 import 'package:boiler/model/completeBoilerTextField.dart';
-import 'package:boiler/view/RiskAssesment/PPEForm2.dart';
+import 'package:boiler/view/ASHPInstallerTechnicalSurvey/InstallMenuOfAshp.dart';
+import 'package:boiler/view/installMenuOfBoiler/installMenuOfBoiler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 import '../../Constants/constants.dart';
 import '../../Manual handling dropdown/dropDown.dart';
 
-class RiskAssesmentForm1 extends StatelessWidget {
+class RiskAssesmentForm1 extends StatefulWidget {
   int role;
   RiskAssesmentForm1({required this.role});
 
+  @override
+  State<RiskAssesmentForm1> createState() => _RiskAssesmentForm1State();
+}
 
+class _RiskAssesmentForm1State extends State<RiskAssesmentForm1> {
+  TextEditingController _date =TextEditingController();
   @override
   Widget build(BuildContext context) {
-     print(role);
-     print("booo ki value...............${bool1}");
+    print(widget.role);
+    print("booo ki value...............${bool1}");
     return Scaffold(
       backgroundColor: Color(0xffEFEFEF),
       body: SingleChildScrollView(
@@ -33,20 +40,18 @@ class RiskAssesmentForm1 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     InkWell(
-                      onTap:(){
+                      onTap: () {
                         Navigator.pop(context);
                       },
                       child: Container(
-                        height:20.h,
+                        height: 20.h,
                         width: 35.w,
                         decoration: BoxDecoration(
-
                             image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/images/Arrow 3.png"),
-                            )
-
-                        ),),
+                          fit: BoxFit.fill,
+                          image: AssetImage("assets/images/Arrow 3.png"),
+                        )),
+                      ),
                     ),
                   ],
                 ),
@@ -96,13 +101,31 @@ class RiskAssesmentForm1 extends StatelessWidget {
                 height: 10.h,
               ),
               TextFormField(
-                maxLines: 2,
+                controller: _date,
                 decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide.none)),
+                  filled: true,
+                  fillColor: Colors.white,
+
+                  disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.white, width: 1)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.white, width: 1)),
+                  enabledBorder:  OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.white, width: 1)),
+                ),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                onTap: ()async{
+                  DateTime? pickeddate=await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(2050));
+                  if(pickeddate!=null){
+                    setState(() {
+                      _date.text= DateFormat("yyyy-mm-dd").format(pickeddate);
+                    });
+                  }
+                },
               ),
               SizedBox(
                 height: 15.h,
@@ -155,20 +178,7 @@ class RiskAssesmentForm1 extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Container(
-                    width: 50.w,
-                    height: 50.h,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(
-                      child: Text("Severity",style: TextStyle(fontSize: 10),),
-                    ),
-                  ),
-                ),
+                children: [
                   Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
@@ -179,9 +189,10 @@ class RiskAssesmentForm1 extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Center(
-                        child: Text("Chance",style: TextStyle(
-                          fontSize: 10
-                        ),),
+                        child: Text(
+                          "Severity",
+                          style: TextStyle(fontSize: 10),
+                        ),
                       ),
                     ),
                   ),
@@ -195,10 +206,31 @@ class RiskAssesmentForm1 extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Center(
-                        child: Text("Risk",style: TextStyle(fontSize: 10),),
+                        child: Text(
+                          "Chance",
+                          style: TextStyle(fontSize: 10),
+                        ),
                       ),
                     ),
-                  ),],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Container(
+                      width: 50.w,
+                      height: 50.h,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Risk",
+                          style: TextStyle(fontSize: 10),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 15.h,
@@ -225,11 +257,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -243,10 +276,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -259,19 +293,19 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
                   )
-
                 ],
               ),
-                   SizedBox(
+              SizedBox(
                 height: 25.h,
               ),
               Row(
@@ -284,61 +318,64 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           fontSize: 20.sp, fontWeight: FontWeight.w400),
                     ),
                   ),
-                 Row(
-                   children: [
-                     Padding(
-                       padding: const EdgeInsets.all(5.0),
-                       child: Container(
-                         width: 50.w,
-                         height: 50.h,
-                         decoration: BoxDecoration(
-                           color: Colors.white,
-                           borderRadius: BorderRadius.circular(10),
-                         ),
-                         child: Center(
-                           child:Padding(
-                             padding: const EdgeInsets.only(left:15.0),
-                             child: dropDown(selectedItem: "L",),
-                           )
-                         ),
-                       ),
-                     ),
-                     Padding(
-                       padding: const EdgeInsets.all(5.0),
-                       child: Container(
-                         width: 50.w,
-                         height: 50.h,
-                         decoration: BoxDecoration(
-                           color: Colors.white,
-                           borderRadius: BorderRadius.circular(10),
-                         ),
-                         child: Center(
-                           child: Padding(
-                             padding: const EdgeInsets.only(left:15.0),
-                             child: dropDown(selectedItem: "L",),
-                           )
-                         ),
-                       ),
-                     ),
-                     Padding(
-                       padding: const EdgeInsets.all(5.0),
-                       child: Container(
-                         width: 50.w,
-                         height: 50.h,
-                         decoration: BoxDecoration(
-                           color: Colors.white,
-                           borderRadius: BorderRadius.circular(10),
-                         ),
-                         child: Center(
-                           child:Padding(
-                             padding: const EdgeInsets.only(left:15.0),
-                             child: dropDown(selectedItem: "L",),
-                           )
-                         ),
-                       ),
-                     ),
-                   ],
-                 )
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Container(
+                          width: 50.w,
+                          height: 50.h,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Container(
+                          width: 50.w,
+                          height: 50.h,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Container(
+                          width: 50.w,
+                          height: 50.h,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
 
@@ -367,11 +404,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -385,10 +423,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -401,11 +440,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
@@ -413,7 +453,7 @@ class RiskAssesmentForm1 extends StatelessWidget {
                 ],
               ),
 
-               SizedBox(
+              SizedBox(
                 height: 25.h,
               ),
               Row(
@@ -438,11 +478,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -456,10 +497,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -472,11 +514,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
@@ -484,8 +527,7 @@ class RiskAssesmentForm1 extends StatelessWidget {
                 ],
               ),
 
-
-               SizedBox(
+              SizedBox(
                 height: 25.h,
               ),
               Row(
@@ -510,11 +552,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -528,10 +571,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -544,16 +588,16 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
                   )
-
                 ],
               ),
 
@@ -582,11 +626,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -600,10 +645,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -616,16 +662,16 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
                   )
-
                 ],
               ),
               SizedBox(
@@ -653,11 +699,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -671,10 +718,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -687,16 +735,16 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
                   )
-
                 ],
               ),
               SizedBox(
@@ -724,11 +772,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -742,10 +791,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -758,16 +808,16 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
                   )
-
                 ],
               ),
               SizedBox(
@@ -795,11 +845,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -813,10 +864,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -829,16 +881,16 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
                   )
-
                 ],
               ),
               SizedBox(
@@ -866,11 +918,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -884,10 +937,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -900,16 +954,16 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
                   )
-
                 ],
               ),
               SizedBox(
@@ -937,11 +991,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -955,10 +1010,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -971,16 +1027,16 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
                   )
-
                 ],
               ),
               SizedBox(
@@ -1008,11 +1064,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -1026,10 +1083,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -1042,16 +1100,16 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
                   )
-
                 ],
               ),
               SizedBox(
@@ -1079,11 +1137,12 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -1097,10 +1156,11 @@ class RiskAssesmentForm1 extends StatelessWidget {
                           ),
                           child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                       Padding(
@@ -1113,165 +1173,32 @@ class RiskAssesmentForm1 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
-                              child:Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: dropDown(selectedItem: "L",),
-                              )
-                          ),
+                              child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: dropDown(
+                              selectedItem: "L",
+                            ),
+                          )),
                         ),
                       ),
                     ],
                   ),
-
                 ],
               ),
 
 
-              SizedBox(
-                height: 30.h,
-              ),
-              // Divider(thickness: 1,color: Colors.black,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "People Exposed",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.dmSans(
-                        fontSize: 21.sp, fontWeight: FontWeight.w500),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 78.0),
-                child: Divider(
-                  thickness: 1,
-                  color: Colors.black,
-                ),
-              ),
-
-              SizedBox(
-                height: 10.h,
-              ),
-              SizedBox(
-                height: 15.h,
-              ),
-              Text(
-                "Operative primarily, people working in the vicinity, public",
-                style: GoogleFonts.dmSans(
-                    fontSize: 20.sp, fontWeight: FontWeight.w400),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Action/Control to\n Reduce Risk",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.dmSans(
-                        fontSize: 21.sp, fontWeight: FontWeight.w500),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 78.0),
-                child: Divider(
-                  thickness: 1,
-                  color: Colors.black,
-                ),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-
-              Text(
-                "110v power or battery operated tools to be used Sites",
-                style: GoogleFonts.dmSans(
-                    fontSize: 19.sp, fontWeight: FontWeight.w400),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(
-                height: 10.h,
-              ),
-
-              Text(
-                "Materials to be moved by mechanical means whenever possible to work area, heavy items to be carried by operatives working in pairs",
-                style: GoogleFonts.dmSans(
-                    fontSize: 19.sp, fontWeight: FontWeight.w400),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(
-                height: 10.h,
-              ),
-
-              Text(
-                "Fire extinguisher to be available when carrying out hot work. Fire blankets to be made available where necessary.",
-                style: GoogleFonts.dmSans(
-                    fontSize: 19.sp, fontWeight: FontWeight.w400),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(
-                height: 10.h,
-              ),
-              Text(
-                "Equipment to be set up in a clear area away from access routes and fitted with the required guards etc.",
-                style: GoogleFonts.dmSans(
-                    fontSize: 19.sp, fontWeight: FontWeight.w400),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(
-                height: 10.h,
-              ),
-              Text(
-                "Trained personnel – use of PPE",
-                style: GoogleFonts.dmSans(
-                    fontSize: 19.sp, fontWeight: FontWeight.w400),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false),
-              SizedBox(
-                height: 20.h,
-              ),
               SizedBox(
                 height: 30.h,
               ),
 
               InkWell(
                 onTap: () {
-                   Navigator.push(context,
-                   MaterialPageRoute(builder: (context) => PPEForm2(role: role,)));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => widget.role == 1
+                              ? InstallMenuOfBoiler()
+                              : InstallMenuOfAshp()));
                 },
                 child: Container(
                   height: 46.h,

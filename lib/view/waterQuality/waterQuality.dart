@@ -33,27 +33,27 @@ class _WaterQualityState extends State<WaterQuality> {
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(height: 30,),
+                  SizedBox(
+                    height: 30,
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(18.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         InkWell(
-                          onTap:(){
+                          onTap: () {
                             Navigator.pop(context);
                           },
                           child: Container(
-                            height:20.h,
+                            height: 20.h,
                             width: 35.w,
                             decoration: BoxDecoration(
-
                                 image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage("assets/images/Arrow 3.png"),
-                                )
-
-                            ),),
+                              fit: BoxFit.fill,
+                              image: AssetImage("assets/images/Arrow 3.png"),
+                            )),
+                          ),
                         ),
                       ],
                     ),
@@ -256,7 +256,7 @@ class _WaterQualityState extends State<WaterQuality> {
                     padding: EdgeInsets.only(top: 25.h, bottom: 5.h),
                     child: Question(
                         text:
-                        'Central heating output left at factory settings?'),
+                            'Central heating output left at factory settings?'),
                   ),
                   //------------------
                   //------------------
@@ -286,7 +286,7 @@ class _WaterQualityState extends State<WaterQuality> {
                     padding: EdgeInsets.only(top: 25.h, bottom: 5.h),
                     child: Question(
                         text:
-                        'If no, what is the maximum central heating output selected?'),
+                            'If no, what is the maximum central heating output selected?'),
                   ),
                   CustomTextFormField(hintText: 'kW'),
                   //------------------
@@ -378,7 +378,7 @@ class _WaterQualityState extends State<WaterQuality> {
                     padding: EdgeInsets.only(top: 25.h, bottom: 5.h),
                     child: Question(
                         text:
-                        'Is the installation in a hard water area (above 200ppm)?'),
+                            'Is the installation in a hard water area (above 200ppm)?'),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -435,7 +435,7 @@ class _WaterQualityState extends State<WaterQuality> {
                     padding: EdgeInsets.only(top: 25.h, bottom: 5.h),
                     child: Question(
                         text:
-                        'What type of scale reducer/softener has been fitted?'),
+                            'What type of scale reducer/softener has been fitted?'),
                   ),
                   //-----------------
                   //-----------------
@@ -702,8 +702,11 @@ class _WaterQualityState extends State<WaterQuality> {
                     height: 10.h,
                   ),
                   InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>CondensateDisposal()));
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CondensateDisposal()));
                     },
                     child: Container(
                       margin: EdgeInsets.only(top: 10.h, bottom: 10.h),
@@ -772,11 +775,11 @@ class CustomTextFormField extends StatelessWidget {
 class CustomButton extends StatelessWidget {
   CustomButton(
       {Key? key,
-        this.height = 42,
-        this.isTextCentered = true,
-        this.maxWidth = false,
-        this.textBold = true,
-        required this.textData})
+      this.height = 42,
+      this.isTextCentered = true,
+      this.maxWidth = false,
+      this.textBold = true,
+      required this.textData})
       : super(key: key);
   int height;
   String textData;

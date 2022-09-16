@@ -22,13 +22,15 @@ class _SendDeleteFileState extends State<SendDeleteFile> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 60,),
+                SizedBox(
+                  height: 60,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Navigator.pop(context);
                       },
                       child: Container(
@@ -36,9 +38,9 @@ class _SendDeleteFileState extends State<SendDeleteFile> {
                         width: 35.w,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/images/Arrow 3.png"),
-                            )),
+                          fit: BoxFit.fill,
+                          image: AssetImage("assets/images/Arrow 3.png"),
+                        )),
                       ),
                     ),
                     Container(
@@ -48,32 +50,33 @@ class _SendDeleteFileState extends State<SendDeleteFile> {
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               fit: BoxFit.fill,
-                              image: AssetImage('assets/images/person.png')
-                          )
-                      ),
+                              image: AssetImage('assets/images/person.png'))),
                     ),
                   ],
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height*0.2,
+                  height: MediaQuery.of(context).size.height * 0.2,
                   margin: EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage('assets/images/back.png')
-                    )
-                  ),
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage('assets/images/back.png'))),
                 ),
                 Row(
                   children: [
-                    Text(' Customer Name\n',style:GoogleFonts.dmSans(fontWeight: FontWeight.w400,fontSize: 24.sp),),
+                    Text(
+                      ' Customer Name\n',
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 24.sp),
+                    ),
                   ],
                 ),
                 GestureDetector(
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>SendFile()));
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (_) => SendFile()));
                   },
                   child: Container(
                     height: 50,
@@ -86,18 +89,20 @@ class _SendDeleteFileState extends State<SendDeleteFile> {
                       child: Text(
                         'Send',
                         style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 21
-                        ),
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 21),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
-                    Expanded(child:Container(
+                    Expanded(
+                        child: Container(
                       height: 50,
                       decoration: BoxDecoration(
                         color: Colors.red,
@@ -109,13 +114,15 @@ class _SendDeleteFileState extends State<SendDeleteFile> {
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
-                              fontSize: 21
-                          ),
+                              fontSize: 21),
                         ),
                       ),
                     )),
-                    SizedBox(width: 10,),
-                    Expanded(child:Container(
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                        child: Container(
                       height: 50,
                       decoration: BoxDecoration(
                         color: Colors.lightGreen,
@@ -127,43 +134,46 @@ class _SendDeleteFileState extends State<SendDeleteFile> {
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
-                              fontSize: 21
-                          ),
+                              fontSize: 21),
                         ),
                       ),
                     )),
                   ],
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 Row(
                   children: [
-                    Text(' Details:\n',style:GoogleFonts.dmSans(fontWeight: FontWeight.w400,fontSize: 24.sp),),
+                    Text(
+                      ' Details:\n',
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w400, fontSize: 24.sp),
+                    ),
                   ],
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 0.0),
                   child: TextFormField(
                     maxLines: 5,
-                    decoration: InputDecoration
-                      (
+                    decoration: InputDecoration(
                         hintText: "",
                         filled: true,
                         fillColor: Colors.grey.shade300,
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(17),
-                        )
-                    ),
+                        )),
                   ),
                 ),
-                SizedBox(height: 10,),
-
+                SizedBox(
+                  height: 10,
+                ),
               ],
             ),
           ),
         ),
       ),
     );
-
   }
 }

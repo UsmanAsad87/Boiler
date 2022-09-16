@@ -1,11 +1,10 @@
 import 'package:boiler/model/completeBoilerTextField.dart';
-import 'package:boiler/view/ASHPInstallerTechnicalSurvey/PostInstallationAshp.dart';
-import 'package:boiler/view/UploadPicture/uploadPicture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'heatingSyatemControl.dart';
+
 class obsorberASHPonly extends StatelessWidget {
   const obsorberASHPonly({Key? key}) : super(key: key);
 
@@ -28,7 +27,7 @@ class obsorberASHPonly extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     InkWell(
-                      onTap:(){
+                      onTap: () {
                         Navigator.pop(context);
                       },
                       child: Container(
@@ -36,9 +35,9 @@ class obsorberASHPonly extends StatelessWidget {
                         width: 35.w,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/images/Arrow 3.png"),
-                            )),
+                          fit: BoxFit.fill,
+                          image: AssetImage("assets/images/Arrow 3.png"),
+                        )),
                       ),
                     ),
                   ],
@@ -47,12 +46,11 @@ class obsorberASHPonly extends StatelessWidget {
               SizedBox(height: 20.h),
               Center(
                   child: Text(
-                    "Absorber (ASHP only)",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.dmSans(
-                        fontSize: 27.sp, fontWeight: FontWeight.w500),
-                  )),
-
+                "Absorber (ASHP only)",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.dmSans(
+                    fontSize: 27.sp, fontWeight: FontWeight.w500),
+              )),
 
               SizedBox(
                 height: 15.h,
@@ -66,7 +64,9 @@ class obsorberASHPonly extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -84,7 +84,9 @@ class obsorberASHPonly extends StatelessWidget {
                 style: GoogleFonts.dmSans(
                     fontSize: 20.sp, fontWeight: FontWeight.w400),
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -106,7 +108,9 @@ class obsorberASHPonly extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -128,7 +132,9 @@ class obsorberASHPonly extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -150,7 +156,9 @@ class obsorberASHPonly extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -172,7 +180,9 @@ class obsorberASHPonly extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -194,7 +204,9 @@ class obsorberASHPonly extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -217,7 +229,9 @@ class obsorberASHPonly extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -235,7 +249,9 @@ class obsorberASHPonly extends StatelessWidget {
                 style: GoogleFonts.dmSans(
                     fontSize: 20.sp, fontWeight: FontWeight.w400),
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -257,7 +273,9 @@ class obsorberASHPonly extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               TextFormField(
                 maxLines: 2,
                 decoration: InputDecoration(
@@ -274,44 +292,49 @@ class obsorberASHPonly extends StatelessWidget {
                 children: [
                   Text(
                     "Clearance around unit:",
-                  style:GoogleFonts.dmSans(
+                    style: GoogleFonts.dmSans(
                         fontSize: 20.sp, fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
                     "Back",
-                    style:GoogleFonts.dmSans(
+                    style: GoogleFonts.dmSans(
                         fontSize: 20.sp, fontWeight: FontWeight.w400),
                   ),
                   Container(
                     height: 50.h,
                     width: 170.w,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)
-                    ),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: Center(
-                      child:  Text(
+                      child: Text(
                         "mm",
-                        style:GoogleFonts.dmSans(
-                            fontSize: 20.sp, fontWeight: FontWeight.w400,color: Colors.grey),
+                        style: GoogleFonts.dmSans(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey),
                       ),
                     ),
                   )
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
                     "Front",
-                    style:GoogleFonts.dmSans(
+                    style: GoogleFonts.dmSans(
                         fontSize: 20.sp, fontWeight: FontWeight.w400),
                   ),
                   Container(
@@ -319,25 +342,28 @@ class obsorberASHPonly extends StatelessWidget {
                     width: 170.w,
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
+                        borderRadius: BorderRadius.circular(10)),
                     child: Center(
-                      child:  Text(
+                      child: Text(
                         "mm",
-                        style:GoogleFonts.dmSans(
-                            fontSize: 20.sp, fontWeight: FontWeight.w400,color: Colors.grey),
+                        style: GoogleFonts.dmSans(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey),
                       ),
                     ),
                   )
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
                     "Right",
-                    style:GoogleFonts.dmSans(
+                    style: GoogleFonts.dmSans(
                         fontSize: 20.sp, fontWeight: FontWeight.w400),
                   ),
                   Container(
@@ -345,25 +371,28 @@ class obsorberASHPonly extends StatelessWidget {
                     width: 170.w,
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
+                        borderRadius: BorderRadius.circular(10)),
                     child: Center(
-                      child:  Text(
+                      child: Text(
                         "mm",
-                        style:GoogleFonts.dmSans(
-                            fontSize: 20.sp, fontWeight: FontWeight.w400,color: Colors.grey),
+                        style: GoogleFonts.dmSans(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey),
                       ),
                     ),
                   )
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
                     "Left",
-                    style:GoogleFonts.dmSans(
+                    style: GoogleFonts.dmSans(
                         fontSize: 20.sp, fontWeight: FontWeight.w400),
                   ),
                   Container(
@@ -371,25 +400,28 @@ class obsorberASHPonly extends StatelessWidget {
                     width: 170.w,
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
+                        borderRadius: BorderRadius.circular(10)),
                     child: Center(
-                      child:  Text(
+                      child: Text(
                         "mm",
-                        style:GoogleFonts.dmSans(
-                            fontSize: 20.sp, fontWeight: FontWeight.w400,color: Colors.grey),
+                        style: GoogleFonts.dmSans(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey),
                       ),
                     ),
                   )
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
                     "Below",
-                    style:GoogleFonts.dmSans(
+                    style: GoogleFonts.dmSans(
                         fontSize: 20.sp, fontWeight: FontWeight.w400),
                   ),
                   Container(
@@ -397,28 +429,27 @@ class obsorberASHPonly extends StatelessWidget {
                     width: 170.w,
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
+                        borderRadius: BorderRadius.circular(10)),
                     child: Center(
-                      child:  Text(
+                      child: Text(
                         "mm",
-                        style:GoogleFonts.dmSans(
-                            fontSize: 20.sp, fontWeight: FontWeight.w400,color: Colors.grey),
+                        style: GoogleFonts.dmSans(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey),
                       ),
                     ),
                   )
                 ],
               ),
 
-
-
-
-
-
               SizedBox(
                 height: 20.h,
               ),
-              Divider(thickness: 1,color: Colors.black,),
+              Divider(
+                thickness: 1,
+                color: Colors.black,
+              ),
               SizedBox(
                 height: 20.h,
               ),
@@ -477,7 +508,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false,hintText: "mm",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "mm",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -540,7 +574,9 @@ class obsorberASHPonly extends StatelessWidget {
                   Text(
                     "Total length of collector:",
                     style: GoogleFonts.dmSans(
-                        fontSize: 20.sp, fontWeight: FontWeight.w400,),
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ],
               ),
@@ -548,7 +584,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false,hintText: "m",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "m",
+              ),
 
               SizedBox(
                 height: 15.h,
@@ -566,7 +605,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false,hintText: "mm",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "mm",
+              ),
 
               SizedBox(
                 height: 15.h,
@@ -637,7 +679,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false,hintText: "C",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "C",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -654,7 +699,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false,hintText: "bar",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "bar",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -671,7 +719,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false,hintText: "bar",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "bar",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -712,7 +763,10 @@ class obsorberASHPonly extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              Divider(thickness: 1,color: Colors.black,),
+              Divider(
+                thickness: 1,
+                color: Colors.black,
+              ),
               SizedBox(
                 height: 20.h,
               ),
@@ -768,9 +822,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false,hintText: "k",),
-
-
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "k",
+              ),
 
               SizedBox(
                 height: 15.h,
@@ -788,7 +843,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "bar",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "bar",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -805,7 +863,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -822,7 +883,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "bar",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "bar",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -839,7 +903,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "C",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "C",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -856,7 +923,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "bark",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "bark",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -873,7 +943,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -890,7 +963,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -907,7 +983,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -924,7 +1003,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -941,7 +1023,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -958,7 +1043,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -975,7 +1063,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -988,7 +1079,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -1005,7 +1099,10 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
               Text(
                 "Do all emitters heat up evenly with a similar ∆Tacross F&R?",
                 style: GoogleFonts.dmSans(
@@ -1015,37 +1112,21 @@ class obsorberASHPonly extends StatelessWidget {
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+              ),
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              SizedBox(height: 20.h,),
-
-
-
-
-
-
-
+              SizedBox(
+                height: 20.h,
+              ),
 
               InkWell(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HeatingSystemControl()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HeatingSystemControl()));
                 },
                 child: Container(
                   height: 46.h,

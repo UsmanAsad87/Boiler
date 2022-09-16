@@ -1,7 +1,4 @@
-import 'package:boiler/model/rbutton.dart';
-import 'package:boiler/view/CustomerDetailForBoiler/CustomerDetailForBoiler.dart';
-import 'package:boiler/view/RiskAssesment/RiskAssesmentForm1.dart';
-import 'package:boiler/view/installMenuOfBoiler/installMenuOfBoiler.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,7 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var role=1;
+  var role = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -216,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             InkWell(
-              onTap: (){
+              onTap: () {
                 // Navigator.push(context, MaterialPageRoute(builder: (context)=>CustomerDetailForBoiler()));
               },
               child: Center(
@@ -408,24 +405,25 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               height: 500.h,
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                color: Color(0xffB8B8B8)
-              ),
+              decoration: BoxDecoration(color: Color(0xffB8B8B8)),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 38.0),
                 child: Column(
                   children: [
-                    SizedBox(height: 10.h,),
+                    SizedBox(
+                      height: 10.h,
+                    ),
                     Center(
                         child: Text(
-                          "Request a Call Back",
-                          style: GoogleFonts.dmSans(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 25.sp,
-                              color: Colors.white),
-                        )),
-                    SizedBox(height: 20.h,),
-
+                      "Request a Call Back",
+                      style: GoogleFonts.dmSans(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 25.sp,
+                          color: Colors.white),
+                    )),
+                    SizedBox(
+                      height: 20.h,
+                    ),
                     Row(
                       children: [
                         Text(
@@ -437,23 +435,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.h,),
-
+                    SizedBox(
+                      height: 10.h,
+                    ),
                     TextFormField(
                       decoration: InputDecoration(
-                        filled: true,
-
-                        contentPadding: EdgeInsets.zero,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.zero
-
-                        )
-                      ),
+                          filled: true,
+                          contentPadding: EdgeInsets.zero,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.zero)),
                     ),
-                    SizedBox(height: 20.h,),
-
+                    SizedBox(
+                      height: 20.h,
+                    ),
                     Row(
                       children: [
                         Text(
@@ -465,23 +461,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.h,),
-
+                    SizedBox(
+                      height: 10.h,
+                    ),
                     TextFormField(
                       decoration: InputDecoration(
                           filled: true,
-
                           contentPadding: EdgeInsets.zero,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
                               borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.zero
-
-                          )
-                      ),
+                              borderRadius: BorderRadius.zero)),
                     ),
-                    SizedBox(height: 20.h,),
-
+                    SizedBox(
+                      height: 20.h,
+                    ),
                     Row(
                       children: [
                         Text(
@@ -493,35 +487,40 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.h,),
-
+                    SizedBox(
+                      height: 10.h,
+                    ),
                     TextFormField(
                       decoration: InputDecoration(
                           filled: true,
-
                           contentPadding: EdgeInsets.zero,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
                               borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.zero
-
-                          )
-                      ),
+                              borderRadius: BorderRadius.zero)),
                     ),
-                    SizedBox(height: 30.h,),
+                    SizedBox(
+                      height: 30.h,
+                    ),
                     Row(
                       children: [
                         InkWell(
-                          onTap:(){
+                          onTap: () {
                             // Navigator.push(context, MaterialPageRoute(builder: (context)=>RiskAssesmentForm1()))
-   ;                       },
+                            ;
+                          },
                           child: Container(
                             height: 38.h,
                             width: 149.w,
-                            decoration: BoxDecoration(
-                              color: Color(0xff1246FF)
-                            ),
-                            child: Center(child: Text("Request Callback >",style: GoogleFonts.dmSans(fontWeight: FontWeight.w500,fontSize: 13,color: Colors.white),)),
+                            decoration: BoxDecoration(color: Color(0xff1246FF)),
+                            child: Center(
+                                child: Text(
+                              "Request Callback >",
+                              style: GoogleFonts.dmSans(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 13,
+                                  color: Colors.white),
+                            )),
                           ),
                         ),
                       ],

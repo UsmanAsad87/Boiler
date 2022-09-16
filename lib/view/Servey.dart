@@ -1,19 +1,18 @@
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/ASHPInstallerTechnicalSurvey.dart';
-import 'package:boiler/view/ASHPInstallerTechnicalSurvey/InstallMenuOfAshp.dart';
 import 'package:boiler/view/InstallBoilerTechnicalSurvey/InstallBoilerTechnicalSevay.dart';
-import 'package:boiler/view/installMenuOfBoiler/installMenuOfBoiler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 class Survey extends StatefulWidget {
   @override
   State<Survey> createState() => _SurveyState();
 }
 
 class _SurveyState extends State<Survey> {
-  var role=1;
+  var role = 1;
 
-  var yes=0;
+  var yes = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +62,9 @@ class _SurveyState extends State<Survey> {
               padding: const EdgeInsets.symmetric(horizontal: 28.0),
               child: Column(
                 children: [
-                  SizedBox(height: 30.h,),
+                  SizedBox(
+                    height: 30.h,
+                  ),
                   Row(
                     children: [
                       Text(
@@ -75,99 +76,104 @@ class _SurveyState extends State<Survey> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.h,),
-
+                  SizedBox(
+                    height: 20.h,
+                  ),
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
-                        role=1;
+                        role = 1;
                       });
                     },
                     child: Container(
                       height: 42.h,
                       width: 342,
-                      decoration: role==1?BoxDecoration(
-                          color:Colors.red,
-                          borderRadius: BorderRadius.circular(20)
-                      ):
-                      BoxDecoration(
-                          color: Color(0xffD9D9D9),
-                          borderRadius: BorderRadius.circular(20)
-                      ),
+                      decoration: role == 1
+                          ? BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(20))
+                          : BoxDecoration(
+                              color: Color(0xffD9D9D9),
+                              borderRadius: BorderRadius.circular(20)),
                       child: Center(
-                        child: Text(
-                            "Boiler",
-                            style: role==1?GoogleFonts.dmSans(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20.sp,
-                                color: Colors.white):
-                            GoogleFonts.dmSans(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20.sp,
-                                color: Colors.black)
-                        ),
+                        child: Text("Boiler",
+                            style: role == 1
+                                ? GoogleFonts.dmSans(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 20.sp,
+                                    color: Colors.white)
+                                : GoogleFonts.dmSans(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 20.sp,
+                                    color: Colors.black)),
                       ),
                     ),
                   ),
-                  SizedBox(height: 20.h,),
+                  SizedBox(
+                    height: 20.h,
+                  ),
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
-                        role=2;
+                        role = 2;
                       });
                     },
                     child: Container(
                       height: 42.h,
                       width: 342,
-                      decoration: role==2?BoxDecoration(
-                          color:Colors.red,
-                          borderRadius: BorderRadius.circular(20)
-                      ):
-                      BoxDecoration(
-                          color: Color(0xffD9D9D9),
-                          borderRadius: BorderRadius.circular(20)
-                      ),
+                      decoration: role == 2
+                          ? BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(20))
+                          : BoxDecoration(
+                              color: Color(0xffD9D9D9),
+                              borderRadius: BorderRadius.circular(20)),
                       child: Center(
-                        child: Text(
-                            "ASHP",
-                            style: role==2?GoogleFonts.dmSans(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20.sp,
-                                color: Colors.white):
-                            GoogleFonts.dmSans(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20.sp,
-                                color: Colors.black)
-                        ),
+                        child: Text("ASHP",
+                            style: role == 2
+                                ? GoogleFonts.dmSans(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 20.sp,
+                                    color: Colors.white)
+                                : GoogleFonts.dmSans(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 20.sp,
+                                    color: Colors.black)),
                       ),
                     ),
                   ),
-                  SizedBox(height: 20.h,),
-
-
+                  SizedBox(
+                    height: 20.h,
+                  ),
                   InkWell(
-                    onTap: (){
-
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>role==1?InstallBoilerTechnicalSevay():ASHPInstallerTechnicalSurvey()));
-
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => role == 1
+                                  ? InstallBoilerTechnicalSevay()
+                                  : ASHPInstallerTechnicalSurvey()));
                     },
                     child: Container(
                       height: 46.h,
                       width: 106,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
-                          color: Color(0xff42FF55)
-                      ),
-                      child: Center(child: Text("Next Step",style: GoogleFonts.dmSans(fontWeight: FontWeight.w400,fontSize: 17.sp),)),
+                          color: Color(0xff42FF55)),
+                      child: Center(
+                          child: Text(
+                        "Next Step",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 17.sp),
+                      )),
                     ),
                   ),
-                  SizedBox(height: 20,),
-
+                  SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             )
-
-
           ],
         ),
       ),

@@ -10,8 +10,6 @@ class UserSettings extends StatefulWidget {
 class _UserSettingsState extends State<UserSettings> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-    );
+    return Scaffold();
   }
 }

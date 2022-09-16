@@ -1,19 +1,24 @@
-import 'package:boiler/view/ASHPInstallerTechnicalSurvey/ASHPPictures.dart';
 import 'package:boiler/view/BottomBar/BottomBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:signature/signature.dart';
 
 import '../../model/completeBoilerTextField.dart';
+
 class HeatPumpHandoverCertificate extends StatefulWidget {
   const HeatPumpHandoverCertificate({Key? key}) : super(key: key);
 
   @override
-  State<HeatPumpHandoverCertificate> createState() => _HeatPumpHandoverCertificateState();
+  State<HeatPumpHandoverCertificate> createState() =>
+      _HeatPumpHandoverCertificateState();
 }
 
-class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificate> {
+class _HeatPumpHandoverCertificateState
+    extends State<HeatPumpHandoverCertificate> {
+
+  TextEditingController _date =TextEditingController();
   final SignatureController _controller = SignatureController(
     penStrokeWidth: 2,
     penColor: Colors.grey,
@@ -38,7 +43,7 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     InkWell(
-                      onTap:(){
+                      onTap: () {
                         Navigator.pop(context);
                       },
                       child: Container(
@@ -46,9 +51,9 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                         width: 35.w,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/images/Arrow 3.png"),
-                            )),
+                          fit: BoxFit.fill,
+                          image: AssetImage("assets/images/Arrow 3.png"),
+                        )),
                       ),
                     ),
                   ],
@@ -57,12 +62,11 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
               SizedBox(height: 20.h),
               Center(
                   child: Text(
-                    "Heat Pump Handover\nCertificate",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.dmSans(
-                        fontSize: 27.sp, fontWeight: FontWeight.w500),
-                  )),
-
+                "Heat Pump Handover\nCertificate",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.dmSans(
+                    fontSize: 27.sp, fontWeight: FontWeight.w500),
+              )),
 
               SizedBox(
                 height: 15.h,
@@ -73,17 +77,20 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 28.0),
-                child: Container(height: 50,width: MediaQuery.of(context).size.width*0.95,
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * 0.95,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
-
                     child: Text(
                       "Initial verification",
                       style: GoogleFonts.dmSans(
-                          fontSize: 20.sp, fontWeight: FontWeight.w400,color: Colors.black),
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black),
                     ),
                   ),
                 ),
@@ -94,33 +101,24 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 28.0),
-                child: Container(height: 50,width: MediaQuery.of(context).size.width*0.95,
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * 0.95,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
-
                     child: Text(
                       "Periodic verification",
                       style: GoogleFonts.dmSans(
-                          fontSize: 20.sp, fontWeight: FontWeight.w400,color: Colors.black),
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black),
                     ),
                   ),
                 ),
               ),
-
-
-
-
-
-
-
-
-
-
-
-
 
               SizedBox(
                 height: 15.h,
@@ -138,7 +136,10 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false,maxLines: 5,),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                maxLines: 5,
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -155,7 +156,11 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",maxLines: 5,),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+                maxLines: 5,
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -189,8 +194,35 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
               SizedBox(
                 height: 10.h,
               ),
-              CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false),
+              TextFormField(
+
+                controller: _date,
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 0),
+                  filled: true,
+                  fillColor: Colors.white,
+
+                  disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.white, width: 1)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.white, width: 1)),
+                  enabledBorder:  OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.white, width: 1)),
+                ),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                onTap: ()async{
+                  DateTime? pickeddate=await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(2050));
+                  if(pickeddate!=null){
+                    setState(() {
+                      _date.text= DateFormat("yyyy-mm-dd").format(pickeddate);
+                    });
+                  }
+                },
+              ),
 
               SizedBox(
                 height: 15.h,
@@ -209,19 +241,22 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                child: Container(height: 250,width: MediaQuery.of(context).size.width*0.95,
+                child: Container(
+                  height: 250,
+                  width: MediaQuery.of(context).size.width * 0.95,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
-
                     child: Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: Text(
                         "The Green Deal Factory t/a Clever Energy Boilers Office 25B Aire Valley Business Centre Lawkholme Lane Keighley West Yorkshire BD21 3BB 01274 214557 info@cleverenergyboilers.co.uk",
                         style: GoogleFonts.dmSans(
-                            fontSize: 20.sp, fontWeight: FontWeight.w400,color: Colors.black),
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black),
                       ),
                     ),
                   ),
@@ -244,18 +279,22 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                child: Container(height: 100,width: MediaQuery.of(context).size.width*0.95,
+                child: Container(
+                  height: 100,
+                  width: MediaQuery.of(context).size.width * 0.95,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
-
                     child: Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: Text(
-"Telephone: 0333 103 8130\n Email:hello@mcscertified.com",                        style: GoogleFonts.dmSans(
-                            fontSize: 20.sp, fontWeight: FontWeight.w400,color: Colors.black),
+                        "Telephone: 0333 103 8130\n Email:hello@mcscertified.com",
+                        style: GoogleFonts.dmSans(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black),
                       ),
                     ),
                   ),
@@ -270,7 +309,9 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                   Text(
                     "Description of installation \n (key components installed)",
                     style: GoogleFonts.dmSans(
-                      fontSize: 20.sp, fontWeight: FontWeight.w400,),
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ],
               ),
@@ -278,7 +319,11 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "",maxLines: 5,),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "",
+                maxLines: 5,
+              ),
 
               SizedBox(
                 height: 15.h,
@@ -286,7 +331,8 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
               Row(
                 children: [
                   Text(
-"System rated capacity:",                style: GoogleFonts.dmSans(
+                    "System rated capacity:",
+                    style: GoogleFonts.dmSans(
                         fontSize: 20.sp, fontWeight: FontWeight.w400),
                   ),
                 ],
@@ -295,7 +341,10 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,hintText: "kw",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                hintText: "kw",
+              ),
 
               SizedBox(
                 height: 15.h,
@@ -309,7 +358,11 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,maxLines: 5,hintText: "kwh",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                maxLines: 5,
+                hintText: "kwh",
+              ),
 
               SizedBox(
                 height: 15.h,
@@ -323,7 +376,11 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,maxLines: 5,hintText: "C",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                maxLines: 5,
+                hintText: "C",
+              ),
               // Installer as per manufacturer's instructions?
               SizedBox(
                 height: 15.h,
@@ -337,7 +394,10 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                  keyboardType: TextInputType.text, readOnly: false,maxLines: 5,),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                maxLines: 5,
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -345,7 +405,10 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
               SizedBox(
                 height: 20.h,
               ),
-              Divider(thickness: 1,color: Colors.black,),
+              Divider(
+                thickness: 1,
+                color: Colors.black,
+              ),
               SizedBox(
                 height: 20.h,
               ),
@@ -403,12 +466,11 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  child: Signature(controller: _controller,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Signature(
+                    controller: _controller,
                     height: 100,
                     backgroundColor: Colors.white,
-
                   ),
                 ),
               ),
@@ -428,7 +490,11 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,maxLines: 1,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                maxLines: 1,
+                hintText: "",
+              ),
               SizedBox(
                 height: 10.h,
               ),
@@ -441,9 +507,13 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,maxLines: 1,hintText: "years",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                maxLines: 1,
+                hintText: "years",
+              ),
 
-                 SizedBox(
+              SizedBox(
                 height: 10.h,
               ),
               Row(
@@ -459,7 +529,11 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,maxLines: 5,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                maxLines: 5,
+                hintText: "",
+              ),
               SizedBox(
                 height: 10.h,
               ),
@@ -472,31 +546,23 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                 height: 10.h,
               ),
               CustomTextFormFieldWithPrefix3(
-                keyboardType: TextInputType.text, readOnly: false,maxLines: 5,hintText: "",),
+                keyboardType: TextInputType.text,
+                readOnly: false,
+                maxLines: 5,
+                hintText: "",
+              ),
 
-
-
-
-
-
-
-
-
-
-
-              SizedBox(height: 20.h,),
-
-
-
-
-
-
-
+              SizedBox(
+                height: 20.h,
+              ),
 
               InkWell(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => BottomBar()));
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                          builder: (context) => BottomBar()),
+                          (route) => false
+                  );
                 },
                 child: Container(
                   height: 46.h,
@@ -506,7 +572,7 @@ class _HeatPumpHandoverCertificateState extends State<HeatPumpHandoverCertificat
                       borderRadius: BorderRadius.circular(11)),
                   child: Center(
                     child: Text(
-                      "save",
+                      "Generate Master File",
                       style: GoogleFonts.dmSans(
                           fontSize: 15, fontWeight: FontWeight.w400),
                     ),
