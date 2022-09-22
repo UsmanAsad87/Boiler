@@ -1,3 +1,4 @@
+import 'package:boiler/Constants/constants.dart';
 import 'package:boiler/view/BoilerPictures/BoilerPicture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -341,7 +342,7 @@ class _CustomerSatisficationState extends State<CustomerSatisfication> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => BoilerPictures()));
+                          builder: (context) => show==0?BottomBar():BoilerPictures()));
                 },
                 child: Container(
                   height: 46.h,
@@ -350,7 +351,11 @@ class _CustomerSatisficationState extends State<CustomerSatisfication> {
                       color: Color(0xff42FF55),
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
-                    child: Text(
+                    child:show==0?Text(
+                      "Save",
+                      style: GoogleFonts.dmSans(
+                          fontSize: 15, fontWeight: FontWeight.w400),
+                    ): Text(
                       "Take Compulsary Picks",
                       style: GoogleFonts.dmSans(
                           fontSize: 15, fontWeight: FontWeight.w400),
@@ -359,35 +364,8 @@ class _CustomerSatisficationState extends State<CustomerSatisfication> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 30.h,
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(
-                        builder: (context) => BottomBar()),
-                        (route) => false
-                );
-              },
-              child: Container(
-                margin: EdgeInsets.only(top: 10.h, bottom: 10.h),
-                alignment: Alignment.center,
-                width: MediaQuery.of(context).size.width * .6,
-                height: 46.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color(0xff42FF55),
-                ),
-                child: Text(
-                  'Generate\nMaster File',
-                  style: GoogleFonts.dmSans(
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black),
-                ),
-              ),
-            ),
+
+
             SizedBox(
               height: 30.h,
             ),

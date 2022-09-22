@@ -1,5 +1,7 @@
 import 'package:boiler/Constants/constants.dart';
+import 'package:boiler/view/BottomBar/BottomBar.dart';
 import 'package:boiler/view/CustomerSatisfication/customerSatisfication.dart';
+import 'package:boiler/view/PostIInstallation/postInstallation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -542,8 +544,11 @@ class BoilerPictures extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => CustomerSatisfication()));
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                          builder: (context) => show==0?PostInstallation():BottomBar()),
+                          (route) => false
+                  );
                 },
                 child: Container(
                   height: 46,
@@ -551,7 +556,13 @@ class BoilerPictures extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Color(0xff42FF55),
                       borderRadius: BorderRadius.circular(11)),
-                  child: Center(
+                  child:show==0?Center(
+                    child: Text(
+                      "Next",
+                      style: GoogleFonts.dmSans(
+                          fontSize: 15, fontWeight: FontWeight.w400),
+                    ),
+                  ): Center(
                     child: Text(
                       "Save",
                       style: GoogleFonts.dmSans(

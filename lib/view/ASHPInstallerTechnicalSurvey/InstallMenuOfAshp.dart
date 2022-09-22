@@ -7,6 +7,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:signature/signature.dart';
 
+import '../../Constants/constants.dart';
+
 class InstallMenuOfAshp extends StatefulWidget {
   const InstallMenuOfAshp({Key? key}) : super(key: key);
 
@@ -91,7 +93,7 @@ class _InstallMenuOfAshpState extends State<InstallMenuOfAshp> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 18.0),
                   child: Text(
-                    "Company Email:",
+                    "Customer Name:",
                     style: GoogleFonts.dmSans(
                         fontSize: 15.sp, fontWeight: FontWeight.w400),
                   ),
@@ -890,46 +892,85 @@ class _InstallMenuOfAshpState extends State<InstallMenuOfAshp> {
               ),
             ),
 
-            // SizedBox(height: 20.h,),
-            // Row(
-            //   children: [
-            //     Padding(
-            //       padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            //       child: Text("How much Glycol in the system?",style: GoogleFonts.dmSans(fontSize:15.sp,fontWeight: FontWeight.w400),),
-            //     ),
-            //   ],
-            // ),
-            // SizedBox(height: 10.h,),
-            // CustomTextFormFieldWithPrefix4(readOnly: false,keyboardType: TextInputType.text),
-            // SizedBox(height: 20.h,),
-            // Row(
-            //   children: [
-            //     Padding(
-            //       padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            //       child: Text("Complete manufactures benchmark ",style: GoogleFonts.dmSans(fontSize:15.sp,fontWeight: FontWeight.w400),),
-            //     ),
-            //   ],
-            // ),
-            //   SizedBox(height: 10.h,),
-            //  Padding(
-            //     padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            //     child: TextFormField(
-            //       maxLines: 5,
-            //       decoration: InputDecoration
-            //         (
-            //           hintText: "Upload Pic",
-            //           filled: true,
-            //           fillColor: Colors.white,
-            //           border: OutlineInputBorder(
-            //             borderSide: BorderSide.none,
-            //             borderRadius: BorderRadius.circular(17),
-            //           )
-            //       ),
-            //     ),
-            //   ),
             SizedBox(
               height: 20.h,
             ),
+            // Row(
+            //   children: [
+            //     Padding(
+            //       padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            //       child: Text(
+            //         "How much Glycol in the system?",
+            //         style: GoogleFonts.dmSans(
+            //             fontSize: 15.sp, fontWeight: FontWeight.w400),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // SizedBox(
+            //   height: 20.h,
+            // ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //   children: [
+            //     InkWell(
+            //       onTap: () {
+            //         setState(() {
+            //           glycolsystem = 0;
+            //         });
+            //       },
+            //       child: Container(
+            //         height: 33.h,
+            //         width: 158.w,
+            //         decoration: systemflushed == 0
+            //             ? BoxDecoration(
+            //             borderRadius: BorderRadius.circular(11),
+            //             color: Color(0xff42FF55))
+            //             : BoxDecoration(
+            //             borderRadius: BorderRadius.circular(11),
+            //             color: Colors.white),
+            //         child: Center(
+            //             child: Text(
+            //               "Yes",
+            //               style: GoogleFonts.dmSans(
+            //                   fontSize: 15.sp, fontWeight: FontWeight.w400),
+            //             )),
+            //       ),
+            //     ),
+            //     InkWell(
+            //       onTap: () {
+            //         setState(() {
+            //           systemflushed = 1;
+            //         });
+            //       },
+            //       child: Container(
+            //         height: 33.h,
+            //         width: 158.w,
+            //         decoration: systemflushed == 1
+            //             ? BoxDecoration(
+            //             borderRadius: BorderRadius.circular(11),
+            //             color: Color(0xff42FF55))
+            //             : BoxDecoration(
+            //             borderRadius: BorderRadius.circular(11),
+            //             color: Colors.white),
+            //         child: Center(
+            //             child: Text(
+            //               "No",
+            //               style: GoogleFonts.dmSans(
+            //                   fontSize: 15.sp, fontWeight: FontWeight.w400),
+            //             )),
+            //       ),
+            //     )
+            //   ],
+            // ),
+            // SizedBox(
+            //   height: 10.h,
+            // ),
+            // CustomTextFormFieldWithPrefix4(
+            //     readOnly: false, keyboardType: TextInputType.text),
+            // SizedBox(
+            //   height: 20.h,
+            // ),
             InkWell(
               onTap: () {
                 Navigator.push(

@@ -1,7 +1,12 @@
+import 'dart:io';
+
 import 'package:boiler/view/PostIInstallation/postInstallation.dart';
+import 'package:boiler/view/boilerCmpleteStandardBenchmarkpicture.dart';
+import 'package:boiler/view/uploadCylinderPic.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:signature/signature.dart';
 
 
@@ -13,6 +18,7 @@ class CondensateDisposal extends StatefulWidget {
 }
 
 class _CondensateDisposalState extends State<CondensateDisposal> {
+
   final SignatureController _controller = SignatureController(
     penStrokeWidth: 2,
     penColor: Colors.grey,
@@ -585,80 +591,13 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
               SizedBox(
                 height: 20.h,
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: Text(
-                      "Complete Cylinder Benchmark",
-                      textAlign: TextAlign.start,
-                      style: GoogleFonts.dmSans(
-                          fontSize: 14.sp, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              InkWell(
-                onTap: () {},
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 100.h,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(child: Text("Upload Picture")),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: Text(
-                      "Terbidity Test",
-                      textAlign: TextAlign.start,
-                      style: GoogleFonts.dmSans(
-                          fontSize: 14.sp, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              InkWell(
-                onTap: () {},
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 100.h,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(child: Text("Upload Picture")),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
+
               InkWell(
                 onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => PostInstallation()));
+                          builder: (context) => UpLoadCylinderPic()));
                 },
                 child: Container(
                   margin: EdgeInsets.only(top: 10.h, bottom: 10.h),
@@ -688,4 +627,5 @@ class _CondensateDisposalState extends State<CondensateDisposal> {
       ),
     );
   }
+
 }

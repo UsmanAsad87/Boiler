@@ -1093,152 +1093,153 @@ class _InstallMenuOfBoilerState extends State<InstallMenuOfBoiler> {
             SizedBox(
               height: 20.h,
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                  child: Text(
-                    "Has the system been flushed? and with what?",
-                    style: GoogleFonts.dmSans(
-                        fontSize: 15.sp, fontWeight: FontWeight.w400),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      systemflushed = 0;
-                    });
-                  },
-                  child: Container(
-                    height: 33.h,
-                    width: 158.w,
-                    decoration: systemflushed == 0
-                        ? BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Color(0xff42FF55))
-                        : BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Colors.white),
-                    child: Center(
-                        child: Text(
-                      "Yes",
-                      style: GoogleFonts.dmSans(
-                          fontSize: 15.sp, fontWeight: FontWeight.w400),
-                    )),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      systemflushed = 1;
-                    });
-                  },
-                  child: Container(
-                    height: 33.h,
-                    width: 158.w,
-                    decoration: systemflushed == 1
-                        ? BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Color(0xff42FF55))
-                        : BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Colors.white),
-                    child: Center(
-                        child: Text(
-                      "No",
-                      style: GoogleFonts.dmSans(
-                          fontSize: 15.sp, fontWeight: FontWeight.w400),
-                    )),
-                  ),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 10.h,
-            ),
-            Visibility(
-                visible: systemflushed == 0,
-                child: CustomTextFormFieldWithPrefix4(
-                    readOnly: false, keyboardType: TextInputType.text)),
-            SizedBox(
-              height: 20.h,
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                  child: Text(
-                    "Did you Install Controls?",
-                    style: GoogleFonts.dmSans(
-                        fontSize: 15.sp, fontWeight: FontWeight.w400),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      controls = 0;
-                    });
-                  },
-                  child: Container(
-                    height: 33.h,
-                    width: 158.w,
-                    decoration: controls == 0
-                        ? BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Color(0xff42FF55))
-                        : BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Colors.white),
-                    child: Center(
-                        child: Text(
-                      "Yes",
-                      style: GoogleFonts.dmSans(
-                          fontSize: 15.sp, fontWeight: FontWeight.w400),
-                    )),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      controls = 1;
-                    });
-                  },
-                  child: Container(
-                    height: 33.h,
-                    width: 158.w,
-                    decoration: controls == 1
-                        ? BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Color(0xff42FF55))
-                        : BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Colors.white),
-                    child: Center(
-                        child: Text(
-                      "No",
-                      style: GoogleFonts.dmSans(
-                          fontSize: 15.sp, fontWeight: FontWeight.w400),
-                    )),
-                  ),
-                )
-              ],
-            ),
+            /////
+            // Row(
+            //   children: [
+            //     Padding(
+            //       padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            //       child: Text(
+            //         "Has the system been flushed? and with what?",
+            //         style: GoogleFonts.dmSans(
+            //             fontSize: 15.sp, fontWeight: FontWeight.w400),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // SizedBox(
+            //   height: 20.h,
+            // ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //   children: [
+            //     InkWell(
+            //       onTap: () {
+            //         setState(() {
+            //           systemflushed = 0;
+            //         });
+            //       },
+            //       child: Container(
+            //         height: 33.h,
+            //         width: 158.w,
+            //         decoration: systemflushed == 0
+            //             ? BoxDecoration(
+            //                 borderRadius: BorderRadius.circular(11),
+            //                 color: Color(0xff42FF55))
+            //             : BoxDecoration(
+            //                 borderRadius: BorderRadius.circular(11),
+            //                 color: Colors.white),
+            //         child: Center(
+            //             child: Text(
+            //           "Yes",
+            //           style: GoogleFonts.dmSans(
+            //               fontSize: 15.sp, fontWeight: FontWeight.w400),
+            //         )),
+            //       ),
+            //     ),
+            //     InkWell(
+            //       onTap: () {
+            //         setState(() {
+            //           systemflushed = 1;
+            //         });
+            //       },
+            //       child: Container(
+            //         height: 33.h,
+            //         width: 158.w,
+            //         decoration: systemflushed == 1
+            //             ? BoxDecoration(
+            //                 borderRadius: BorderRadius.circular(11),
+            //                 color: Color(0xff42FF55))
+            //             : BoxDecoration(
+            //                 borderRadius: BorderRadius.circular(11),
+            //                 color: Colors.white),
+            //         child: Center(
+            //             child: Text(
+            //           "No",
+            //           style: GoogleFonts.dmSans(
+            //               fontSize: 15.sp, fontWeight: FontWeight.w400),
+            //         )),
+            //       ),
+            //     )
+            //   ],
+            // ),
+            // SizedBox(
+            //   height: 10.h,
+            // ),
+            // Visibility(
+            //     visible: systemflushed == 0,
+            //     child: CustomTextFormFieldWithPrefix4(
+            //         readOnly: false, keyboardType: TextInputType.text)),
+            // SizedBox(
+            //   height: 20.h,
+            // ),
+            // Row(
+            //   children: [
+            //     Padding(
+            //       padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            //       child: Text(
+            //         "Did you Install Controls?",
+            //         style: GoogleFonts.dmSans(
+            //             fontSize: 15.sp, fontWeight: FontWeight.w400),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // SizedBox(
+            //   height: 20.h,
+            // ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //   children: [
+            //     InkWell(
+            //       onTap: () {
+            //         setState(() {
+            //           controls = 0;
+            //         });
+            //       },
+            //       child: Container(
+            //         height: 33.h,
+            //         width: 158.w,
+            //         decoration: controls == 0
+            //             ? BoxDecoration(
+            //                 borderRadius: BorderRadius.circular(11),
+            //                 color: Color(0xff42FF55))
+            //             : BoxDecoration(
+            //                 borderRadius: BorderRadius.circular(11),
+            //                 color: Colors.white),
+            //         child: Center(
+            //             child: Text(
+            //           "Yes",
+            //           style: GoogleFonts.dmSans(
+            //               fontSize: 15.sp, fontWeight: FontWeight.w400),
+            //         )),
+            //       ),
+            //     ),
+            //     InkWell(
+            //       onTap: () {
+            //         setState(() {
+            //           controls = 1;
+            //         });
+            //       },
+            //       child: Container(
+            //         height: 33.h,
+            //         width: 158.w,
+            //         decoration: controls == 1
+            //             ? BoxDecoration(
+            //                 borderRadius: BorderRadius.circular(11),
+            //                 color: Color(0xff42FF55))
+            //             : BoxDecoration(
+            //                 borderRadius: BorderRadius.circular(11),
+            //                 color: Colors.white),
+            //         child: Center(
+            //             child: Text(
+            //           "No",
+            //           style: GoogleFonts.dmSans(
+            //               fontSize: 15.sp, fontWeight: FontWeight.w400),
+            //         )),
+            //       ),
+            //     )
+            //   ],
+            // ),
             SizedBox(
               height: 30.h,
             ),

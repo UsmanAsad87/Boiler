@@ -54,7 +54,8 @@ class _ASHPInstallerTechnicalSurveyState extends State<ASHPInstallerTechnicalSur
                 children: [
                   Center(
                       child: Text(
-                    "                ASHP\n TECHNICAL SURVEY",
+                    "ASHP\n TECHNICAL SURVEY",
+                    textAlign: TextAlign.center,
                     style: GoogleFonts.dmSans(
                         fontSize: 27.sp, fontWeight: FontWeight.w500),
                   )),

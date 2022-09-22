@@ -73,7 +73,7 @@ class _PostInstallationState extends State<PostInstallation> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 18.0),
                     child: Text(
-                      "Company Email:",
+                      "Customer Name:",
                       style: GoogleFonts.dmSans(
                           fontSize: 15.sp, fontWeight: FontWeight.w400),
                     ),

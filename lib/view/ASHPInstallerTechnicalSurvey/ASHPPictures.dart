@@ -523,7 +523,7 @@ class ASHPPictures extends StatelessWidget {
                       borderRadius: BorderRadius.circular(11)),
                   child: Center(
                     child: Text(
-                      "Save",
+                      "Next",
                       style: GoogleFonts.dmSans(
                           fontSize: 15, fontWeight: FontWeight.w400),
                     ),

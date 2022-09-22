@@ -1,5 +1,5 @@
 import 'package:boiler/Constants/constants.dart';
-import 'package:boiler/model/TextField2.dart';;
+import 'package:boiler/model/TextField2.dart';
 import 'package:boiler/view/RiskAssesment/RiskAssesmentForm1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

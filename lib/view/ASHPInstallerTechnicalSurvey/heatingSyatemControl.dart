@@ -1,6 +1,7 @@
 import 'package:boiler/Constants/constants.dart';
 import 'package:boiler/model/completeBoilerTextField.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/ASHPPictures.dart';
+import 'package:boiler/view/UploadPicture/uploadPicture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -344,45 +345,50 @@ class _HeatingSystemControlState extends State<HeatingSystemControl> {
               SizedBox(
                 height: 15.h,
               ),
-              Visibility(
-                visible: bool1 == 1,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          "Completed Cylinder Benchmark  ",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 20.sp, fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    Container(
-                      height: 170,
-                      width: MediaQuery.of(context).size.width * 0.95,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Upload Pic ",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                  ],
-                ),
-              ),
+              // Visibility(
+              //   visible: bool1 == 1,
+              //   child: Column(
+              //     children: [
+              //       Row(
+              //         children: [
+              //           Text(
+              //             "Completed Cylinder Benchmark  ",
+              //             style: GoogleFonts.dmSans(
+              //                 fontSize: 20.sp, fontWeight: FontWeight.w400),
+              //           ),
+              //         ],
+              //       ),
+              //       SizedBox(
+              //         height: 10.h,
+              //       ),
+              //       InkWell(
+              //         onTap: (){
+              //           Navigator.push(context, MaterialPageRoute(builder: (context)=>UploadPicture()));
+              //         },
+              //         child: Container(
+              //           height: 170,
+              //           width: MediaQuery.of(context).size.width * 0.95,
+              //           decoration: BoxDecoration(
+              //             color: Colors.white,
+              //             borderRadius: BorderRadius.circular(10),
+              //           ),
+              //           child: Center(
+              //             child: Text(
+              //               "Upload Pic ",
+              //               style: GoogleFonts.dmSans(
+              //                   fontSize: 20.sp,
+              //                   fontWeight: FontWeight.w400,
+              //                   color: Colors.black),
+              //             ),
+              //           ),
+              //         ),
+              //       ),
+              //       SizedBox(
+              //         height: 20.h,
+              //       ),
+              //     ],
+              //   ),
+              // ),
 
               InkWell(
                 onTap: () {
@@ -398,7 +404,7 @@ class _HeatingSystemControlState extends State<HeatingSystemControl> {
                   ),
                   child: Center(
                     child: Text(
-                      "Take Comulsary Picks",
+                      "Next",
                       style: GoogleFonts.dmSans(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w400,

@@ -1,9 +1,15 @@
+import 'dart:io';
+
+import 'package:boiler/Constants/constants.dart';
 import 'package:boiler/model/completeBoilerTextField.dart';
+import 'package:boiler/view/BoilerPictures/BoilerPicture.dart';
 import 'package:boiler/view/UploadPicture/uploadPicture.dart';
+import 'package:boiler/view/boilerCmpleteStandardBenchmarkpicture.dart';
 import 'package:boiler/view/waterQuality/waterQuality.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 
 class CompleteBoilerBenchMark extends StatefulWidget {
@@ -13,9 +19,19 @@ class CompleteBoilerBenchMark extends StatefulWidget {
 }
 
 class _CompleteBoilerBenchMarkState extends State<CompleteBoilerBenchMark> {
+  final ImagePicker _picker = ImagePicker();
+  File? _image;
+
+
+  // Pick an image
+
+
+
+  // Capture a photo
+  // Pick a video
 
   TextEditingController _date =TextEditingController();
-  var show = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -68,15 +84,7 @@ class _CompleteBoilerBenchMarkState extends State<CompleteBoilerBenchMark> {
               SizedBox(
                 height: 30.h,
               ),
-              Row(
-                children: [
-                  Text(
-                    "Choose File:",
-                    style: GoogleFonts.dmSans(
-                        fontSize: 20.sp, fontWeight: FontWeight.w400),
-                  ),
-                ],
-              ),
+
               SizedBox(
                 height: 10.h,
               ),
@@ -139,32 +147,74 @@ class _CompleteBoilerBenchMarkState extends State<CompleteBoilerBenchMark> {
                 visible: show == 0,
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          "Choose File:",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 20.sp, fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
+                    
                     SizedBox(
                       height: 10.h,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        dialog(context);
+                      },
+                      child: Center(
+                        child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: _image != null
+                              ? ClipRect(
+                            clipBehavior: Clip.hardEdge,
+
+                            child: Image.file(
+                              _image!.absolute,
+                              height: 100,
+                              width: MediaQuery.of(context).size
+                              .width,
+
+                              fit: BoxFit.fill,
+                            ),
+                          )
+                              : Container(
+                            width: 100,
+                            height: 130,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                               borderRadius: BorderRadius.circular(30),
+                            ),
+                            child: Center(child: Text("Upload Picture"))
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30.h,
                     ),
                     InkWell(
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => UploadPicture()));
+                                builder: (context) => BoilerCompleteStandardBenchMarkPicture()));
                       },
                       child: Container(
-                        height: 100,
-                        width: MediaQuery.of(context).size.width,
+                        height: 46.h,
+                        width: 193.w,
                         decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)),
+                            color: Color(0xff42FF55),
+                            borderRadius: BorderRadius.circular(11)),
+                        child: Center(
+                          child: Text(
+                            "Next",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400),
+                          ),
+                        ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 30.h,
                     ),
                   ],
                 ),
@@ -732,13 +782,79 @@ class _CompleteBoilerBenchMarkState extends State<CompleteBoilerBenchMark> {
                     SizedBox(
                       height: 30.h,
                     ),
+
                   ],
                 ),
-              )
+              ),
+
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future getCameraImage() async {
+    final pickedFile = await piker.pickImage(source: ImageSource.camera);
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('no image selected');
+      }
+    });
+  }
+  void dialog(context) {
+    showDialog(
+        context: context,
+        builder: (BuildContext) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            content: Container(
+              height: 120,
+              child: Column(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      getCameraImage();
+                    },
+                    child: ListTile(
+                      leading: Icon(Icons.add_a_photo),
+                      title: Text('Camera'),
+                    ),
+                  ),
+
+                  InkWell(
+                    onTap: () {
+                      getImageGalary();
+                    },
+                    child: ListTile(
+                      leading: Icon(Icons.photo_library_outlined),
+                      title: Text('Gallery'),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        });
+  }
+  final piker = ImagePicker();
+
+  Future getImageGalary() async {
+    final pickedFile = await piker.pickImage(source: ImageSource.gallery);
+    print('image selected');
+
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+        Navigator.pop(context);
+        print('image setState selected');
+      } else {
+        print('no image selected');
+      }
+    });
   }
 }
