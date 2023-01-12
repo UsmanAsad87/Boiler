@@ -1,259 +1,464 @@
-import 'package:signature/signature.dart';
+class ASHPModel {
+  String? ASHPId;
+  //1 form
+  String? installDate;
+  String? installType;
+  String? manPower;
+  String? surveydate;
+  String? surveyby;
+  String? customername;
+  String? propertyaddress;
+  String? postcode;
+  String? customercontact;
+  String? email;
 
-class Mycomponents {
-  static String useremail="";
-  //form1
-  static String installdate = "";
+  //2 form
+  String? parking;
+  String? skipNeede;
+  String? skipPermitrequired;
+  String? propertyDetailsComments;
+  String? boilerType;
+  String? boilerLocation;
+  String? boilerRipOut;
+  String? BoilerComments;
+  String? cylinder;
+  String? cylinderLocation;
+  String? cylinderRipOut;
+  String? cylinderComments3;
+  String? abbestosRemoval;
+  String? abbestosComments4;
+  String? ripOutrequired;
 
-  static String installtype = "";
+  //3 form
+  //Proposed New ASHP System details
+  String? makeAndModel;
+  String? ashpLocation;
+  String? doWeNeedToBuildABase;
+  String? baseConstructedWith;
+  String? whoIsBuildingTheBase;
+  String? howManyHeatingZones;
+  String? describeFlow;
+  String? pipesAndLagging;
+  String? doWeNeedTrunking;
+  String? doweNeedScaffold;
+  String? doWeNeedAGenie;
+  String? describeCondensate;
+  String? anyPumps;
+  String? system25Pump;
+  String? anyZone;
+  String? whatType;
 
-  static String manpower = "";
-  static String surveydate = "";
-  static String customername = "";
-  static String propertyadress = "";
-  static String postcode = "";
-  static String customerconatct = "";
-  static String fueltype = "";
-  static String limescale = "";
-  //form2
-  static String makemodel1 = "";
-  static String boilertypr1 = "";
-  static String boilerposition1 = "";
-  static String boilerlocation1 = "";
-  static String existingheating = "";
-  static String asbestosRemoval = "";
-  static String comments = "";
-  static String makemodel2 = "";
+  //4 form
+  //proposed new cylinder
+  String? newCylinderMake;
+  String? newCylinderLocation;
+  String? newLimeScale;
+  String? newDoWe;
+  String? newBaseConStructed;
+  String? newWhoIs;
+  String? newWhereDo;
+  String? newPipes;
+  String? newCylinderComments;
 
-  static String boilertype2 = "";
-  static String boilerposition2 = "";
-  static String boilerlocation2 = "";
-  static String flueorintaion = "";
-  static String plumekitrequired = "";
-  static String newheatingcontrols = "";
-  static String newhaetingcontrollocation = "";
+  //5 form
+  //Existing radiator and location
+  String? room;
+  String? size;
+  String? where;
+  String? existingRaidLocation;
+  String? pipeSize;
+  String? totalRads;
+  String? howManyToChange;
+  String? pDo;
+  String? howManyTrvs;
+  String? howManyLockshields;
+  String? existingRadiatorComments;
 
-  static String gasupgrade = "";
-  static String newcondesatelocation = "";
-  static String newpump = "";
+  //6 form
+  //Electrical System
+  String? mainFuse;
+  String? boardType;
+  String? numberOfSpare;
+  String? typeofFuse;
+  String? distanceToASHP;
+  String? standardMaterials;
+  String? electricalSystemComments;
 
-  static String newzone = "";
-  static String isbrickup = "";
+  //7 form
+  //extra pics
+  String? anyProperty;
+  String? approximate;
+  String? loftHatch;
+  String? loftBoarded;
+  String? loftHaveLight;
 
-  //form3
+  //8 form
+  List<String>? images;
+  ASHPModel({
+    this.ASHPId,
+    this.installDate,
+    this.installType,
+    this.manPower,
+    this.surveydate,
+    this.surveyby,
+    this.customername,
+    this.propertyaddress,
+    this.postcode,
+    this.customercontact,
+    this.email,
 
-  static String newradiatortv_lockshiled = "";
-  static String gas = "";
-  static String gfflowandreturn = "";
-  static String hotaandcold = "";
-  static String condesate = "";
-  static String access = "";
-  static String ladders = "";
-  static String additionalnotes = "";
+    //2 form
+    this.parking,
+    this.skipNeede,
+    this.skipPermitrequired,
+    this.propertyDetailsComments,
+    this.boilerType,
+    this.boilerLocation,
+    this.boilerRipOut,
+    this.BoilerComments,
+    this.cylinder,
+    this.cylinderLocation,
+    this.cylinderRipOut,
+    this.cylinderComments3,
+    this.abbestosRemoval,
+    this.abbestosComments4,
+    this.ripOutrequired,
 
-  //form4
-  static String whatdoeselectritionneedtodo = "";
-  static String whatcontrolarewefitting = "";
+    //3 form
+    //Proposed New ASHP System details
+    this.makeAndModel,
+    this.ashpLocation,
+    this.doWeNeedToBuildABase,
+    this.baseConstructedWith,
+    this.whoIsBuildingTheBase,
+    this.howManyHeatingZones,
+    this.describeFlow,
+    this.pipesAndLagging,
+    this.doWeNeedTrunking,
+    this.doweNeedScaffold,
+    this.doWeNeedAGenie,
+    this.describeCondensate,
+    this.anyPumps,
+    this.system25Pump,
+    this.anyZone,
+    this.whatType,
 
-  // String installdate="";
-  // String installdate="";
-  // String installdate="";
-  // String installdate="";
-  // String installdate="";
-  // String installdate="";
-  // String installdate="";
-  // String installdate="";
+    //4 form
+    //proposed new cylinder
+    this.newCylinderMake,
+    this.newCylinderLocation,
+    this.newLimeScale,
+    this.newDoWe,
+    this.newBaseConStructed,
+    this.newWhoIs,
+    this.newWhereDo,
+    this.newPipes,
+    this.newCylinderComments,
 
-}
+    //5 form
+    //Existing radiator and location
+    this.room,
+    this.size,
+    this.where,
+    this.existingRaidLocation,
+    this.pipeSize,
+    this.totalRads,
+    this.howManyToChange,
+    this.pDo,
+    this.howManyTrvs,
+    this.howManyLockshields,
+    this.existingRadiatorComments,
 
-class MyComponent {
-  static String installdatecontroller = "";
-  static String installtypecontroller = "";
-  static String manpowercontroller = "";
+    //6 form
+    //Electrical System
+    this.mainFuse,
+    this.boardType,
+    this.numberOfSpare,
+    this.typeofFuse,
+    this.distanceToASHP,
+    this.standardMaterials,
+    this.electricalSystemComments,
 
-  static String surveydatecontroller = "";
-  static String surveybycontroller = "";
-  static String customernamecontroller = "";
-  static String propertyaddresscontroller = "";
-  static String postcodecontroller = "";
-  static String customercontactcontroller = "";
-  static String emailcontroller = "";
+    //7 form
+    //extra pics
+    this.anyProperty,
+    this.approximate,
+    this.loftHatch,
+    this.loftBoarded,
+    this.loftHaveLight,
+    this.images,
+  });
 
-//2 form
-  static String parkingController = "";
-  static String skipNeedecontroller = "";
-  static String skipPermitrequiredController = "";
-  static String commentsController = "";
-  static String boilerTypeController = "";
-  static String boilerLocationController = "";
-  static String ripOutController = "";
-  static String comments2Controller = "";
-  static String cylinderController = "";
-  static String cylinderLocationController = "";
-  static String ripOut2Controller = "";
-  static String comments3Controller = "";
-  static String abbestosremovalController = "";
-  static String comments4Controller = "";
-  static String ripOutequiredController = "";
+  ASHPModel.named({
+    this.ASHPId,
+    this.installDate,
+    this.installType,
+    this.manPower,
+    this.surveydate,
+    this.surveyby,
+    this.customername,
+    this.propertyaddress,
+    this.postcode,
+    this.customercontact,
+    this.email,
 
-//3 form
+    //2 form
+    this.parking,
+    this.skipNeede,
+    this.skipPermitrequired,
+    this.propertyDetailsComments,
+    this.boilerType,
+    this.boilerLocation,
+    this.boilerRipOut,
+    this.BoilerComments,
+    this.cylinder,
+    this.cylinderLocation,
+    this.cylinderRipOut,
+    this.cylinderComments3,
+    this.abbestosRemoval,
+    this.abbestosComments4,
+    this.ripOutrequired,
 
-  static String makeAndModelController = "";
-  static String ashpLocationcontroller = "";
-  static String doweNeedToBuildABaseController = "";
-  static String baseConstructedWithController = "";
-  static String whoIsBuildingTheBaseController = "";
-  static String howManyHeatingZonesController = "";
-  static String describeFlowController = "";
-  static String pipesAndLaggingController = "";
-  static String doWeNeedTrunkingController = "";
-  static String doweNeedScaffoldController = "";
-  static String doWeNeedAGenieController = "";
-  static String describeCondensateController = "";
-  static String anyPumpsController = "";
-  static String system25PumpController = "";
-  static String anyZoneController = "";
-  static String whatTypeController = "";
+    //3 form
+    //Proposed New ASHP System details
+    this.makeAndModel,
+    this.ashpLocation,
+    this.doWeNeedToBuildABase,
+    this.baseConstructedWith,
+    this.whoIsBuildingTheBase,
+    this.howManyHeatingZones,
+    this.describeFlow,
+    this.pipesAndLagging,
+    this.doWeNeedTrunking,
+    this.doweNeedScaffold,
+    this.doWeNeedAGenie,
+    this.describeCondensate,
+    this.anyPumps,
+    this.system25Pump,
+    this.anyZone,
+    this.whatType,
 
-//4 form
-  static String cylinderMakeController = "";
-  static String cylinderLocationcontroller = "";
-  static String limeScaleController = "";
-  static String doWeController = "";
-  static String baseConStructedController = "";
-  static String whoIsController = "";
-  static String whereDoController = "";
-  static String pipesController = "";
-  static String comments5Controller = "";
+    //4 form
+    //proposed new cylinder
+    this.newCylinderMake,
+    this.newCylinderLocation,
+    this.newLimeScale,
+    this.newDoWe,
+    this.newBaseConStructed,
+    this.newWhoIs,
+    this.newWhereDo,
+    this.newPipes,
+    this.newCylinderComments,
 
-//5 form
-  static String roomController = "";
-  static String sizeController = "";
-  static String whereController = "";
-  static String newController = "";
-  static String pipeSizeController = "";
-  static String totalRadsController = "";
-  static String howManyToChangeController = "";
-  static String pDoController = "";
-  static String howManyTrvsController = "";
-  static String howManyLockshieldsController = "";
-  static String comments6Controller = "";
+    //5 form
+    //Existing radiator and location
+    this.room,
+    this.size,
+    this.where,
+    this.existingRaidLocation,
+    this.pipeSize,
+    this.totalRads,
+    this.howManyToChange,
+    this.pDo,
+    this.howManyTrvs,
+    this.howManyLockshields,
+    this.existingRadiatorComments,
 
-//6 form
-  static String mainFuseController = "";
-  static String boardTypeController = "";
-  static String numberOfSpareController = "";
-  static String typeofFuseController = "";
-  static String distanceToASHPController = "";
-  static String standardMaterialsController = "";
-  static String comments7Controller = "";
+    //6 form
+    //Electrical System
+    this.mainFuse,
+    this.boardType,
+    this.numberOfSpare,
+    this.typeofFuse,
+    this.distanceToASHP,
+    this.standardMaterials,
+    this.electricalSystemComments,
 
-//7 form
-  static String anyPropertyController = "";
-  static String approximateController = "";
-  static String loftHatchController = "";
-  static String loftBoardedController = "";
-  static String loftHaveController = "";
-}
+    //7 form
+    //extra pics
+    this.anyProperty,
+    this.approximate,
+    this.loftHatch,
+    this.loftBoarded,
+    this.loftHaveLight,
+    this.images,
+  });
 
-class BoilerCustomerDetail {
-  static String Name = "";
-  static String Adress = "";
-  static String PostCode = "";
-  static String MobileNum = "";
-  static String DAte = "";
-  static String BoilerModelNum = "";
-  static String kwsize = "";
-  static String Location = "";
-  static String ModelNum = "";
-  static String SizeLiter = "";
-  static String Location2 = "";
-  //Form 2
-  static String PropertyAdress = "";
-  static String DatefAssesment = "";
-  static String AssessmentCarreidout = "";
+  ASHPModel copyWith({
+    String? ASHPId,
+    //1 form
+    String? installDate,
+    String? installType,
+    String? manPower,
+    String? surveydate,
+    String? surveyby,
+    String? customername,
+    String? propertyaddress,
+    String? postcode,
+    String? customercontact,
+    String? email,
 
-  //form 3
-  static String CompanyEmail = "";
-  static String Address = "";
-  static String PostCode2 = "";
-  static String Installer = "";
-  static String InstallationDate = "";
-  static String OriginalJobDiscription = "";
-  static String ProposedVariation = "";
-  static String CustomerSignature = "";
-  static String Date = "";
-  static String InstalllerSignature = "";
-  //form 4
-  static String uploadpic = "";
-  static String Address2 = "";
-  static String BoilerMakeandModel = "";
-  static String BoilerSerialNo = "";
-  static String CommisionedBy = "";
-  static String Companyname = "";
-  static String CompanyEmail2 = "";
-  static String companyAddress = "";
-  static String telephoneNumber = "";
-  static String commisiongDate = "";
-  static String BuildingreregulationNotificationNumber = "";
+    //2 form
+    String? parking,
+    String? skipNeede,
+    String? skipPermitrequired,
+    String? propertyDetailsComments,
+    String? boilerType,
+    String? boilerLocation,
+    String? boilerRipOut,
+    String? BoilerComments,
+    String? cylinder,
+    String? cylinderLocation,
+    String? cylinderRipOut,
+    String? cylinderComments3,
+    String? abbestosRemoval,
+    String? abbestosComments4,
+    String? ripOutrequired,
 
-  // form 5
-  static String systemcleanerbrand = "";
-  static String systemcleanerproduct = "";
-  static String inhibatorusedbrand = "";
-  static String inhibatorusedproduct = "";
-  static String centralheatingoutput = "";
-  static String dynamicgasmbar = "";
-  static String centralheatingflowtem = "";
-  static String centralheatingreturntemp = "";
-  static String systemcorectlybalanced = "";
-  static String typeofscalereduverbrand = "";
-  
-  static String typeofscalereduverproduct = "";
- 
-  static String dynamicgasinletmbar = "";
-  static String coldwaterinittempmbar= "";
-  static String hotwaterischeckedtemprature = "";
+    //3 form
+    //Proposed New ASHP System details
+    String? makeAndModel,
+    String? ashpLocation,
+    String? doWeNeedToBuildABase,
+    String? baseConstructedWith,
+    String? whoIsBuildingTheBase,
+    String? howManyHeatingZones,
+    String? describeFlow,
+    String? pipesAndLagging,
+    String? doWeNeedTrunking,
+    String? doweNeedScaffold,
+    String? doWeNeedAGenie,
+    String? describeCondensate,
+    String? anyPumps,
+    String? system25Pump,
+    String? anyZone,
+    String? whatType,
 
-  //form6
-  static String recordfollowingCO1 = "";
-  static String recordfollowingCO2 = "";
-  static String recordfollowingCO3 = "";
-  static String recordfollowingCO3atminrate1 = "";
-  static String recordfollowingCO3atminrate2 = "";
-  static String recordfollowingCO3atminrate3 = "";
-  static String commisionenginersignature = "";
-  static String customersignature = "";
+    //4 form
+    //proposed new cylinder
+    String? newCylinderMake,
+    String? newCylinderLocation,
+    String? newLimeScale,
+    String? newDoWe,
+    String? newBaseConStructed,
+    String? newWhoIs,
+    String? newWhereDo,
+    String? newPipes,
+    String? newCylinderComments,
 
-  //form7
-  static String completeylnderbencmarkpic1 = "";
-  static String completecylinderbenhmarkuploadpic2 = "";
+    //5 form
+    //Existing radiator and location
+    String? room,
+    String? size,
+    String? where,
+    String? existingRaidLocation,
+    String? pipeSize,
+    String? totalRads,
+    String? howManyToChange,
+    String? pDo,
+    String? howManyTrvs,
+    String? howManyLockshields,
+    String? existingRadiatorComments,
 
-  //form8
-  static String customername = "";
-  static String Adress2 = "";
-  static String postcode3 = "";
-  static String installer = "";
-  static String installtiondate = "";
-  static String radiatorcheckcomment = "";
-  static String radiatorcheckkitchen = "";
-  static String diningroomcomment = "";
-  static String hallwaycomment = "";
-  static String bathroomcomment = "";
-  static String landingcomment = "";
-  static String bedroomcomment = "";
-  static String bedroom2comment = "";
-  static String bedroom3comment = "";
-  static String radiatortrvscomment = "";
-  static String wasteremovalcomment = "";
+    //6 form
+    //Electrical System
+    String? mainFuse,
+    String? boardType,
+    String? numberOfSpare,
+    String? typeofFuse,
+    String? distanceToASHP,
+    String? standardMaterials,
+    String? electricalSystemComments,
 
-  //form9
-  static String customersatifactionquestionpart2comment = "";
-  static String customersatifactionquestionpart2comment2 = "";
-  static String declarationsignature = "";
+    //7 form
+    //extra pics
+    String? anyProperty,
+    String? approximate,
+    String? loftHatch,
+    String? loftBoarded,
+    String? loftHaveLight,
 
-  static String declataiondate = "";
-  static String installersignature = "";
-  static String installersignaturedate = "";
-  //static String customersignature = "";
+    //8 form
+    List<String>? images,
+  }) {
+    return ASHPModel.named(
+      ASHPId: ASHPId ?? this.ASHPId,
+      installDate: installDate ?? this.installDate,
+      installType: installType ?? this.installType,
+      manPower: manPower ?? this.manPower,
+      surveydate: surveydate ?? this.surveydate,
+      surveyby: surveyby ?? this.surveyby,
+      customername: customername ?? this.customername,
+      propertyaddress: propertyaddress ?? this.propertyaddress,
+      postcode: postcode ?? this.postcode,
+      customercontact: customercontact ?? this.customercontact,
+      email: email ?? this.email,
+      parking: parking ?? this.parking,
+      skipNeede: skipNeede ?? this.skipNeede,
+      skipPermitrequired: skipPermitrequired ?? this.skipPermitrequired,
+      propertyDetailsComments:
+      propertyDetailsComments ?? this.propertyDetailsComments,
+      boilerType: boilerType ?? this.boilerType,
+      boilerLocation: boilerLocation ?? this.boilerLocation,
+      boilerRipOut: boilerRipOut ?? this.boilerRipOut,
+      BoilerComments: BoilerComments ?? this.BoilerComments,
+      cylinder: cylinder ?? this.cylinder,
+      cylinderLocation: cylinderLocation ?? this.cylinderLocation,
+      cylinderRipOut: cylinderRipOut ?? this.cylinderRipOut,
+      cylinderComments3: cylinderComments3 ?? this.cylinderComments3,
+      abbestosRemoval: abbestosRemoval ?? this.abbestosRemoval,
+      abbestosComments4: abbestosComments4 ?? this.abbestosComments4,
+      ripOutrequired: ripOutrequired ?? this.ripOutrequired,
+      makeAndModel: makeAndModel ?? this.makeAndModel,
+      ashpLocation: ashpLocation ?? this.ashpLocation,
+      doWeNeedToBuildABase: doWeNeedToBuildABase ?? this.doWeNeedToBuildABase,
+      baseConstructedWith: baseConstructedWith ?? this.baseConstructedWith,
+      whoIsBuildingTheBase: whoIsBuildingTheBase ?? this.whoIsBuildingTheBase,
+      howManyHeatingZones: howManyHeatingZones ?? this.howManyHeatingZones,
+      describeFlow: describeFlow ?? this.describeFlow,
+      pipesAndLagging: pipesAndLagging ?? this.pipesAndLagging,
+      doWeNeedTrunking: doWeNeedTrunking ?? this.doWeNeedTrunking,
+      doweNeedScaffold: doweNeedScaffold ?? this.doweNeedScaffold,
+      doWeNeedAGenie: doWeNeedAGenie ?? this.doWeNeedAGenie,
+      describeCondensate: describeCondensate ?? this.describeCondensate,
+      anyPumps: anyPumps ?? this.anyPumps,
+      system25Pump: system25Pump ?? this.system25Pump,
+      anyZone: anyZone ?? this.anyZone,
+      whatType: whatType ?? this.whatType,
+      newCylinderMake: newCylinderMake ?? this.newCylinderMake,
+      newCylinderLocation: newCylinderLocation ?? this.newCylinderLocation,
+      newLimeScale: newLimeScale ?? this.newLimeScale,
+      newDoWe: newDoWe ?? this.newDoWe,
+      newBaseConStructed: newBaseConStructed ?? this.newBaseConStructed,
+      newWhoIs: newWhoIs ?? this.newWhoIs,
+      newWhereDo: newWhereDo ?? this.newWhereDo,
+      newPipes: newPipes ?? this.newPipes,
+      newCylinderComments: newCylinderComments ?? this.newCylinderComments,
+      room: room ?? this.room,
+      size: size ?? this.size,
+      where: where ?? this.where,
+      existingRaidLocation: existingRaidLocation ?? this.existingRaidLocation,
+      pipeSize: pipeSize ?? this.pipeSize,
+      totalRads: totalRads ?? this.totalRads,
+      howManyToChange: howManyToChange ?? this.howManyToChange,
+      pDo: pDo ?? this.pDo,
+      howManyTrvs: howManyTrvs ?? this.howManyTrvs,
+      howManyLockshields: howManyLockshields ?? this.howManyLockshields,
+      existingRadiatorComments:
+      existingRadiatorComments ?? this.existingRadiatorComments,
+      mainFuse: mainFuse ?? this.mainFuse,
+      boardType: boardType ?? this.boardType,
+      numberOfSpare: numberOfSpare ?? this.numberOfSpare,
+      typeofFuse: typeofFuse ?? this.typeofFuse,
+      distanceToASHP: distanceToASHP ?? this.distanceToASHP,
+      standardMaterials: standardMaterials ?? this.standardMaterials,
+      electricalSystemComments:
+      electricalSystemComments ?? this.electricalSystemComments,
+      anyProperty: anyProperty ?? this.anyProperty,
+      approximate: approximate ?? this.approximate,
+      loftHatch: loftHatch ?? this.loftHatch,
+      loftBoarded: loftBoarded ?? this.loftBoarded,
+      loftHaveLight: loftHaveLight ?? this.loftHaveLight,
+    );
+  }
 }

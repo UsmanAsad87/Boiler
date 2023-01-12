@@ -41,6 +41,11 @@ dependencies:
   syncfusion_flutter_datepicker: ^20.2.49
   intl: ^0.17.0
   image_picker: ^0.8.5+3
+  firebase_core: ^2.1.1
+  fluttertoast: ^8.1.1
+  cloud_firestore: ^4.0.3
+  firebase_storage: ^11.0.3
+  shared_preferences: ^2.0.15
 
 
 
@@ -56,6 +61,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  firebase_auth:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

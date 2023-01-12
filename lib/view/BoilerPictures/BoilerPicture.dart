@@ -1,17 +1,26 @@
+import 'dart:io';
+
 import 'package:boiler/Constants/constants.dart';
 import 'package:boiler/view/BottomBar/BottomBar.dart';
-import 'package:boiler/view/CustomerSatisfication/customerSatisfication.dart';
 import 'package:boiler/view/PostIInstallation/postInstallation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 
-class BoilerPictures extends StatelessWidget {
+class BoilerPictures extends StatefulWidget {
   const BoilerPictures({Key? key}) : super(key: key);
 
   @override
+  State<BoilerPictures> createState() => _BoilerPicturesState();
+}
+
+class _BoilerPicturesState extends State<BoilerPictures> {
+  final ImagePicker _picker = ImagePicker();
+  File? _image;
+  @override
   Widget build(BuildContext context) {
-    print("booo ki value...............${bool1}");
+    print("booo ki value...............${isInstall}");
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -56,7 +65,7 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Choose Files",
+                    "Add Pictures",
                     style: GoogleFonts.dmSans(
                         fontSize: 22.sp, fontWeight: FontWeight.w500),
                   ),
@@ -72,27 +81,37 @@ class BoilerPictures extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: 49.h,
-                      width: 165.w,
-                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                      child: Center(
-                          child: Text(
-                        "Flue Inside",
-                        style: GoogleFonts.dmSans(
-                            fontWeight: FontWeight.w400, fontSize: 19),
-                      )),
+                    InkWell(
+                      onTap: () {
+                        dialog(context);
+                      },
+                      child: Container(
+                        height: 49.h,
+                        width: 165.w,
+                        decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                        child: Center(
+                            child: Text(
+                          "Flue Inside",
+                          style: GoogleFonts.dmSans(
+                              fontWeight: FontWeight.w400, fontSize: 19),
+                        )),
+                      ),
                     ),
-                    Container(
-                      height: 49.h,
-                      width: 165.w,
-                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                      child: Center(
-                          child: Text(
-                        "Pipe Runs",
-                        style: GoogleFonts.dmSans(
-                            fontWeight: FontWeight.w400, fontSize: 19),
-                      )),
+                    InkWell(
+                      onTap: () {
+                        dialog(context);
+                      },
+                      child: Container(
+                        height: 49.h,
+                        width: 165.w,
+                        decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                        child: Center(
+                            child: Text(
+                          "Pipe Runs",
+                          style: GoogleFonts.dmSans(
+                              fontWeight: FontWeight.w400, fontSize: 19),
+                        )),
+                      ),
                     )
                   ],
                 ),
@@ -103,27 +122,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Flue External",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Flue External",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Gas Runs",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Gas Runs",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -133,27 +162,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Boiler Fitted",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Boiler Fitted",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Previous Damage",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Previous Damage",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -163,27 +202,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Data Badge",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Data Badge",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Condensate Pipe",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Condensate Pipe",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -193,27 +242,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Boiler Pipes",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Boiler Pipes",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Condensate Termination",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Condensate Termination",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -223,27 +282,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "CH Filter",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "CH Filter",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Vert flu",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Vert flu",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -253,27 +322,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Filter Serial No",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Filter Serial No",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Gas meter",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Gas meter",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -283,27 +362,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "User Control",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "User Control",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Tightness Test",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Tightness Test",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -313,27 +402,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Brickup",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Brickup",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "CPA readings",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "CPA readings",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -343,27 +442,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Radiators Fitted (Add as many needed)",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 13),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Radiators Fitted (Add as many needed)",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 13),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Terbitity test",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Terbitity test",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -373,27 +482,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "S/Y Plan",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "S/Y Plan",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Wiring Centre",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Wiring Centre",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -403,27 +522,37 @@ class BoilerPictures extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Pump",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 19),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Pump",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 19),
+                      )),
+                    ),
                   ),
-                  Container(
-                    height: 49.h,
-                    width: 165.w,
-                    decoration: BoxDecoration(color: Color(0xffD9D9D9)),
-                    child: Center(
-                        child: Text(
-                      "Add any more pics as required & name ",
-                      style: GoogleFonts.dmSans(
-                          fontWeight: FontWeight.w400, fontSize: 11),
-                    )),
+                  InkWell(
+                    onTap: () {
+                      dialog(context);
+                    },
+                    child: Container(
+                      height: 49.h,
+                      width: 165.w,
+                      decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+                      child: Center(
+                          child: Text(
+                        "Add any more pics as required & name ",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w400, fontSize: 11),
+                      )),
+                    ),
                   )
                 ],
               ),
@@ -434,7 +563,7 @@ class BoilerPictures extends StatelessWidget {
                 height: 20.h,
               ),
               Visibility(
-                visible: bool1 == 1,
+                visible: isInstall == 1,
                 child: Column(
                   children: [
                     Row(
@@ -546,9 +675,9 @@ class BoilerPictures extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(
-                          builder: (context) => show==0?PostInstallation():BottomBar()),
-                          (route) => false
-                  );
+                          builder: (context) =>
+                              show == 0 ? PostInstallation() : BottomBar()),
+                      (route) => false);
                 },
                 child: Container(
                   height: 46,
@@ -556,19 +685,21 @@ class BoilerPictures extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Color(0xff42FF55),
                       borderRadius: BorderRadius.circular(11)),
-                  child:show==0?Center(
-                    child: Text(
-                      "Next",
-                      style: GoogleFonts.dmSans(
-                          fontSize: 15, fontWeight: FontWeight.w400),
-                    ),
-                  ): Center(
-                    child: Text(
-                      "Save",
-                      style: GoogleFonts.dmSans(
-                          fontSize: 15, fontWeight: FontWeight.w400),
-                    ),
-                  ),
+                  child: show == 0
+                      ? Center(
+                          child: Text(
+                            "Next",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400),
+                          ),
+                        )
+                      : Center(
+                          child: Text(
+                            "Save",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400),
+                          ),
+                        ),
                 ),
               ),
               SizedBox(
@@ -579,5 +710,70 @@ class BoilerPictures extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future getCameraImage() async {
+    final pickedFile = await piker.pickImage(source: ImageSource.camera);
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('no image selected');
+      }
+    });
+  }
+
+  void dialog(context) {
+    showDialog(
+        context: context,
+        builder: (BuildContext) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            content: Container(
+              height: 120,
+              child: Column(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      getCameraImage();
+                    },
+                    child: ListTile(
+                      leading: Icon(Icons.add_a_photo),
+                      title: Text('Camera'),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      getImageGalary();
+                    },
+                    child: ListTile(
+                      leading: Icon(Icons.photo_library_outlined),
+                      title: Text('Gallery'),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        });
+  }
+
+  final piker = ImagePicker();
+
+  Future getImageGalary() async {
+    final pickedFile = await piker.pickImage(source: ImageSource.gallery);
+    print('image selected');
+
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+        Navigator.pop(context);
+        print('image setState selected');
+      } else {
+        print('no image selected');
+      }
+    });
   }
 }

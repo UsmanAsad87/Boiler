@@ -37,11 +37,13 @@ class CustomTextFormFieldWithPrefix extends StatefulWidget {
   final int? minLines;
   final int? maxLines;
   final String? label;
+  
+  
   final Widget? sufixIcon;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final Function()? onTap;
-  final bool readOnly;
+  final bool readOnly;final bool obscureText;
   final TextInputType keyboardType;
 
   const CustomTextFormFieldWithPrefix(
@@ -54,7 +56,7 @@ class CustomTextFormFieldWithPrefix extends StatefulWidget {
       this.validator,
       this.onTap,
       this.maxLines,
-      required this.keyboardType,
+      required this.keyboardType, required this.obscureText,
       required this.readOnly})
       : super(key: key);
   @override
@@ -69,7 +71,7 @@ class _CustomTextFormFieldWithPrefixState
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18.0),
       child: TextFormField(
-        style: TextStyle(fontSize: 14, color: Colors.white),
+        style: TextStyle(fontSize: 14, color: Color.fromARGB(255, 5, 1, 1)),
         keyboardType: widget.keyboardType,
         maxLines: widget.maxLines,
         readOnly: widget.readOnly,
@@ -150,49 +152,52 @@ class _CustomPasswordFormFieldWithPrefixState
   bool isVisible = true;
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      // textAlign: TextAlign.center,
-      controller: widget.controller,
-      obscureText: isVisible,
-      style: TextStyle(fontSize: 14, color: Colors.white),
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: Color(0xffEEEEEE),
-        prefixIcon: widget.prefixIcon,
-        hintText: widget.hintText,
-        label: widget.label != null ? Text(widget.label!) : null,
-        hintStyle: TextStyle(fontSize: 14, color: Colors.white),
-        border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(color: Colors.white, width: 1)),
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(color: Colors.white, width: 1)),
-        focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(color: Colors.white, width: 1)),
-        suffixIcon: IconButton(
-          onPressed: () {
-            setState(() {
-              isVisible = !isVisible;
-            });
-          },
-          splashRadius: 15,
-          icon: Icon(
-            isVisible ? Icons.visibility_off : Icons.visibility,
-            color: Colors.black,
+    return Padding(
+      padding: const EdgeInsets.only(left:18.0,right: 18),
+      child: TextFormField(
+        // textAlign: TextAlign.center,
+        controller: widget.controller,
+        obscureText: isVisible,
+        style: TextStyle(fontSize: 14, color: Color.fromARGB(255, 12, 5, 5)),
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Color(0xffEEEEEE),
+          prefixIcon: widget.prefixIcon,
+          hintText: widget.hintText,
+          label: widget.label != null ? Text(widget.label!) : null,
+          hintStyle: TextStyle(fontSize: 14, color: Colors.white),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+              borderSide: BorderSide(color: Colors.white, width: 1)),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+              borderSide: BorderSide(color: Colors.white, width: 1)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+              borderSide: BorderSide(color: Colors.white, width: 1)),
+          suffixIcon: IconButton(
+            onPressed: () {
+              setState(() {
+                isVisible = !isVisible;
+              });
+            },
+            splashRadius: 15,
+            icon: Icon(
+              isVisible ? Icons.visibility_off : Icons.visibility,
+              color: Colors.black,
+            ),
+            iconSize: 20,
           ),
-          iconSize: 20,
         ),
-      ),
 
-      validator: widget.validator ??
-          (String? value) {
-            if (value!.isEmpty) {
-              return "Please fill out this field";
-            }
-            return null;
-          },
+        validator: widget.validator ??
+            (String? value) {
+              if (value!.isEmpty) {
+                return "Please fill out this field";
+              }
+              return null;
+            },
+      ),
     );
   }
 }

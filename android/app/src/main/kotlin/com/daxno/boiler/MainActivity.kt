@@ -1,4 +1,4 @@
-package com.example.boiler
+package com.daxno.boiler
 
 import io.flutter.embedding.android.FlutterActivity
 
