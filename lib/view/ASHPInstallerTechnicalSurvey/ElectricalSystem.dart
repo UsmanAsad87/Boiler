@@ -1,3 +1,5 @@
+import 'package:boiler/model/ASHPModel.dart';
+import 'package:boiler/provider/ASHPprovider.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/RequiredPicture.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/extraInformationAndMeasurement.dart';
 import 'package:boiler/view/GlobalData.dart';
@@ -6,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:boiler/colors/common.dart';
+import 'package:provider/provider.dart';
 import '../../model/installMenuOfBoiler.dart';
 
 class ElectricalSystem extends StatefulWidget {
@@ -20,6 +23,7 @@ class _ElectricalSystemState extends State<ElectricalSystem> {
   ASHPsurveycontroller _controoler = new ASHPsurveycontroller();
   @override
   Widget build(BuildContext context) {
+    ASHPModel model = Provider.of<ASHPProvider>(context).getASHPObject;
     return Scaffold(
         backgroundColor: Color(0xffEFEFEF),
         body: SingleChildScrollView(
@@ -314,7 +318,21 @@ class _ElectricalSystemState extends State<ElectricalSystem> {
                         MyComponent.distanceToASHPController = _controoler.distanceToASHPController.text;
                         MyComponent.standardMaterialsController = _controoler.standardMaterialsController.text;
                         MyComponent.comments7Controller = _controoler.comments7Controller.text;
-                    Navigator.push(
+                        model = model.copyWith(
+                            mainFuse : _controoler.mainFuseController.text,
+                            boardType : _controoler.boardTypeController.text,
+                            numberOfSpare : _controoler.numberOfSpareController.text,
+                            typeofFuse : _controoler.typeofFuseController.text,
+                            distanceToASHP : _controoler.distanceToASHPController.text,
+                            standardMaterials : _controoler.standardMaterialsController.text,
+                            electricalSystemComments : _controoler.comments7Controller.text,
+
+                        );
+
+                        print(model.toJson().toString().substring(402,));
+                        Provider.of<ASHPProvider>(context,listen: false).setASHPObject(model);
+
+                        Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => ExtaInformationAndMeasurement()));}

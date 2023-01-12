@@ -1,4 +1,6 @@
+import 'package:boiler/model/ASHPModel.dart';
 import 'package:boiler/model/installMenuOfBoiler.dart';
+import 'package:boiler/provider/ASHPprovider.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/proposedNewCylender.dart';
 import 'package:boiler/view/GlobalData.dart';
 import 'package:boiler/view/ServeyASHPController.dart';
@@ -6,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:boiler/colors/common.dart';
+import 'package:provider/provider.dart';
 class ProposerNewASHP extends StatefulWidget {
   const ProposerNewASHP({Key? key}) : super(key: key);
 
@@ -18,6 +21,7 @@ class _ProposerNewASHPState extends State<ProposerNewASHP> {
   ASHPsurveycontroller _controoler = new ASHPsurveycontroller();
   @override
   Widget build(BuildContext context) {
+    ASHPModel model = Provider.of<ASHPProvider>(context).getASHPObject;
     return Scaffold(
         backgroundColor: Color(0xffEFEFEF),
         body: SingleChildScrollView(
@@ -539,6 +543,29 @@ class _ProposerNewASHPState extends State<ProposerNewASHP> {
                       MyComponent.system25PumpController = _controoler.system25PumpController.text;
                       MyComponent.anyZoneController = _controoler.anyZoneController.text;
                       MyComponent.whatTypeController = _controoler.whatTypeController.text;
+                      model= model.copyWith(
+                          makeAndModel : _controoler.makeAndModelController.text,
+                          ashpLocation : _controoler.ashpLocationcontroller.text,
+                          doWeNeedToBuildABase : _controoler.doweNeedToBuildABaseController.text,
+                          baseConstructedWith : _controoler.baseConstructedWithController.text,
+                         whoIsBuildingTheBase : _controoler.whoIsBuildingTheBaseController.text,
+                          howManyHeatingZones : _controoler.howManyHeatingZonesController.text,
+                          doWeNeedTrunking: _controoler.doWeNeedTrunkingController.text,
+                          describeFlow : _controoler.describeFlowController.text,
+                          pipesAndLagging : _controoler.pipesAndLaggingController.text,
+                          doweNeedScaffold : _controoler.doweNeedScaffoldController.text,
+                          doWeNeedAGenie : _controoler.doWeNeedAGenieController.text,
+                          describeCondensate : _controoler.describeCondensateController.text,
+                          anyPumps : _controoler.anyPumpsController.text,
+                          system25Pump : _controoler.system25PumpController.text,
+                          anyZone : _controoler.anyZoneController.text,
+                          whatType : _controoler.whatTypeController.text,
+                      );
+                      print(model.toJson());
+                      Provider.of<ASHPProvider>(context,listen: false).setASHPObject(model);
+
+
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(

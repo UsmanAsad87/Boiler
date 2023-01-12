@@ -1,4 +1,6 @@
+import 'package:boiler/model/ASHPModel.dart';
 import 'package:boiler/model/installMenuOfBoiler.dart';
+import 'package:boiler/provider/ASHPprovider.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/existingRadiatorAndLocation.dart';
 import 'package:boiler/view/GlobalData.dart';
 import 'package:boiler/view/ServeyASHPController.dart';
@@ -6,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:boiler/colors/common.dart';
+import 'package:provider/provider.dart';
 
 class ProposedNewCylender extends StatefulWidget {
   const ProposedNewCylender({Key? key}) : super(key: key);
@@ -19,6 +22,7 @@ class _ProposedNewCylenderState extends State<ProposedNewCylender> {
   ASHPsurveycontroller _controoler = new ASHPsurveycontroller();
   @override
   Widget build(BuildContext context) {
+    ASHPModel model = Provider.of<ASHPProvider>(context).getASHPObject;
     return Scaffold(
         backgroundColor: Color(0xffEFEFEF),
         body: SingleChildScrollView(
@@ -355,7 +359,22 @@ class _ProposedNewCylenderState extends State<ProposedNewCylender> {
                       MyComponent.whereDoController = _controoler.whereDoController.text;
                       MyComponent.pipesController = _controoler.pipesController.text;
                       MyComponent.comments5Controller = _controoler.comments5Controller.text;
-                    Navigator.push(
+                      print( _controoler.cylinderLocationController.text);
+                      model= model.copyWith(
+                          newCylinderMake : _controoler.cylinderMakeController.text,
+                          newCylinderLocation : _controoler.cylinderLocationController.text,
+                          newLimeScale : _controoler.limeScaleController.text,
+                          newDoWe: _controoler.doWeController.text,
+                          newBaseConStructed : _controoler.baseConStructedController.text,
+                          newWhoIs : _controoler.whoIsController.text,
+                          newWhereDo : _controoler.whereDoController.text,
+                          newPipes : _controoler.pipesController.text,
+                          newCylinderComments : _controoler.comments5Controller.text,
+                      );
+                      print(model.toJson());
+                      Provider.of<ASHPProvider>(context,listen: false).setASHPObject(model);
+
+                      Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => ExistingRadiatorAndLocation()));}

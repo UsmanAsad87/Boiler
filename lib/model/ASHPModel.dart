@@ -1,5 +1,12 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'ASHPModel.g.dart';
+
+@JsonSerializable()
+
 class ASHPModel {
   String? ASHPId;
+  DateTime? createdDateTime;
   //1 form
   String? installDate;
   String? installType;
@@ -95,97 +102,98 @@ class ASHPModel {
   //8 form
   List<String>? images;
   ASHPModel({
-    this.ASHPId,
-    this.installDate,
-    this.installType,
-    this.manPower,
-    this.surveydate,
-    this.surveyby,
-    this.customername,
-    this.propertyaddress,
-    this.postcode,
-    this.customercontact,
-    this.email,
+    this.ASHPId ='',
+    this.installDate='',
+    this.installType='',
+    this.manPower='',
+    this.surveydate='',
+    this.surveyby='',
+    this.customername='',
+    this.propertyaddress='',
+    this.postcode='',
+    this.customercontact='',
+    this.email='',
 
     //2 form
-    this.parking,
-    this.skipNeede,
-    this.skipPermitrequired,
-    this.propertyDetailsComments,
-    this.boilerType,
-    this.boilerLocation,
-    this.boilerRipOut,
-    this.BoilerComments,
-    this.cylinder,
-    this.cylinderLocation,
-    this.cylinderRipOut,
-    this.cylinderComments3,
-    this.abbestosRemoval,
-    this.abbestosComments4,
-    this.ripOutrequired,
+    this.parking='',
+    this.skipNeede='',
+    this.skipPermitrequired='',
+    this.propertyDetailsComments='',
+    this.boilerType='',
+    this.boilerLocation='',
+    this.boilerRipOut='',
+    this.BoilerComments='',
+    this.cylinder='',
+    this.cylinderLocation='',
+    this.cylinderRipOut='',
+    this.cylinderComments3='',
+    this.abbestosRemoval='',
+    this.abbestosComments4='',
+    this.ripOutrequired='',
 
     //3 form
     //Proposed New ASHP System details
-    this.makeAndModel,
-    this.ashpLocation,
-    this.doWeNeedToBuildABase,
-    this.baseConstructedWith,
-    this.whoIsBuildingTheBase,
-    this.howManyHeatingZones,
-    this.describeFlow,
-    this.pipesAndLagging,
-    this.doWeNeedTrunking,
-    this.doweNeedScaffold,
-    this.doWeNeedAGenie,
-    this.describeCondensate,
-    this.anyPumps,
-    this.system25Pump,
-    this.anyZone,
-    this.whatType,
+    this.makeAndModel='',
+    this.ashpLocation='',
+    this.doWeNeedToBuildABase='',
+    this.baseConstructedWith='',
+    this.whoIsBuildingTheBase='',
+    this.howManyHeatingZones='',
+    this.describeFlow='',
+    this.pipesAndLagging='',
+    this.doWeNeedTrunking='',
+    this.doweNeedScaffold='',
+    this.doWeNeedAGenie='',
+    this.describeCondensate='',
+    this.anyPumps='',
+    this.system25Pump='',
+    this.anyZone='',
+    this.whatType='',
 
     //4 form
     //proposed new cylinder
-    this.newCylinderMake,
-    this.newCylinderLocation,
-    this.newLimeScale,
-    this.newDoWe,
-    this.newBaseConStructed,
-    this.newWhoIs,
-    this.newWhereDo,
-    this.newPipes,
-    this.newCylinderComments,
+    this.newCylinderMake='',
+    this.newCylinderLocation='',
+    this.newLimeScale='',
+    this.newDoWe='',
+    this.newBaseConStructed='',
+    this.newWhoIs='',
+    this.newWhereDo='',
+    this.newPipes='',
+    this.newCylinderComments='',
 
     //5 form
     //Existing radiator and location
-    this.room,
-    this.size,
-    this.where,
-    this.existingRaidLocation,
-    this.pipeSize,
-    this.totalRads,
-    this.howManyToChange,
-    this.pDo,
-    this.howManyTrvs,
-    this.howManyLockshields,
-    this.existingRadiatorComments,
+    this.room='',
+    this.size='',
+    this.where='',
+    this.existingRaidLocation='',
+    this.pipeSize='',
+    this.totalRads='',
+    this.howManyToChange='',
+    this.pDo='',
+    this.howManyTrvs='',
+    this.howManyLockshields='',
+    this.existingRadiatorComments='',
 
     //6 form
     //Electrical System
-    this.mainFuse,
-    this.boardType,
-    this.numberOfSpare,
-    this.typeofFuse,
-    this.distanceToASHP,
-    this.standardMaterials,
-    this.electricalSystemComments,
+    this.mainFuse='',
+    this.boardType='',
+    this.numberOfSpare='',
+    this.typeofFuse='',
+    this.distanceToASHP='',
+    this.standardMaterials='',
+    this.electricalSystemComments='',
 
     //7 form
     //extra pics
-    this.anyProperty,
-    this.approximate,
-    this.loftHatch,
-    this.loftBoarded,
-    this.loftHaveLight,
+    this.anyProperty='',
+    this.approximate='',
+    this.loftHatch='',
+    this.loftBoarded='',
+    this.loftHaveLight='',
+    this.createdDateTime,
     this.images,
   });
 
@@ -281,6 +289,7 @@ class ASHPModel {
     this.loftHatch,
     this.loftBoarded,
     this.loftHaveLight,
+    this.createdDateTime,
     this.images,
   });
 
@@ -380,7 +389,9 @@ class ASHPModel {
 
     //8 form
     List<String>? images,
+    DateTime? createdDateTime,
   }) {
+    print(installType);
     return ASHPModel.named(
       ASHPId: ASHPId ?? this.ASHPId,
       installDate: installDate ?? this.installDate,
@@ -459,6 +470,10 @@ class ASHPModel {
       loftHatch: loftHatch ?? this.loftHatch,
       loftBoarded: loftBoarded ?? this.loftBoarded,
       loftHaveLight: loftHaveLight ?? this.loftHaveLight,
+        createdDateTime:createdDateTime??this.createdDateTime,
     );
   }
+
+  factory ASHPModel.fromJson(Map<String, dynamic> json) => _$ASHPModelFromJson(json);
+  Map<String, dynamic> toJson() => _$ASHPModelToJson(this);
 }
