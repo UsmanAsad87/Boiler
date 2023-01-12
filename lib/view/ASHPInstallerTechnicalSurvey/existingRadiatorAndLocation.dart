@@ -1,3 +1,4 @@
+import 'package:boiler/model/ASHPModel.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/ElectricalSystem.dart';
 import 'package:boiler/view/GlobalData.dart';
 import 'package:boiler/view/ServeyASHPController.dart';
@@ -5,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:boiler/colors/common.dart';
+import 'package:provider/provider.dart';
 import '../../model/installMenuOfBoiler.dart';
+import '../../provider/ASHPprovider.dart';
 
 class ExistingRadiatorAndLocation extends StatefulWidget {
   const ExistingRadiatorAndLocation({Key? key}) : super(key: key);
@@ -19,6 +22,7 @@ class _ExistingRadiatorAndLocationState extends State<ExistingRadiatorAndLocatio
   ASHPsurveycontroller _controoler = new ASHPsurveycontroller();
   @override
   Widget build(BuildContext context) {
+    ASHPModel model = Provider.of<ASHPProvider>(context).getASHPObject;
     return Scaffold(
         backgroundColor: Color(0xffEFEFEF),
         body: SingleChildScrollView(
@@ -442,7 +446,23 @@ class _ExistingRadiatorAndLocationState extends State<ExistingRadiatorAndLocatio
                         MyComponent.howManyTrvsController = _controoler.howManyTrvsController.text;
                         MyComponent.howManyLockshieldsController = _controoler.howManyLockshieldsController.text;
                         MyComponent.comments6Controller = _controoler.comments6Controller.text;
-                    Navigator.push(
+                        model=model.copyWith(
+                            room : _controoler.roomController.text,
+                           size : _controoler.sizeController.text,
+                            where : _controoler.whereController.text,
+                           existingRaidLocation : _controoler.newController.text,
+                            pipeSize : _controoler.pipeSizeController.text,
+                           totalRads : _controoler.totalRadsController.text,
+                            howManyToChange : _controoler.howManyToChangeController.text,
+                             pDo: _controoler.pDoController.text,
+                           howManyTrvs : _controoler.howManyTrvsController.text,
+                            howManyLockshields : _controoler.howManyLockshieldsController.text,
+                            existingRadiatorComments : _controoler.comments6Controller.text,
+                        );
+                        print(model.toJson().toString().substring(202,));
+                        Provider.of<ASHPProvider>(context,listen: false).setASHPObject(model);
+
+                        Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => ElectricalSystem()));}

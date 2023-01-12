@@ -1,4 +1,6 @@
+import 'package:boiler/model/ASHPModel.dart';
 import 'package:boiler/model/installMenuOfBoiler.dart';
+import 'package:boiler/provider/ASHPprovider.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/proposedNewASHP.dart';
 import 'package:boiler/view/GlobalData.dart';
 import 'package:boiler/view/ServeyASHPController.dart';
@@ -6,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:boiler/colors/common.dart';
+import 'package:provider/provider.dart';
 class PropertyDetails extends StatefulWidget {
   const PropertyDetails({Key? key}) : super(key: key);
 
@@ -20,10 +23,11 @@ class _PropertyDetailsState extends State<PropertyDetails> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    print('Checking -------> ${ MyComponent.manpowercontroller}');
+    //print('Checking -------> ${ MyComponent.manpowercontroller}');
   }
   @override
   Widget build(BuildContext context) {
+    ASHPModel model = Provider.of<ASHPProvider>(context).getASHPObject;
     return Scaffold(
         backgroundColor: Color(0xffEFEFEF),
         body: SingleChildScrollView(
@@ -299,7 +303,15 @@ class _PropertyDetailsState extends State<PropertyDetails> {
                   height: 10.h,
                 ),
                 CustomTextFormFieldWithPrefix4(
-                    readOnly: false, keyboardType: TextInputType.text),
+                  readOnly: false,
+                  keyboardType: TextInputType.text,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.ripOutController,),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -429,7 +441,7 @@ class _PropertyDetailsState extends State<PropertyDetails> {
                     }
                     return null;
                   },
-                  controller: _controoler.ripOutController,),
+                  controller: _controoler.ripOut2Controller,),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -575,6 +587,7 @@ class _PropertyDetailsState extends State<PropertyDetails> {
                       MyComponent.parkingController = _controoler.parkingController.text;
                       MyComponent.skipNeedecontroller = _controoler.skipNeedecontroller.text;
                       MyComponent.skipPermitrequiredController = _controoler.skipPermitrequiredController.text;
+                      MyComponent.commentsController=_controoler.commentsController.text;
                       MyComponent.boilerTypeController = _controoler.boilerTypeController.text;
                       MyComponent.boilerLocationController = _controoler.boilerLocationController.text;
                       MyComponent.ripOutController = _controoler.ripOutController.text;
@@ -586,6 +599,25 @@ class _PropertyDetailsState extends State<PropertyDetails> {
                       MyComponent.abbestosremovalController = _controoler.abbestosremovalController.text;
                       MyComponent.comments4Controller = _controoler.comments4Controller.text;
                       MyComponent.ripOutequiredController = _controoler.ripOutequiredController.text;
+                      model= model.copyWith(
+                          parking : _controoler.parkingController.text,
+                          skipNeede : _controoler.skipNeedecontroller.text,
+                          skipPermitrequired : _controoler.skipPermitrequiredController.text,
+                          propertyDetailsComments:_controoler.commentsController.text,
+                          boilerType : _controoler.boilerTypeController.text,
+                          boilerLocation : _controoler.boilerLocationController.text,
+                          boilerRipOut : _controoler.ripOutController.text,
+                          BoilerComments : _controoler.comments2Controller.text,
+                        cylinder: _controoler.cylinderController.text,
+                        cylinderLocation: _controoler.cylinderLocationController.text,
+                          cylinderRipOut : _controoler.ripOut2Controller.text,
+                          cylinderComments3: _controoler.comments3Controller.text,
+                          abbestosRemoval : _controoler.abbestosremovalController.text,
+                          abbestosComments4 : _controoler.comments4Controller.text,
+                          ripOutrequired : _controoler.ripOutequiredController.text,
+                      );
+                      print(model.toJson());
+                      Provider.of<ASHPProvider>(context,listen: false).setASHPObject(model);
                     Navigator.push(
                         context,
                         MaterialPageRoute(

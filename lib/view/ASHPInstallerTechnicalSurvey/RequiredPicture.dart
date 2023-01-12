@@ -23,7 +23,7 @@ class _RequiredPictureState extends State<RequiredPicture> {
   File? _image;
   File? _image1;
 
-   SurveyASHP()async{
+  SurveyASHP() async {
     setState(() {
       print("1");
     });
@@ -38,101 +38,86 @@ class _RequiredPictureState extends State<RequiredPicture> {
         .collection('survey ASHP')
         .doc(Mycomponents.useremail + " " + DateTime.now().toString())
         .set({
-      'install date':MyComponent.installdatecontroller, // John Doe
+      'install date': MyComponent.installdatecontroller, // John Doe
       // 'contact': "c", // Stokes and Sons
       'install type': MyComponent.installtypecontroller, // 42
       'Manpower': MyComponent.manpowercontroller,
       'Survey Date': MyComponent.surveydatecontroller,
       'Survey by': MyComponent.surveybycontroller,
       'Customer Name': MyComponent.customernamecontroller,
-      'property adress':MyComponent.propertyaddresscontroller,
-      'post code':MyComponent.postcodecontroller,
-      'customer contact':MyComponent.customercontactcontroller,
+      'property adress': MyComponent.propertyaddresscontroller,
+      'post code': MyComponent.postcodecontroller,
+      'customer contact': MyComponent.customercontactcontroller,
       'email': MyComponent.emailcontroller,
 
+      'parking': MyComponent.parkingController,
+      'skip needed': MyComponent.skipNeedecontroller,
+      'skip permit required': MyComponent.skipPermitrequiredController,
+      'comments': MyComponent.commentsController,
+      'boiler type': MyComponent.boilerTypeController,
+      'boiler location': MyComponent.boilerLocationController,
+      'Rip out': MyComponent.ripOutController,
+      'comments1': MyComponent.comments2Controller,
+      'cylinder': MyComponent.cylinderController,
+      'cylinder location': MyComponent.cylinderLocationController,
+      'Rip out2': MyComponent.ripOut2Controller,
+      'comments2': MyComponent.comments3Controller,
+      'Asbestos removal': MyComponent.abbestosremovalController,
+      'comments3': MyComponent.comments4Controller,
+      'Rip out Required': MyComponent.ripOutequiredController,
 
-      'parking':MyComponent.parkingController,
-      'skip needed':MyComponent.skipNeedecontroller,
-      'skip permit required':MyComponent.skipPermitrequiredController,
-      'comments':MyComponent.commentsController,
-      'boiler type':MyComponent.boilerTypeController,
-      'boiler location':MyComponent.boilerLocationController,
-      'Rip out':MyComponent.ripOutController,
-      'comments1':MyComponent.comments2Controller,
-      'cylinder':MyComponent.cylinderController,
-      'cylinder location':MyComponent.cylinderLocationController,
-      'Rip out2':MyComponent.ripOut2Controller,
-      'comments2':MyComponent.comments3Controller,
-      'Asbestos removal':MyComponent.abbestosremovalController,
-      'comments3':MyComponent.comments4Controller,  
-      'Rip out Required':MyComponent.ripOutequiredController,
+      'make and model': MyComponent.makeAndModelController,
+      'Ashp location': MyComponent.ashpLocationcontroller,
+      'do we need to build base': MyComponent.doweNeedToBuildABaseController,
+      'base constructed with': MyComponent.baseConstructedWithController,
+      'who building base': MyComponent.whoIsBuildingTheBaseController,
+      'how many heating zones': MyComponent.howManyHeatingZonesController,
+      'describe flow and routes': MyComponent.describeFlowController,
+      'pipes needed': MyComponent.pipesAndLaggingController,
+      'do we need trunking': MyComponent.doWeNeedTrunkingController,
+      'do we need scaffold': MyComponent.doweNeedScaffoldController,
+      'do we need genine lift': MyComponent.doWeNeedAGenieController,
+      'describe condensate run': MyComponent.describeCondensateController,
+      'any pump to replace': MyComponent.anyPumpsController,
+      '25/1-8 system pump needed': MyComponent.system25PumpController,
+      'any zone valve need to replace': MyComponent.anyZoneController,
+      'what type of floor': MyComponent.whatTypeController,
 
+      'cylinder make model siz': MyComponent.cylinderMakeController,
+      'cylinder location2': MyComponent.cylinderLocationController,
+      'lime scale reducer required': MyComponent.limeScaleController,
+      'do we need build base': MyComponent.doWeController,
+      'base constructed with2': MyComponent.baseConStructedController,
+      'who is building base': MyComponent.whoIsController,
+      'where do we run blow off D2/D1': MyComponent.whereDoController,
+      'pipes need laging size': MyComponent.pipesController,
+      'comments4': MyComponent.comments5Controller,
 
-      'make and model':MyComponent.makeAndModelController,
-      'Ashp location':MyComponent.ashpLocationcontroller,
-      'do we need to build base':MyComponent.doweNeedToBuildABaseController,
-      'base constructed with':MyComponent.baseConstructedWithController,
-      'who building base':MyComponent.whoIsBuildingTheBaseController,
-      'how many heating zones':MyComponent.howManyHeatingZonesController,
-      'describe flow and routes':MyComponent.describeFlowController,
-      'pipes needed':MyComponent.pipesAndLaggingController,
-      'do we need trunking':MyComponent.doWeNeedTrunkingController,
-      'do we need scaffold':MyComponent.doweNeedScaffoldController,
-      'do we need genine lift':MyComponent.doWeNeedAGenieController,
-      'describe condensate run':MyComponent.describeCondensateController,
-      'any pump to replace':MyComponent.anyPumpsController,
-      '25/1-8 system pump needed':MyComponent.system25PumpController,
-      'any zone valve need to replace':MyComponent.anyZoneController,
-       'what type of floor':MyComponent.whatTypeController,
+      'room': MyComponent.roomController,
+      'size': MyComponent.sizeController,
+      'where is room': MyComponent.whereController,
+      'new location': MyComponent.newController,
+      'pipe size': MyComponent.pipeSizeController,
+      'total rads': MyComponent.totalRadsController,
+      'how many cahrge': MyComponent.howManyToChangeController,
+      'PDO we need to charge': MyComponent.pDoController,
+      'how many trvs': MyComponent.howManyTrvsController,
+      'how many loackshields': MyComponent.howManyLockshieldsController,
+      'comments5': MyComponent.comments6Controller,
 
+      'main fuse board loacation': MyComponent.mainFuseController,
+      'board type': MyComponent.boardTypeController,
+      'number of spare ways': MyComponent.numberOfSpareController,
+      'type of fuse': MyComponent.typeofFuseController,
+      'distance to Ashp': MyComponent.distanceToASHPController,
+      'standard materials': MyComponent.standardMaterialsController,
+      'comments6': MyComponent.comments7Controller,
 
-       
-       'cylinder make model siz':MyComponent.cylinderMakeController,
-       'cylinder location2':MyComponent.cylinderLocationController,
-       'lime scale reducer required':MyComponent.limeScaleController,
-       'do we need build base':MyComponent.doWeController,
-       'base constructed with2':MyComponent.baseConStructedController,
-       'who is building base':MyComponent.whoIsController,
-       'where do we run blow off D2/D1':MyComponent.whereDoController,
-       'pipes need laging size':MyComponent.pipesController,
-       'comments4':MyComponent.comments5Controller,
-
-
-
-       'room':MyComponent.roomController,
-       'size':MyComponent.sizeController,
-       'where is room':MyComponent.whereController,
-       'new location':MyComponent.newController,
-       'pipe size':MyComponent.pipeSizeController,
-       'total rads':MyComponent.totalRadsController,
-       'how many cahrge':MyComponent.howManyToChangeController,      
-       'PDO we need to charge':MyComponent.pDoController,      
-       'how many trvs':MyComponent.howManyTrvsController,
-       'how many loackshields':MyComponent.howManyLockshieldsController,     
-       'comments5':MyComponent.comments6Controller,
-
-
-
-       'main fuse board loacation':MyComponent.mainFuseController,     
-       'board type':MyComponent.boardTypeController,
-       'number of spare ways':MyComponent.numberOfSpareController,
-       'type of fuse':MyComponent.typeofFuseController,
-       'distance to Ashp':MyComponent.distanceToASHPController,
-       'standard materials':MyComponent.standardMaterialsController,
-       'comments6':MyComponent.comments7Controller,
-
-
-       'any property info':MyComponent.anyPropertyController,
-       'approx distance':MyComponent.approximateController,
-       'loft hatch dimenson':MyComponent.loftHatchController,
-       'loft boarded':MyComponent.loftBoardedController,
-       'loft have light':MyComponent.loftHaveController,
-       
-
-
-      
-
-     
+      'any property info': MyComponent.anyPropertyController,
+      'approx distance': MyComponent.approximateController,
+      'loft hatch dimenson': MyComponent.loftHatchController,
+      'loft boarded': MyComponent.loftBoardedController,
+      'loft have light': MyComponent.loftHaveController,
     });
     setState(() {
       Fluttertoast.showToast(
@@ -182,7 +167,6 @@ class _RequiredPictureState extends State<RequiredPicture> {
                   ],
                 ),
               ),
-
               SizedBox(height: 20.h),
               Center(
                   child: Text(
@@ -204,12 +188,9 @@ class _RequiredPictureState extends State<RequiredPicture> {
               SizedBox(
                 height: 20.h,
               ),
-
               SizedBox(
                 height: 15.h,
               ),
-
-
               Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Center(
@@ -220,14 +201,13 @@ class _RequiredPictureState extends State<RequiredPicture> {
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child:Container(
+                    child: Container(
                       width: 100,
                       height: 50,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       ),
-
                     ),
                   ),
                 ),
@@ -235,16 +215,15 @@ class _RequiredPictureState extends State<RequiredPicture> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),
                 child: InkWell(
-                  onTap: (){
+                  onTap: () {
                     dialog(context);
                   },
                   child: Container(
                     height: 50.h,
                     width: 190.w,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 1,color: Colors.green)
-                    ),
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(width: 1, color: Colors.green)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -271,16 +250,16 @@ class _RequiredPictureState extends State<RequiredPicture> {
                   ),
                 ),
               ),
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               InkWell(
                 onTap: () {
                   print("surveydate");
                   print(MyComponent.surveydatecontroller);
                   SurveyASHP();
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => BottomBar()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BottomBar()));
                 },
                 child: Container(
                   height: 46.h,
@@ -297,13 +276,12 @@ class _RequiredPictureState extends State<RequiredPicture> {
                   ),
                 ),
               ),
-
               SizedBox(height: 40.h),
-
             ],
           ),
         ));
   }
+
   Future getCameraImage() async {
     final pickedFile = await piker.pickImage(source: ImageSource.camera);
     setState(() {
@@ -314,6 +292,7 @@ class _RequiredPictureState extends State<RequiredPicture> {
       }
     });
   }
+
   void dialog(context) {
     showDialog(
         context: context,
@@ -335,7 +314,6 @@ class _RequiredPictureState extends State<RequiredPicture> {
                       title: Text('Camera'),
                     ),
                   ),
-
                   InkWell(
                     onTap: () {
                       getImageGalary();
@@ -351,6 +329,7 @@ class _RequiredPictureState extends State<RequiredPicture> {
           );
         });
   }
+
   final piker = ImagePicker();
 
   Future getImageGalary() async {

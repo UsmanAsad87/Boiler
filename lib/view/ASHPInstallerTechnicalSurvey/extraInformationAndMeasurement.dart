@@ -1,4 +1,6 @@
+import 'package:boiler/model/ASHPModel.dart';
 import 'package:boiler/model/installMenuOfBoiler.dart';
+import 'package:boiler/provider/ASHPprovider.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/RequiredPicture.dart';
 import 'package:boiler/view/GlobalData.dart';
 import 'package:boiler/view/ServeyASHPController.dart';
@@ -6,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:boiler/colors/common.dart';
+import 'package:provider/provider.dart';
 class ExtaInformationAndMeasurement extends StatefulWidget {
   const ExtaInformationAndMeasurement({Key? key}) : super(key: key);
 
@@ -18,6 +21,7 @@ class _ExtaInformationAndMeasurementState extends State<ExtaInformationAndMeasur
   ASHPsurveycontroller _controoler = new ASHPsurveycontroller();
   @override
   Widget build(BuildContext context) {
+    ASHPModel model = Provider.of<ASHPProvider>(context).getASHPObject;
     return Scaffold(
       body: SingleChildScrollView(
         child: Form(
@@ -230,7 +234,19 @@ class _ExtaInformationAndMeasurementState extends State<ExtaInformationAndMeasur
                           MyComponent.loftHatchController = _controoler.loftHatchController.text;
                           MyComponent.loftBoardedController = _controoler.loftBoardedController.text;
                           MyComponent.loftHaveController = _controoler.loftHaveController.text;
-                  Navigator.of(context).push(
+
+                          model= model.copyWith(
+                              anyProperty : _controoler.anyPropertyController.text,
+                              approximate : _controoler.approximateController.text,
+                              loftHatch : _controoler.loftHatchController.text,
+                              loftBoarded : _controoler.loftBoardedController.text,
+                              loftHaveLight : _controoler.loftHaveController.text,
+
+                          );
+                          print(model.toJson().toString().substring(402,));
+                          Provider.of<ASHPProvider>(context,listen: false).setASHPObject(model);
+
+                          Navigator.of(context).push(
                       MaterialPageRoute(
                           builder: (context) => RequiredPicture()),
                           );}

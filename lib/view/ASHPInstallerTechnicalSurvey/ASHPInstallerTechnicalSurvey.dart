@@ -1,4 +1,6 @@
+import 'package:boiler/model/ASHPModel.dart';
 import 'package:boiler/model/installMenuOfBoiler.dart';
+import 'package:boiler/provider/ASHPprovider.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/propertyDetails.dart';
 import 'package:boiler/view/GlobalData.dart';
 import 'package:boiler/view/ServeyASHPController.dart';
@@ -7,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:boiler/colors/common.dart';
+import 'package:provider/provider.dart';
 
 class ASHPInstallerTechnicalSurvey extends StatefulWidget {
   const ASHPInstallerTechnicalSurvey({Key? key}) : super(key: key);
@@ -21,10 +24,22 @@ class _ASHPInstallerTechnicalSurveyState
   final formkey = GlobalKey<FormState>();
   ASHPsurveycontroller _controoler = new ASHPsurveycontroller();
 
+  void initState() {
+    ASHPModel ashpModel=ASHPModel();
+    print(ashpModel.toJson());
+    //ASHPProvider ashpProvider = Provider.of(context, listen: false);
+    //ashpProvider.setASHPObject(ashpModel);
+
+    super.initState();
+  }
+
+
+
   TextEditingController _date = TextEditingController();
   TextEditingController _date1 = TextEditingController();
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         backgroundColor: Color(0xffEFEFEF),
         body: SingleChildScrollView(
@@ -465,6 +480,8 @@ class _ASHPInstallerTechnicalSurveyState
                 InkWell(
                   onTap: () {
                     if(formkey.currentState!.validate()){
+                      ASHPModel model34 = ASHPModel();
+                      Provider.of<ASHPProvider>(context,listen: false).setASHPObject(model34);
                       MyComponent.installdatecontroller = _controoler.installdatecontroller.text;
                       MyComponent.installtypecontroller = _controoler.installtypecontroller.text;
                       MyComponent.manpowercontroller = _controoler.manpowercontroller.text;
@@ -475,8 +492,26 @@ class _ASHPInstallerTechnicalSurveyState
                       MyComponent.propertyaddresscontroller = _controoler.propertycontroller.text;
                       MyComponent.postcodecontroller = _controoler.postcodecontroller.text;
                       MyComponent.customercontactcontroller = _controoler.contactcontroller.text;
-                      
                       MyComponent.emailcontroller = _controoler.emailcontroller.text;
+
+                      ASHPModel model = Provider.of<ASHPProvider>(context,listen: false).getASHPObject;
+
+
+                     model= model.copyWith(
+                          installDate : _controoler.installdatecontroller.text,
+                          installType: _controoler.installtypecontroller.text,
+                          manPower:_controoler.manpowercontroller.text,
+                          surveydate: _controoler.surveydatecontroller.text,
+                          surveyby: _controoler.surveybycontroller.text,
+                          customername: _controoler.customernamecontroller.text,
+                          propertyaddress: _controoler.propertycontroller.text,
+                          postcode: _controoler.postcodecontroller.text,
+                          customercontact:_controoler.contactcontroller.text,
+                          email:_controoler.emailcontroller.text,
+                      );
+                      print(model.toJson());
+                      Provider.of<ASHPProvider>(context,listen: false).setASHPObject(model);
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(
