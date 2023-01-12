@@ -7,6 +7,7 @@ part of 'ASHPModel.dart';
 // **************************************************************************
 
 ASHPModel _$ASHPModelFromJson(Map<String, dynamic> json) => ASHPModel(
+      uid: json['uid'] as String?,
       ASHPId: json['ASHPId'] as String?,
       installDate: json['installDate'] as String?,
       installType: json['installType'] as String?,
@@ -87,6 +88,7 @@ ASHPModel _$ASHPModelFromJson(Map<String, dynamic> json) => ASHPModel(
     );
 
 Map<String, dynamic> _$ASHPModelToJson(ASHPModel instance) => <String, dynamic>{
+      'uid':instance.uid,
       'ASHPId': instance.ASHPId,
       'installDate': instance.installDate,
       'installType': instance.installType,

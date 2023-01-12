@@ -1,4 +1,5 @@
 import 'package:boiler/provider/ASHPprovider.dart';
+import 'package:boiler/view/ASHPInstallerTechnicalSurvey/RequiredPicture.dart';
 import 'package:boiler/view/SplashScreen/splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
           splitScreenMode: true,
           builder: (context, child) {
             return GetMaterialApp(
-                debugShowCheckedModeBanner: false, home: SplashScreen()
+                debugShowCheckedModeBanner: false, home: //RequiredPicture()
+            SplashScreen()
                 // CompleteMcsBenchMark()
                 // CustomerSatisficationQuestionair()
                 // PostInstallationAshp()
