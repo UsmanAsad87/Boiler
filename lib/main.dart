@@ -1,4 +1,5 @@
 import 'package:boiler/provider/ASHPprovider.dart';
+import 'package:boiler/provider/boiler_provider.dart';
 import 'package:boiler/view/ASHPInstallerTechnicalSurvey/RequiredPicture.dart';
 import 'package:boiler/view/SplashScreen/splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -40,6 +41,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => ASHPProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => BoilerProvider(),
+        ),
+
       ],
       child: ScreenUtilInit(
           designSize: const Size(390, 844),

@@ -1,5 +1,7 @@
 import 'package:boiler/colors/common.dart';
+import 'package:boiler/model/boilerModel.dart';
 import 'package:boiler/model/installMenuOfBoiler.dart';
+import 'package:boiler/provider/boiler_provider.dart';
 import 'package:boiler/view/ExistingBoilerSystemDetails/ExistingBoilerSystemDetails.dart';
 import 'package:boiler/view/GlobalData.dart';
 import 'package:boiler/view/surveycontroller.dart';
@@ -9,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 class InstallBoilerTechnicalSevay extends StatefulWidget {
   const InstallBoilerTechnicalSevay({Key? key}) : super(key: key);
@@ -517,7 +520,10 @@ class _InstallBoilerTechnicalSevayState extends State<InstallBoilerTechnicalSeva
                      
                               //print(_controoler.emailcontroller.toString() + _controoler.usrnamecontroller.toString() +_controoler.passcontroller.toString());
                               if (formkey.currentState!.validate()) {
-                                print(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
+
+                                BoilerModel _boilerModel = BoilerModel();
+                                Provider.of<BoilerProvider>(context,listen: false).setBoilerObject(_boilerModel);
+
                                 Mycomponents.installdate=_controoler.date.text;
                                 Mycomponents.installtype=_controoler.installtypecontroller.text;
                                 Mycomponents.manpower=_controoler.manpowercontroller.text;
@@ -528,9 +534,27 @@ class _InstallBoilerTechnicalSevayState extends State<InstallBoilerTechnicalSeva
                                 Mycomponents.customerconatct=_controoler.contactcontroller.text;
                                 Mycomponents.fueltype=_controoler.fueltypecontroller.text;
                                 Mycomponents.limescale=_controoler.limescalecontroller.text;
-                                print(Mycomponents.installdate);
-                                print("hhhhhhhhhh");
-                                print(_controoler.date.text);
+
+
+
+                                BoilerModel boilerModel = Provider.of<BoilerProvider>(context,listen: false).getBoilerObject;
+
+
+                                boilerModel= boilerModel.copyWith(
+                                    installDate:_controoler.date.text,
+                                    installType:_controoler.installtypecontroller.text,
+                                    manPower:_controoler.manpowercontroller.text,
+                                    surveydate:_controoler.date1.text,
+                                    customername:_controoler.customercontroller.text,
+                                    propertyaddress:_controoler.propertycontroller.text,
+                                    postcode:_controoler.postcodecontroller.text,
+                                    customerContact:_controoler.contactcontroller.text,
+                                    fuelType:_controoler.fueltypecontroller.text,
+                                    limeScaleReducerRequired:_controoler.limescalecontroller.text,
+                                );
+                                print(boilerModel.toJson());
+
+                                Provider.of<BoilerProvider>(context,listen: false).setBoilerObject(boilerModel);
                               //  _controoler.signin();            }
                            //   Survey(_.text, _controoler.installtypecontroller.text, _controoler.manpowercontroller.text, _date1.text, _controoler.customercontroller.text);
                     Navigator.push(
