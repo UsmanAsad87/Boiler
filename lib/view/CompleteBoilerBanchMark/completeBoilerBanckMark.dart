@@ -1106,8 +1106,8 @@ class _CompleteBoilerBenchMarkState extends State<CompleteBoilerBenchMark> {
                               'telephoneNumber':
                                   BoilerCustomerDetail.telephoneNumber,
                               'commisioningDate': _date.text,
-                              'boilerPlusReq': boilerPlus ?? '',
-                              'zoneValves': zoneValves ?? '',
+                              'boilerPlusReq': boilerPlus,
+                              'zoneValves': zoneValves ,
                             });
                             // BoilerCustomerDetail.Address2=_controoler.Address.text;
                             Navigator.push(
