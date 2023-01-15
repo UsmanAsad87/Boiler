@@ -144,8 +144,7 @@ class PdfASHPApi {
               buildText(title: 'Install type: ', value: ashpModel.installType!),
               buildText(title: 'Manpower: ', value: ashpModel.manPower!),
               buildText(title: 'Survey Date: ', value: ashpModel.surveydate!),
-              buildText(title: 'Survey Date: ', value: ashpModel.surveyby!),
-              buildText(title: 'Survey by: ', value: ashpModel.surveydate!),
+              buildText(title: 'Survey by: ', value: ashpModel.surveyby!),
             ],
           ),
         ));
