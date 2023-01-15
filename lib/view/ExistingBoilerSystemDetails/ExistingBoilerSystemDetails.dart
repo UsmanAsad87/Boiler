@@ -1,11 +1,14 @@
 import 'package:boiler/colors/common.dart';
+import 'package:boiler/model/boilerModel.dart';
 import 'package:boiler/model/installMenuOfBoiler.dart';
+import 'package:boiler/provider/boiler_provider.dart';
 import 'package:boiler/view/ExistingBoilerSystemDetailsStep3/ExistingBoilerSystemDetailsStep3.dart';
 import 'package:boiler/view/GlobalData.dart';
 import 'package:boiler/view/surveycontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class ExistingBoilerSystemDetails extends StatefulWidget {
   const ExistingBoilerSystemDetails({Key? key}) : super(key: key);
@@ -24,8 +27,11 @@ class _ExistingBoilerSystemDetailsState
     super.initState();
     print('Checking -------> ${Mycomponents.installdate}');
   }
+
   @override
   Widget build(BuildContext context) {
+    BoilerModel boilerModel =
+        Provider.of<BoilerProvider>(context).getBoilerObject;
     return Scaffold(
         backgroundColor: Color(0xffEFEFEF),
         body: SingleChildScrollView(
@@ -97,17 +103,18 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.makeModelcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                   // readOnly: false, keyboardType: TextInputType.text
-                   ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.makeModelcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                  // readOnly: false, keyboardType: TextInputType.text
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -126,16 +133,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.boilertypecontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.boilertypecontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -154,16 +162,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.boilerPositioncontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.boilerPositioncontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -182,16 +191,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.boilerocationcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.boilerocationcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -210,16 +220,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.existingheatingcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.existingheatingcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -238,16 +249,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.asbestosRemovalcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.asbestosRemovalcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -268,14 +280,15 @@ class _ExistingBoilerSystemDetailsState
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                  child: TextFormField(validator: (value) {
+                  child: TextFormField(
+                    validator: (value) {
                       if (value == null || value.isEmpty) {
                         return ' Cannot Be Empty';
                       }
                       return null;
                     },
                     controller: _controoler.comentscontroller,
-                                      maxLines: 3,
+                    maxLines: 3,
                     decoration: InputDecoration(
                         fillColor: Colors.white,
                         filled: true,
@@ -283,10 +296,7 @@ class _ExistingBoilerSystemDetailsState
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide.none,
                         )),
-                   
-                    ),
-          
-                  
+                  ),
                 ),
                 SizedBox(
                   height: 30.h,
@@ -326,16 +336,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.makemodel1controller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.makemodel1controller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -354,16 +365,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.boilertype2controller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.boilertype2controller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -382,16 +394,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.boilerposition2controller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.boilerposition2controller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -410,16 +423,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.boilerlocation2controller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.boilerlocation2controller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -438,16 +452,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.flueorientationcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.flueorientationcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -466,16 +481,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.plumekitcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.plumekitcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -494,16 +510,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.newheatingcontrolcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.newheatingcontrolcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -522,16 +539,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.newheatingcontrollocationcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.newheatingcontrollocationcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -552,7 +570,8 @@ class _ExistingBoilerSystemDetailsState
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                  child: TextFormField(validator: (value) {
+                  child: TextFormField(
+                    validator: (value) {
                       if (value == null || value.isEmpty) {
                         return ' Cannot Be Empty';
                       }
@@ -561,7 +580,7 @@ class _ExistingBoilerSystemDetailsState
                     controller: _controoler.gasupgradecontroller,
                     keyboardType: TextInputType.text,
                     readOnly: false,
-                     maxLines: 3,
+                    maxLines: 3,
                     decoration: InputDecoration(
                         fillColor: Colors.white,
                         filled: true,
@@ -569,9 +588,7 @@ class _ExistingBoilerSystemDetailsState
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide.none,
                         )),
-                    ),
-                   
-                  
+                  ),
                 ),
                 SizedBox(
                   height: 15.h,
@@ -591,16 +608,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.newcondesatelocationcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.newcondesatelocationcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -619,16 +637,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.newpumptobeinstalledcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.newpumptobeinstalledcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -647,16 +666,17 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.newzonevaluecontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.newzonevaluecontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -675,50 +695,104 @@ class _ExistingBoilerSystemDetailsState
                 SizedBox(
                   height: 10.h,
                 ),
-                CustomTextFormFieldWithPrefix4(validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return ' Cannot Be Empty';
-                      }
-                      return null;
-                    },
-                    controller: _controoler.isbickuprequiredcontroller,
-                    keyboardType: TextInputType.text,
-                    readOnly: false,
-                    ),
+                CustomTextFormFieldWithPrefix4(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return ' Cannot Be Empty';
+                    }
+                    return null;
+                  },
+                  controller: _controoler.isbickuprequiredcontroller,
+                  keyboardType: TextInputType.text,
+                  readOnly: false,
+                ),
                 SizedBox(
                   height: 30.h,
                 ),
                 InkWell(
                   onTap: () {
-                    //print(_controoler.emailcontroller.text);print( _controoler.passcontroller);
-          
-                    //print(_controoler.emailcontroller.toString() + _controoler.usrnamecontroller.toString() +_controoler.passcontroller.toString());
                     if (formkey.currentState!.validate()) {
-                      print(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
-                      
-                                Mycomponents.makemodel1=_controoler.makeModelcontroller.text;
-                                
-                                Mycomponents.boilertypr1=_controoler.boilertypecontroller.text;
-                                Mycomponents.boilerposition1=_controoler.boilerPositioncontroller.text;
-                                Mycomponents.boilerlocation1=_controoler.boilerocationcontroller.text;
-                                Mycomponents.existingheating=_controoler.existingheatingcontroller.text;
-                                Mycomponents.asbestosRemoval=_controoler.asbestosRemovalcontroller.text;
-                                Mycomponents.comments=_controoler.comentscontroller.text;
-                                Mycomponents.makemodel2=_controoler.makemodel1controller.text;
-                                Mycomponents.boilertype2=_controoler.boilertype2controller.text;
-                                Mycomponents.boilerposition2=_controoler.boilerlocation2controller.text;
-                                Mycomponents.boilerlocation2=_controoler.boilerlocation2controller.text;
-                                Mycomponents.flueorintaion=_controoler.flueorientationcontroller.text;
-                                Mycomponents.plumekitrequired=_controoler.plumekitcontroller.text;
-                                Mycomponents.newheatingcontrols=_controoler.newheatingcontrolcontroller.text;
-                                Mycomponents.newhaetingcontrollocation=_controoler.newheatingcontrollocationcontroller.text;
-                                Mycomponents.gasupgrade=_controoler.gasupgradecontroller.text;
-                                Mycomponents.newcondesatelocation=_controoler.newcondesatelocationcontroller.text;
-                                Mycomponents.newpump=_controoler.newpumptobeinstalledcontroller.text;
-                                Mycomponents.newzone=_controoler.newzonevaluecontroller.text;
-                                
-                                Mycomponents.isbrickup=_controoler.isbickuprequiredcontroller.text;
-                                
+                      Mycomponents.makemodel1 =
+                          _controoler.makeModelcontroller.text;
+                      Mycomponents.boilertypr1 =
+                          _controoler.boilertypecontroller.text;
+                      Mycomponents.boilerposition1 =
+                          _controoler.boilerPositioncontroller.text;
+                      Mycomponents.boilerlocation1 =
+                          _controoler.boilerocationcontroller.text;
+                      Mycomponents.existingheating =
+                          _controoler.existingheatingcontroller.text;
+                      Mycomponents.asbestosRemoval =
+                          _controoler.asbestosRemovalcontroller.text;
+                      Mycomponents.comments =
+                          _controoler.comentscontroller.text;
+                      Mycomponents.makemodel2 =
+                          _controoler.makemodel1controller.text;
+                      Mycomponents.boilertype2 =
+                          _controoler.boilertype2controller.text;
+                      Mycomponents.boilerposition2 =
+                          _controoler.boilerlocation2controller.text;
+                      Mycomponents.boilerlocation2 =
+                          _controoler.boilerlocation2controller.text;
+                      Mycomponents.flueorintaion =
+                          _controoler.flueorientationcontroller.text;
+                      Mycomponents.plumekitrequired =
+                          _controoler.plumekitcontroller.text;
+                      Mycomponents.newheatingcontrols =
+                          _controoler.newheatingcontrolcontroller.text;
+                      Mycomponents.newhaetingcontrollocation =
+                          _controoler.newheatingcontrollocationcontroller.text;
+                      Mycomponents.gasupgrade =
+                          _controoler.gasupgradecontroller.text;
+                      Mycomponents.newcondesatelocation =
+                          _controoler.newcondesatelocationcontroller.text;
+                      Mycomponents.newpump =
+                          _controoler.newpumptobeinstalledcontroller.text;
+                      Mycomponents.newzone =
+                          _controoler.newzonevaluecontroller.text;
+                      Mycomponents.isbrickup =
+                          _controoler.isbickuprequiredcontroller.text;
+
+                      boilerModel = boilerModel.copyWith(
+                        existingMakeModel: _controoler.makeModelcontroller.text,
+                        existingBoilerType:
+                            _controoler.boilertypecontroller.text,
+                        existingBoilerPosition:
+                            _controoler.boilerPositioncontroller.text,
+                        existingBoilerLocation:
+                            _controoler.boilerocationcontroller.text,
+                        existingHeatingControl:
+                            _controoler.existingheatingcontroller.text,
+                        existingRemoval:
+                            _controoler.asbestosRemovalcontroller.text,
+                        existingComments: Mycomponents.comments =
+                            _controoler.comentscontroller.text,
+                        newMakeModel: _controoler.makemodel1controller.text,
+                        newBoilerType: _controoler.boilertype2controller.text,
+                        newBoilerPosition:
+                            _controoler.boilerlocation2controller.text,
+                        newBoilerLocation:
+                            _controoler.boilerlocation2controller.text,
+                        newFuelOrientation:
+                            _controoler.flueorientationcontroller.text,
+                        newPlumeKitReq: _controoler.plumekitcontroller.text,
+                        newHeatingControl:
+                            _controoler.newheatingcontrolcontroller.text,
+                        newHeatingControlLocation: _controoler
+                            .newheatingcontrollocationcontroller.text,
+                        newUpgradeReq: _controoler.gasupgradecontroller.text,
+                        newCondensateLocation:
+                            _controoler.newcondesatelocationcontroller.text,
+                        newPumpInstalled:
+                            _controoler.newpumptobeinstalledcontroller.text,
+                        newZoneValve: _controoler.newzonevaluecontroller.text,
+                        newIsBrickUpReq:
+                            _controoler.isbickuprequiredcontroller.text,
+                      );
+                      print(boilerModel.toJson());
+                      Provider.of<BoilerProvider>(context, listen: false)
+                          .setBoilerObject(boilerModel);
+
                       // _controoler.signin();
                       Navigator.push(
                           context,

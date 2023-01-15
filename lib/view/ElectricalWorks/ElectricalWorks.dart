@@ -1,10 +1,13 @@
 import 'package:boiler/colors/common.dart';
+import 'package:boiler/model/boilerModel.dart';
+import 'package:boiler/provider/boiler_provider.dart';
 import 'package:boiler/view/BottomBar/BottomBar.dart';
 import 'package:boiler/view/boilerRequiredPictures.dart';
 import 'package:boiler/view/surveycontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import '../GlobalData.dart';
 
@@ -21,6 +24,8 @@ class _ElectricalWorksState extends State<ElectricalWorks> {
   
   @override
   Widget build(BuildContext context) {
+    BoilerModel boilerModel =
+        Provider.of<BoilerProvider>(context).getBoilerObject;
     return Scaffold(
       backgroundColor: Color(0xffEFEFEF),
       body: SingleChildScrollView(
@@ -247,6 +252,15 @@ class _ElectricalWorksState extends State<ElectricalWorks> {
                     
                                 Mycomponents.whatdoeselectritionneedtodo=_controoler.whatdoeselectritionneedtodocontroller.text;
                                 Mycomponents.whatcontrolarewefitting=_controoler.whatcontrolsarewefittingcontroller.text;
+                    boilerModel = boilerModel.copyWith(
+                      electricianReq: yes==1?'Yes':'No',
+                      whatElectricianDo: _controoler.whatdoeselectritionneedtodocontroller.text,
+                      whatControlFitting: _controoler.whatcontrolsarewefittingcontroller.text,
+                    );
+                    print(boilerModel.toJson());
+                    Provider.of<BoilerProvider>(context, listen: false)
+                        .setBoilerObject(boilerModel);
+
                     // _controoler.signin();
                     Navigator.push(
                         context,

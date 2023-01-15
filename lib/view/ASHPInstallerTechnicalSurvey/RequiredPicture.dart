@@ -36,9 +36,6 @@ class _RequiredPictureState extends State<RequiredPicture> {
 
   bool _loading=false;
 
-  SurveyASHP() async {
-  }
-
   @override
   Widget build(BuildContext context) {
     ASHPModel model = Provider.of<ASHPProvider>(context).getASHPObject;
@@ -194,14 +191,6 @@ class _RequiredPictureState extends State<RequiredPicture> {
                   setState(() {
                     _loading=false;
                   });
-
-
-
-
-
-                  // SurveyASHP();
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (context) => BottomBar()));
                 },
                 child: Container(
                   height: 46.h,
@@ -288,18 +277,4 @@ class _RequiredPictureState extends State<RequiredPicture> {
     setState((){});
     Navigator.pop(context);
   }
-  // Future getImageGalary() async {
-  //   final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
-  //   print('image selected');
-  //
-  //   setState(() {
-  //     if (pickedFile != null) {
-  //       _image = File(pickedFile.path);
-  //       Navigator.pop(context);
-  //       print('image setState selected');
-  //     } else {
-  //       print('no image selected');
-  //     }
-  //   });
-  // }
 }

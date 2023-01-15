@@ -96,8 +96,10 @@ Map<String, dynamic> _$ASHPModelToJson(ASHPModel instance) => <String, dynamic>{
       'ASHPId': instance.ASHPId,
       'uid': instance.uid,
       'username': instance.username,
-      'createdDateTime':   instance.createdDateTime==null?DateTime.now().toIso8601String():instance.createdDateTime?.toIso8601String(),
-'installDate': instance.installDate,
+      'createdDateTime': instance.createdDateTime == null
+          ? DateTime.now().toIso8601String()
+          : instance.createdDateTime?.toIso8601String(),
+      'installDate': instance.installDate,
       'installType': instance.installType,
       'manPower': instance.manPower,
       'surveydate': instance.surveydate,

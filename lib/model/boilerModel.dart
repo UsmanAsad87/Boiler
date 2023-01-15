@@ -15,6 +15,7 @@ class BoilerModel {
   String? manPower;
   String? surveydate;
   String? customername;
+  String? customerContact;
   String? propertyaddress;
   String? postcode;
   String? fuelType;
@@ -61,12 +62,6 @@ class BoilerModel {
   String? electricianReq;
   String? whatElectricianDo;
   String? whatControlFitting;
-  String? newDoWe;
-  String? newBaseConStructed;
-  String? newWhoIs;
-  String? newWhereDo;
-  String? newPipes;
-  String? newCylinderComments;
 
 
   //6 form
@@ -82,6 +77,7 @@ class BoilerModel {
     this.surveydate='',
 
     this.customername='',
+    this.customerContact='',
     this.propertyaddress='',
     this.postcode='',
     this.fuelType='',
@@ -128,12 +124,6 @@ class BoilerModel {
     this.electricianReq='',
     this.whatElectricianDo='',
     this.whatControlFitting='',
-    this.newDoWe='',
-    this.newBaseConStructed='',
-    this.newWhoIs='',
-    this.newWhereDo='',
-    this.newPipes='',
-    this.newCylinderComments='',
 
 
     //6 form
@@ -151,6 +141,7 @@ class BoilerModel {
     this.surveydate,
 
     this.customername,
+    this.customerContact,
     this.propertyaddress,
     this.postcode,
     this.fuelType,
@@ -197,12 +188,6 @@ class BoilerModel {
     this.electricianReq,
     this.whatElectricianDo,
     this.whatControlFitting,
-    this.newDoWe,
-    this.newBaseConStructed,
-    this.newWhoIs,
-    this.newWhereDo,
-    this.newPipes,
-    this.newCylinderComments,
 
 
     //6 form
@@ -220,6 +205,7 @@ class BoilerModel {
      String? manPower,
      String? surveydate,
      String? customername,
+     String? customerContact,
      String? propertyaddress,
      String? postcode,
      String? fuelType,
@@ -265,12 +251,6 @@ class BoilerModel {
      String? electricianReq,
      String? whatElectricianDo,
      String? whatControlFitting,
-     String? newDoWe,
-     String? newBaseConStructed,
-     String? newWhoIs,
-     String? newWhereDo,
-     String? newPipes,
-     String? newCylinderComments,
 
 
      //6 form
@@ -287,6 +267,7 @@ class BoilerModel {
       surveydate:surveydate ?? this.surveydate ,
 
       customername:customername ?? this.customername ,
+      customerContact: customerContact?? this.customerContact,
       propertyaddress:propertyaddress ?? this.propertyaddress ,
       postcode:postcode ?? this.postcode ,
       fuelType:fuelType ?? this.fuelType ,
@@ -332,12 +313,6 @@ class BoilerModel {
       electricianReq: electricianReq?? this.electricianReq ,
       whatElectricianDo:whatElectricianDo ?? this. whatElectricianDo,
       whatControlFitting: whatControlFitting?? this.whatControlFitting ,
-      newDoWe:newDoWe ?? this.newDoWe ,
-      newBaseConStructed:newBaseConStructed ?? this.newBaseConStructed ,
-      newWhoIs:newWhoIs ?? this.newWhoIs ,
-      newWhereDo:newWhereDo ?? this.newWhereDo ,
-      newPipes: newPipes?? this.newPipes ,
-      newCylinderComments:newCylinderComments ?? this.newCylinderComments ,
 
 
       //6 form

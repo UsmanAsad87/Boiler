@@ -25,11 +25,6 @@ class _ASHPInstallerTechnicalSurveyState
   ASHPsurveycontroller _controoler = new ASHPsurveycontroller();
 
   void initState() {
-    ASHPModel ashpModel=ASHPModel();
-    print(ashpModel.toJson());
-    //ASHPProvider ashpProvider = Provider.of(context, listen: false);
-    //ashpProvider.setASHPObject(ashpModel);
-
     super.initState();
   }
 
