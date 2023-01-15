@@ -488,3 +488,7 @@ class ASHPModel {
   factory ASHPModel.fromJson(Map<String, dynamic> json) => _$ASHPModelFromJson(json);
   Map<String, dynamic> toJson() => _$ASHPModelToJson(this);
 }
+
+//
+// 'createdDateTime': instance.createdDateTime==null?DateTime.now().toIso8601String():instance.createdDateTime?.toIso8601String(),
+// DateTime.parse(json['createdDateTime'] as String)
