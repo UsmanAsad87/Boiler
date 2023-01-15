@@ -73,18 +73,25 @@ class ASHPMethods {
     try {
 
       ahspId = const Uuid().v4();
+      DocumentSnapshot snap =
+      await _firestore.collection('userInfo').doc(_auth.currentUser!.uid).get();
+      Map<String, dynamic> user=snap.data() as Map<String, dynamic>;
+      print(user['userName']);
+
+
       ASHPModel model = Provider.of<ASHPProvider>(context,listen: false).getASHPObject;
       model = model.copyWith(
         ASHPId: ahspId,
         createdDateTime: DateTime.now(),
         uid: _auth.currentUser!.uid,
+        username:user['userName']
       );
 
       await _firestore
-          .collection('AHSP_Survey')
+          .collection('ASHP_Survey')
           .doc(ahspId)
           .set(model.toJson());
-      res = 'AHSP survey submitted!';
+      res = 'ASHP survey submitted!';
       ASHPModel emptyModel=ASHPModel();
       Provider.of<ASHPProvider>(context,listen: false).setASHPObject(emptyModel);
     } catch (e) {

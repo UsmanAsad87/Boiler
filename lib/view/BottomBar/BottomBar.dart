@@ -2,6 +2,7 @@ import 'package:boiler/view/CustomerDetailForBoiler/CustomerDetailForBoiler.dart
 import 'package:boiler/view/HomeScreen/homeScreen.dart';
 import 'package:boiler/view/Servey.dart';
 import 'package:boiler/view/UserFiles/UserFiles.dart';
+import 'package:boiler/view/UserFiles/UserFilesDummy.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,8 @@ class _BottomBarState extends State<BottomBar> {
     CustomerDetailForBoiler(),
 
     UserProfile(),
-    UserFiles(),
+    //TODO: change it back to UserFiles() ,now its just to show PDF of survey
+    UserFilesDummy(),
     Survey(),
     HomeScreen(),
 

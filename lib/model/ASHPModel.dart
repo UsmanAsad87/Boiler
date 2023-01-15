@@ -7,6 +7,7 @@ part 'ASHPModel.g.dart';
 class ASHPModel {
   String? ASHPId;
   String? uid;
+  String? username;
   DateTime? createdDateTime;
   //1 form
   String? installDate;
@@ -104,6 +105,7 @@ class ASHPModel {
   List<String>? images;
   ASHPModel({
     this.uid='',
+    this.username='',
     this.ASHPId ='',
     this.installDate='',
     this.installType='',
@@ -200,6 +202,7 @@ class ASHPModel {
   });
 
   ASHPModel.named({
+    this.username,
     this.uid,
     this.ASHPId,
     this.installDate,
@@ -299,6 +302,7 @@ class ASHPModel {
   ASHPModel copyWith({
     String? ASHPId,
     String? uid,
+    String? username,
     //1 form
     String? installDate,
     String? installType,
@@ -398,6 +402,7 @@ class ASHPModel {
     print(images);
     return ASHPModel.named(
       uid: uid??this.uid,
+      username:username??this.username,
       ASHPId: ASHPId ?? this.ASHPId,
       installDate: installDate ?? this.installDate,
       installType: installType ?? this.installType,
