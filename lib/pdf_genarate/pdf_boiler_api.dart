@@ -30,7 +30,6 @@ class PdfBoilerApi {
           buildSubTitle('CUSTOMER/PROPERTY DETAILS'),
           buildCustPropDetailsSurvey(boilerModel),
 
-
           SizedBox(height: 0.5 * PdfPageFormat.cm),
           buildSubTitle('EXISTING BOILER SYSTEM DETAILS'),
           buildExistingBoilerSystemDetails(boilerModel),
@@ -39,13 +38,12 @@ class PdfBoilerApi {
           buildSubTitle('PROPOSED NEW BOILER SYSTEM DETAILS'),
           buildProposedNewBoilerSystemDetails(boilerModel),
 
-
           SizedBox(height: 0.5 * PdfPageFormat.cm),
           buildSubTitle('ELECTRICAL WORKS'),
           buildElectricalSystem(boilerModel),
 
           SizedBox(height: 0.5 * PdfPageFormat.cm),
-          buildSubTitle('Required images'),
+          buildSubTitle('REQUIRED IMAGES'),
           buildRequiredImages(images)
         ];
       },
@@ -86,13 +84,17 @@ class PdfBoilerApi {
   }) {
     final style = TextStyle(fontWeight: FontWeight.bold);
 
-    return Row(
-      mainAxisSize: MainAxisSize.min,
+    return Text(value);
+    Row(
+      //mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Text(title, style: style),
         SizedBox(width: 2 * PdfPageFormat.mm),
-        Text(value),
+        SizedBox(
+          width: 10 * PdfPageFormat.mm,
+          child: Text(value),
+        ),
       ],
     );
   }
@@ -100,7 +102,7 @@ class PdfBoilerApi {
   static buildText({
     required String title,
     required String value,
-    double width = double.infinity,
+    double width = 15 * PdfPageFormat.cm,
     TextStyle? titleStyle,
     bool unite = false,
   }) {
@@ -109,9 +111,23 @@ class PdfBoilerApi {
     return Container(
       width: width,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(child: Text(title, style: style)),
-          Text(value, style: unite ? style : null),
+          //Expanded(child: Text(title, style: style)),
+          //Text(value, style: unite ? style : null),
+          SizedBox(
+            width: 6 * PdfPageFormat.cm,
+            child: Text(title, style: style),
+          ),
+          SizedBox(
+            width: 7 * PdfPageFormat.cm,
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Text(value,
+                  style: unite ? style : null, textAlign: TextAlign.justify),
+            ),
+          ),
         ],
       ),
     );
@@ -125,8 +141,10 @@ class PdfBoilerApi {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              buildText(title: 'Install date: ', value: boilerModel.installDate!),
-              buildText(title: 'Install type: ', value: boilerModel.installType!),
+              buildText(
+                  title: 'Install date: ', value: boilerModel.installDate!),
+              buildText(
+                  title: 'Install type: ', value: boilerModel.installType!),
               buildText(title: 'Manpower: ', value: boilerModel.manPower!),
               buildText(title: 'Survey Date: ', value: boilerModel.surveydate!),
             ],
@@ -152,13 +170,13 @@ class PdfBoilerApi {
                   title: 'Customer contact: ',
                   value: boilerModel.customerContact!),
               buildText(title: 'Fuel Type: ', value: boilerModel.fuelType!),
-              buildText(title: 'Lime Scale Reducer Required: ', value: boilerModel.limeScaleReducerRequired!),
+              buildText(
+                  title: 'Lime Scale Reducer Required: ',
+                  value: boilerModel.limeScaleReducerRequired!),
             ],
           ),
         ));
   }
-
-
 
   static buildExistingBoilerSystemDetails(BoilerModel boilerModel) {
     return SizedBox(
@@ -168,15 +186,24 @@ class PdfBoilerApi {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
-              buildText(title: 'Make/Model: ', value: boilerModel.newMakeModel!),
-              buildText(title: 'Boiler type: ', value: boilerModel.newBoilerType!),
-              buildText(title: 'Boiler Position: ', value: boilerModel.newBoilerPosition!),
-              buildText(title: 'Boiler location: ', value: boilerModel.newBoilerLocation!),
-              buildText(title: 'Existing heating control: ', value: boilerModel.existingHeatingControl!),
-              buildText(title: 'Asbestos Removal: ', value: boilerModel.existingRemoval!),
-              buildText(title: 'Comments: ', value: boilerModel.existingComments!),
-
+              buildText(
+                  title: 'Make/Model: ', value: boilerModel.newMakeModel!),
+              buildText(
+                  title: 'Boiler type: ', value: boilerModel.newBoilerType!),
+              buildText(
+                  title: 'Boiler Position: ',
+                  value: boilerModel.newBoilerPosition!),
+              buildText(
+                  title: 'Boiler location: ',
+                  value: boilerModel.newBoilerLocation!),
+              buildText(
+                  title: 'Existing heating control: ',
+                  value: boilerModel.existingHeatingControl!),
+              buildText(
+                  title: 'Asbestos Removal: ',
+                  value: boilerModel.existingRemoval!),
+              buildText(
+                  title: 'Comments: ', value: boilerModel.existingComments!),
             ],
           ),
         ));
@@ -230,24 +257,16 @@ class PdfBoilerApi {
               buildText(
                   title: 'New radiator & Trv\'s & lock-shield: ',
                   value: boilerModel.newRadiaterTrv!),
-              buildText(
-                  title: 'Gas: ',
-                  value: boilerModel.newGas!),
+              buildText(title: 'Gas: ', value: boilerModel.newGas!),
               buildText(
                   title: 'GFlow and Return: ',
                   value: boilerModel.newGFlowReturn!),
               buildText(
-                  title: 'Hot and Cold: ',
-                  value: boilerModel.newHotAndCold!),
+                  title: 'Hot and Cold: ', value: boilerModel.newHotAndCold!),
               buildText(
-                  title: 'Condensate: ',
-                  value: boilerModel.newCondensate!),
-              buildText(
-                  title: 'Access: ',
-                  value: boilerModel.newAccess!),
-              buildText(
-                  title: 'Ladders: ',
-                  value: boilerModel.newLadders!),
+                  title: 'Condensate: ', value: boilerModel.newCondensate!),
+              buildText(title: 'Access: ', value: boilerModel.newAccess!),
+              buildText(title: 'Ladders: ', value: boilerModel.newLadders!),
               buildText(
                   title: 'Additional Notes: ',
                   value: boilerModel.makeAdditionalNotes!),
@@ -255,7 +274,6 @@ class PdfBoilerApi {
           ),
         ));
   }
-
 
   static buildElectricalSystem(BoilerModel boilerModel) {
     return SizedBox(
@@ -269,7 +287,8 @@ class PdfBoilerApi {
                   title: 'Electrician required on site: ',
                   value: boilerModel.electricianReq!),
               buildText(
-                  title: 'What does the electrician need to do: ', value: boilerModel.whatElectricianDo!),
+                  title: 'What does the electrician need to do: ',
+                  value: boilerModel.whatElectricianDo!),
               buildText(
                   title: 'What controls are we fitting: ',
                   value: boilerModel.whatControlFitting!),

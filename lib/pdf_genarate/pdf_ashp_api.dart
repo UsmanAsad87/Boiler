@@ -115,7 +115,7 @@ class PdfASHPApi {
   static buildText({
     required String title,
     required String value,
-    double width = double.infinity,
+    double width = 15 * PdfPageFormat.cm,
     TextStyle? titleStyle,
     bool unite = false,
   }) {
@@ -124,13 +124,28 @@ class PdfASHPApi {
     return Container(
       width: width,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(child: Text(title, style: style)),
-          Text(value, style: unite ? style : null),
+          //Expanded(child: Text(title, style: style)),
+          //Text(value, style: unite ? style : null),
+          SizedBox(
+            width: 6 * PdfPageFormat.cm,
+            child: Text(title, style: style),
+          ),
+          SizedBox(
+            width: 7 * PdfPageFormat.cm,
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Text(value,
+                  style: unite ? style : null, textAlign: TextAlign.justify),
+            ),
+          ),
         ],
       ),
     );
   }
+
 
   static buildASHPTechSurvey(ASHPModel ashpModel) {
     return SizedBox(
